@@ -70,6 +70,9 @@ Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'jiangmiao/auto-pairs'
 
+" Plug Markdown Preview
+Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
+
 " Plug themes
 Plug 'gosukiwi/vim-atom-dark'
 Plug 'changyuheng/color-scheme-holokai-for-vim'
@@ -133,6 +136,8 @@ Plug 'Shougo/vimshell', { 'rev' : '3787e5'  }
 " fonts
 Plug 'powerline/fonts', { 'do' : './install.sh' }
 Plug 'ryanoasis/vim-devicons'
+
+let g:ycm_filetype_blacklist = { 'cake': 1 }
 
 set encoding=utf8
 " fonts end
