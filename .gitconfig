@@ -33,6 +33,7 @@
 	rt = reset
 	rta = reset .
 	rth = reset --hard
+	rts = reset --soft
 [user]
-	name = Michael Carlson
-	email = Michael.Carlson2@extendhealth.com
+	name = Eric Carlson
+	email = e.carlson94@gmail.com
