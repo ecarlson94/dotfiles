@@ -23,6 +23,7 @@
 	pl = pull origin
 	mg = merge
 	mga = merge --abort
+	mt = mergetool
 	sh = stash
 	sha = stash apply
 	shp = stash pop
