@@ -78,6 +78,8 @@ Plug 'gosukiwi/vim-atom-dark'
 Plug 'changyuheng/color-scheme-holokai-for-vim'
 Plug 'fielding/vice'
 Plug 'xdg/vim-darkluma'
+Plug 'atahabaki/archman-vim'
+Plug 'Mizux/vim-colorschemes', { 'as': 'mizux' }
 
 Plug 'othree/javascript-libraries-syntax.vim'
 Plug 'maksimr/vim-jsbeautify'
@@ -212,8 +214,9 @@ map <silent> <leader>V :source ~/.vimrc<CR>:filetype detect<CR>:exe ":echo 'vimr
 
 set t_Co=256 " For 256 color mode support
 syntax on
-colorscheme darkluma
-let g:darkluma_dark_comments = 1
+
+
+colorscheme blade_runner
 
 "
 " Moving around / editing
