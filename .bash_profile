@@ -7,6 +7,8 @@ alias tfa="terraform apply"
 alias nr="npm run"
 alias wp="nr webpack"
 alias wpw="nr webwatch"
+alias vdiff="nvim -d"
+alias v="nvim"
 
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
