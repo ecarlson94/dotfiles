@@ -42,8 +42,8 @@
   tool = vimdiff
   conflictstyle = diff3
 [mergetool "vimdiff"]
-  cmd = vdiff $BASE $LOCAL $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
+  cmd = vimdiff $BASE $LOCAL $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
 [diff]
   tool = vimdiff
 [difftool "vimdiff"]
-  cmd = vdiff $LOCAL $REMOTE
+  cmd = vimdiff $LOCAL $REMOTE
