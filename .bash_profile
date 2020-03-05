@@ -1,4 +1,13 @@
-if [-f ~/.bash_profile ]; then source ~/.bash_profile; fi
+export PATH="$HOME/bin:$PATH"
+[ -f ~/.fzf.bash ] && . ~/.fzf.bash
+
+alias tfi="terraform init"
+alias tfp="terraform plan"
+alias tfa="terraform apply"
+alias nr="npm run"
+alias wp="nr webpack"
+alias wpw="nr webwatch"
+
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
