@@ -35,6 +35,10 @@ let g:terraform_align=1
 let g:terraform_fold_sections=0
 let g:terraform_fmt_on_save=1
 
+Plug 'OmniSharp/omnisharp-vim'
+Plug 'puremourning/vimspector', { 'do' : './install_gadgetpy --all --disable-tcl'}
+let g:vimspector_enable_mappings = 'VISUAL_STUDIO'
+
 Plug 'frazrepo/vim-rainbow'
 let g:rainbow_active=1
 

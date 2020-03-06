@@ -11,7 +11,7 @@ read gitEmail
 
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 
-brew install fzf ripgrep neovim zsh
+brew install python fzf ripgrep neovim zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
 git checkout .
