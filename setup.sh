@@ -43,12 +43,14 @@ case "${unameOut}" in
     *)          machine="UNKNOWN:${unameOut}"
 esac
 
-if [ $machine == "Linux" ]; then
+if [ $machine = "Linux" ]
+then
   sed -i "s|<home>|$HOME|g" $DIR/.zshrc
   sed -i "s/<firstName>/$firstName/g" $DIR/.gitconfig
   sed -i "s/<lastName>/$lastName/g" $DIR/.gitconfig
   sed -i "s/<gitEmail>/$gitEmail/g" $DIR/.gitconfig
-elif [ $machine == "Mac" ]; then
+elif [ $machine = "Mac" ]
+then
   sed -i '' "s|<home>|$HOME|g" $DIR/.zshrc
   sed -i '' "s/<firstName>/$firstName/g" $DIR/.gitconfig
   sed -i '' "s/<lastName>/$lastName/g" $DIR/.gitconfig
