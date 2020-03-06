@@ -13,10 +13,10 @@ DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 
 brew install python fzf ripgrep neovim zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-
 git checkout .
 
 rm $HOME/.bash_profile
+rm $HOME/.bashrc
 rm $HOME/.vimrc
 rm $HOME/.gitconfig
 rm $HOME/.zshrc
@@ -26,6 +26,7 @@ rm $HOME/.fzf.bash
 rm $HOME/.bash_aliases
 
 ln -s $DIR/.bash_profile $HOME/.bash_profile
+ln -s $DIR/.bashrc $HOME/.bashrc
 ln -s $DIR/.vimrc $HOME/.vimrc
 ln -s $DIR/.gitconfig $HOME/.gitconfig
 ln -s $DIR/.zshrc $HOME/.zshrc
@@ -46,12 +47,16 @@ esac
 if [ $machine = "Linux" ]
 then
   sed -i "s|<home>|$HOME|g" $DIR/.zshrc
+  sed -i "s|<home>|$HOME|g" $DIR/.fzf.zsh
+  sed -i "s|<home>|$HOME|g" $DIR/.fzf.bash
   sed -i "s/<firstName>/$firstName/g" $DIR/.gitconfig
   sed -i "s/<lastName>/$lastName/g" $DIR/.gitconfig
   sed -i "s/<gitEmail>/$gitEmail/g" $DIR/.gitconfig
 elif [ $machine = "Mac" ]
 then
   sed -i '' "s|<home>|$HOME|g" $DIR/.zshrc
+  sed -i '' "s|<home>|$HOME|g" $DIR/.fzf.zsh
+  sed -i '' "s|<home>|$HOME|g" $DIR/.fzf.bash
   sed -i '' "s/<firstName>/$firstName/g" $DIR/.gitconfig
   sed -i '' "s/<lastName>/$lastName/g" $DIR/.gitconfig
   sed -i '' "s/<gitEmail>/$gitEmail/g" $DIR/.gitconfig
