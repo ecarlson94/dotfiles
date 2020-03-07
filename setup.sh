@@ -9,31 +9,39 @@ read lastName
 echo "What is your git email?"
 read gitEmail
 
+echo "Backup original dotfiles (y/n)"
+read backup
+
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 
 brew install python fzf ripgrep neovim zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-git checkout .
 
-rm $HOME/.bash_profile
-rm $HOME/.bashrc
-rm $HOME/.vimrc
-rm $HOME/.gitconfig
-rm $HOME/.zshrc
-rm $HOME/.zshrc.pre-oh-my-zsh
-rm $HOME/.fzf.zsh
-rm $HOME/.fzf.bash
-rm $HOME/.bash_aliases
+declare -a dotfiles=(
+  ".bash_profile"
+  ".bashrc"
+  ".vimrc"
+  ".gitconfig"
+  ".zshrc"
+  ".zshrc.pre-oh-my-zsh"
+  ".fzf.zsh"
+  ".fzf.bash"
+  ".bash_aliases"
+)
 
-ln -s $DIR/.bash_profile $HOME/.bash_profile
-ln -s $DIR/.bashrc $HOME/.bashrc
-ln -s $DIR/.vimrc $HOME/.vimrc
-ln -s $DIR/.gitconfig $HOME/.gitconfig
-ln -s $DIR/.zshrc $HOME/.zshrc
-ln -s $DIR/.zshrc.pre-oh-my-zsh $HOME/.zshrc.pre-oh-my-zsh
-ln -s $DIR/.fzf.zsh $HOME/.fzf.zsh
-ln -s $DIR/.fzf.bash $HOME/.fzf.bash
-ln -s $DIR/.bash_aliases $HOME/.bash_aliases
+for d in "${dotfiles[@]}"
+do
+  if test -f $HOME/$d; then
+    if [ backup = "y" ]; then
+      echo "Backing up $HOME/$d to $HOME/$d.bac..."
+      mv $HOME/$d $HOME/$d.bac
+    fi
+    rm $HOME/$d
+  fi
+
+  echo "Creating symlink from $DIR/$d to $HOME/$d"
+  ln -s $DIR/$d $HOME/$d
+done
 
 unameOut="$(uname -s)"
 case "${unameOut}" in
