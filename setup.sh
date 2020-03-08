@@ -1,4 +1,4 @@
-#! /bin/sh
+#! /bin/bash
 
 echo "What is your first name?"
 read firstName
@@ -17,24 +17,23 @@ DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 brew install python fzf ripgrep neovim zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
-declare -a dotfiles=(
-  ".bash_profile"
-  ".bashrc"
-  ".vimrc"
-  ".gitconfig"
-  ".zshrc"
-  ".zshrc.pre-oh-my-zsh"
-  ".fzf.zsh"
-  ".fzf.bash"
-  ".bash_aliases"
+declare -a dotfiles=(.bash_profile
+  .bashrc
+  .vimrc
+  .gitconfig
+  .zshrc
+  .zshrc.pre-oh-my-zsh
+  .fzf.zsh
+  .fzf.bash
+  .bash_aliases
 )
 
 for d in "${dotfiles[@]}"
 do
   if test -f $HOME/$d; then
-    if [ backup = "y" ]; then
+    if [ $backup = "y" ]; then
       echo "Backing up $HOME/$d to $HOME/$d.bac..."
-      mv $HOME/$d $HOME/$d.bac
+      cp $HOME/$d $HOME/$d.bac
     fi
     rm $HOME/$d
   fi
