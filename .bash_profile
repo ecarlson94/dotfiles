@@ -97,4 +97,5 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
-eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+
+test -f /home/linuxbrew/.linuxbrew/bin/brew && eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
