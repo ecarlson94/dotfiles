@@ -14,8 +14,38 @@ read backup
 
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 
-brew install python fzf ripgrep neovim zsh
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+unameOut="$(uname -s)"
+case "${unameOut}" in
+    Linux*)     machine=Linux;;
+    Darwin*)    machine=Mac;;
+    CYGWIN*)    machine=Cygwin;;
+    MINGW*)     machine=MinGw;;
+    *)          machine="UNKNOWN:${unameOut}"
+esac
+
+if [ $machine = "Linux" ]
+then 
+  git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+  ~/.fzf/install
+  curl -LO https://github.com/BurntSushi/ripgrep/releases/download/11.0.2/ripgrep_11.0.2_amd64.deb
+  sudo dpkg -i ripgrep_11.0.2_amd64.deb
+  rm ripgrep*
+  sudo apt-get install fontconfig zsh python-pip neovim -y
+
+  wget https://github.com/powerline/powerline/raw/develop/font/PowerlineSymbols.otf
+  wget https://github.com/powerline/powerline/raw/develop/font/10-powerline-symbols.conf
+  mkdir -p $HOME/.local/share/fonts/
+  mkdir -p $HOME/.config/fontconfig/conf.d/
+  mv PowerlineSymbols.otf $HOME/.local/share/fonts/
+  fc-cache -vf ~/.local/share/fonts/
+  mv 10-powerline-symbols.conf $HOME/.config/fontconfig/conf.d/
+elif [ $machine = "Mac" ]
+then
+  brew install python fzf ripgrep neovim zsh wget
+  sudo easy_install pip
+fi
+
+pip install --user powerline-status
 
 declare -a dotfiles=(.bash_profile
   .bashrc
