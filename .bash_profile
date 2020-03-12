@@ -1,7 +1,7 @@
-if test -t 1; then
-exec zsh
-fi
 export PATH="$HOME/bin:$PATH"
+if test -t 1; then
+  exec zsh
+fi
 [ -f ~/.fzf.bash ] && . ~/.fzf.bash
 
 # ~/.bashrc: executed by bash(1) for non-login shells.

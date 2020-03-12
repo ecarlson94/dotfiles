@@ -31,6 +31,9 @@
   st = status
   rb = rebase
   rbc = rebase --continue
+  rbi = rebase -i
+  rba = rebase --abort
+  rbs = rebase --skip
   rt = reset
   rta = reset .
   rth = reset --hard
