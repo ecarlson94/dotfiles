@@ -72,6 +72,18 @@ do
   ln -s $DIR/$d $HOME/$d
 done
 
+if test -f $HOME/.config/nvim/init.vim; then
+  if [ $backup = "y" ]; then
+    echo "Backing up $HOME/.config/nvim/init.vim to $HOME/.config/nvim/init.vim.bac..."
+    cp $HOME/.config/nvim/init.vim $HOME/.config/nvim/init.vim.bac
+  fi
+  rm $HOME/.config/nvim/init.vim
+fi
+
+echo "Creating symlink from $DIR/.config/nvim/init.vim to $HOME/.config/nvim/init.vim"
+mkdir -p $HOME/.config/nvim
+ln -s $DIR/.config/nvim/init.vim $HOME/.config/nvim/init.vim
+
 unameOut="$(uname -s)"
 case "${unameOut}" in
     Linux*)     machine=Linux;;
