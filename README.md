@@ -22,8 +22,7 @@
 13. Close and reopen `iTerm`
 14. Select `y` to install plugins
 15. Follow configuration prompts
-16. Navigate to `dotfiles` repo
-17. `vi README.md` (`.vimrc` setup should commence)
+16. `compaudit | xargs chmod g-w`
 
 ### Linux/WSL
 1. (WSL) Download [MesloLGS NF Regular.ttf](https://github.com/romkatv/dotfiles-public/raw/master/.local/share/fonts/NerdFonts/MesloLGS%20NF%20Regular.ttf)
@@ -32,10 +31,9 @@
 4. (WSL) Right click program bar > Properties > set font to `MesloLGS NF`
 5. `git clone git@github.com:ecarlson94/dotfiles.git`
 6. `cd dotfiles`
-7. `./setup.sh` (this could take upwards of 20 minutes)
+7. `sudo ./setup.sh` (this could take upwards of 20 minutes)
 8. Answer `y` for the fuzzy prompts
 9. Restart terminal
 10. Select `y` to install plugins
 11. Follow configuration prompts
-12. Navigate to `dotfiles` repo
-13. `vi README.md` (`.vimrc` setup should commence)
+12. `compaudit | xargs chmod g-w`
