@@ -30,7 +30,7 @@ then
   curl -LO https://github.com/BurntSushi/ripgrep/releases/download/11.0.2/ripgrep_11.0.2_amd64.deb
   sudo dpkg -i ripgrep_11.0.2_amd64.deb
   rm ripgrep*
-  sudo apt-get install fontconfig zsh python-pip neovim -y
+  sudo apt-get install fontconfig zsh python-pip neovim cmake -y
 
   wget https://github.com/powerline/powerline/raw/develop/font/PowerlineSymbols.otf
   wget https://github.com/powerline/powerline/raw/develop/font/10-powerline-symbols.conf
@@ -41,7 +41,7 @@ then
   mv 10-powerline-symbols.conf $HOME/.config/fontconfig/conf.d/
 elif [ $machine = "Mac" ]
 then
-  brew install python fzf ripgrep neovim zsh wget
+  brew install python fzf ripgrep neovim zsh wget cmake
   sudo easy_install pip
 fi
 
