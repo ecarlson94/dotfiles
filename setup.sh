@@ -112,6 +112,5 @@ then
 fi
 
 vim +PlugInstall +qa
-~/.vim/plugged/YouCompleteMe/install.py --cs-completer --ts-completer --rust-completer --omnisharp-completer
 
 echo "Restart your terminal..."
