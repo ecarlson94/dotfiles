@@ -30,7 +30,7 @@ then
   curl -LO https://github.com/BurntSushi/ripgrep/releases/download/11.0.2/ripgrep_11.0.2_amd64.deb
   sudo dpkg -i ripgrep_11.0.2_amd64.deb
   rm ripgrep*
-  sudo apt-get install fontconfig zsh python-pip neovim cmake -y
+  sudo apt-get install fontconfig zsh python3-dev python-pip python neovim cmake build-essential mono-complete nodejs npm -y
 
   wget https://github.com/powerline/powerline/raw/develop/font/PowerlineSymbols.otf
   wget https://github.com/powerline/powerline/raw/develop/font/10-powerline-symbols.conf
@@ -41,7 +41,7 @@ then
   mv 10-powerline-symbols.conf $HOME/.config/fontconfig/conf.d/
 elif [ $machine = "Mac" ]
 then
-  brew install python fzf ripgrep neovim zsh wget cmake
+  brew install python fzf ripgrep neovim zsh wget cmake mono npm
   sudo easy_install pip
 fi
 
@@ -110,5 +110,8 @@ then
   sed -i '' "s/<lastName>/$lastName/g" $DIR/.gitconfig
   sed -i '' "s/<gitEmail>/$gitEmail/g" $DIR/.gitconfig
 fi
+
+vim +PlugInstall +qa
+~/.vim/plugged/YouCompleteMe/install.py --cs-completer --ts-completer --rust-completer --omnisharp-completer
 
 echo "Restart your terminal..."
