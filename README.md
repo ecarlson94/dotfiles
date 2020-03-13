@@ -31,7 +31,7 @@
 4. (WSL) Right click program bar > Properties > set font to `MesloLGS NF`
 5. `git clone git@github.com:ecarlson94/dotfiles.git`
 6. `cd dotfiles`
-7. `sudo ./setup.sh` (this could take upwards of 20 minutes)
+7. `./setup.sh` (this could take upwards of 20 minutes)
 8. Answer `y` for the fuzzy prompts
 9. Restart terminal
 10. Select `y` to install plugins
