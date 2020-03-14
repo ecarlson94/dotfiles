@@ -1,0 +1,25 @@
+- defaults:
+    link:
+        relink: true
+        create: true
+        force: true
+    shell:
+        stdout: true
+        stderr: true
+
+- clean: ['$HOME']
+
+- shell:
+    - [git submodule update --init --recursive, Installing submodules]
+    -
+        command: chsh -s $(which zsh)
+        stdin: true
+        description: Making zsh the default shell
+
+- link:
+    $HOME/.zshrc: zsh/.zshrc
+    $HOME/.zsh-plugins: zsh/.zsh-plugins
+    $HOME/.bash_aliases: zsh/.bash_aliases
+    $HOME/.vimrc: vim/.vimrc
+    $HOME/.config/nvim: vim/.config/nvim
+    $HOME/.gitconfig: git/.gitconfig

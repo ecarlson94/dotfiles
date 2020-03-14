@@ -16,3 +16,7 @@
 [submodule "zsh/.zsh-plugins/ohmyzsh"]
 	path = zsh/.zsh-plugins/ohmyzsh
 	url = https://github.com/ohmyzsh/ohmyzsh
+[submodule "dotbot"]
+	path = dotbot
+	url = https://github.com/anishathalye/dotbot
+	ignore = dirty
