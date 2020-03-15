@@ -5,6 +5,3 @@
 [submodule "dotbot-aptget"]
 	path = dotbot-aptget
 	url = https://github.com/dein0s/dotbot_plugin_aptget.git
-[submodule "dotbot-brew"]
-	path = dotbot-brew
-	url = https://github.com/d12frosted/dotbot-brew.git

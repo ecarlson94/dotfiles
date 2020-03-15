@@ -11,10 +11,10 @@
 
 - shell:
     - [git submodule update --init --recursive, Installing submodules]
+    - [pip install --user powerline-status, Installing powerline status]
 
 - link:
     $HOME/.zshrc: zsh/.zshrc
-    $HOME/.zsh-plugins: zsh/.zsh-plugins
     $HOME/.bash_aliases: zsh/.bash_aliases
     $HOME/.vimrc: vim/.vimrc
     $HOME/.config/nvim: vim/.config/nvim

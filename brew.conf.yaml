@@ -1,0 +1,8 @@
+- shell:
+    - [ brew bundle --file Brewfile, Install dependencies]
+    - sudo easy_install pip
+    - [ /usr/local/opt/fzf/install --key-bindings --completion --no-update-rc, Install fzf (Fuzzy Find) ]
+    -
+        command: sudo chsh -s /bin/zsh
+        stdin: true
+        description: Making zsh the default shell
