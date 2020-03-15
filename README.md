@@ -15,25 +15,25 @@
 6. Click `Text`
 7. Set the font to `MesoLGS NF`
 8. Close Preferences
-9. `git clone git@github.com:ecarlson94/dotfiles.git`
-10. `cd dotfiles`
-11. `./setup.sh` (this could take upwards of 20 minutes)
-12. `exit` (this exits zsh and allows `./setup.sh` to finish)
-13. Close and reopen `iTerm`
-14. Select `y` to install plugins
-15. Follow configuration prompts
-16. `compaudit | xargs chmod g-w`
+9. Install homebrew `/usr/bin/ruby -e "$(curl -fsSL https://raw.zshhubusercontent.com/Homebrew/install/master/install)"
+brew doctor`
+10. Run `brew install python`
+11. Run `git clone git@github.com:ecarlson94/dotfiles.git ~/dotfiles`
+12. `cd ~/dotfiles`
+13. `./install (this could take upwards of 20 minutes)
+14. Close and reopen `iTerm`
+15. Select `y` to install plugins
+16. Follow configuration prompts
 
 ### Linux/WSL
 1. (WSL) Download [MesloLGS NF Regular.ttf](https://github.com/romkatv/dotfiles-public/raw/master/.local/share/fonts/NerdFonts/MesloLGS%20NF%20Regular.ttf)
 2. (WSL) Right click file in windows explorer and click `Install`
 3. Start terminal
 4. (WSL) Right click program bar > Properties > set font to `MesloLGS NF`
-5. `git clone git@github.com:ecarlson94/dotfiles.git`
-6. `cd dotfiles`
-7. `./setup.sh` (this could take upwards of 20 minutes)
-8. Answer `y` for the fuzzy prompts
+6. Run `git clone git@github.com:ecarlson94/dotfiles.git ~/dotfiles`
+7. Run `cd ~/dotfiles`
+8. Run `./install (this could take upwards of 20 minutes)
 9. Restart terminal
 10. Select `y` to install plugins
 11. Follow configuration prompts
-12. `compaudit | xargs chmod g-w`
+12. `compaudit | xargs chmod go-w`

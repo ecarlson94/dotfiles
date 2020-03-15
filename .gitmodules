@@ -20,3 +20,6 @@
 	path = dotbot
 	url = https://github.com/anishathalye/dotbot
 	ignore = dirty
+[submodule "dotbot-aptget"]
+	path = dotbot-aptget
+	url = https://github.com/dein0s/dotbot_plugin_aptget.git
