@@ -34,7 +34,8 @@ if [ $machine = "Linux"  ]; then
   sudo apt-get install python python3-pip python3-apt -y
   sudo "${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASEDIR}" -c "aptget.conf.yaml" --plugin-dir "dotbot-aptget"
 elif [ $machine = "Mac"  ]; then
-  echo "This is a mac. Not supported yet."
+  brew install python
+  "${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASEDIR}" -c "brew.conf.yaml" --plugin-dir "dotbot-brew"
 fi
 
 "${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASEDIR}" -c "${CONFIG}" "${@}"
