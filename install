@@ -2,6 +2,12 @@
 
 set -e
 
+echo "What is your name (\"First Last\"):"
+read name
+
+echo "What is your git email:"
+read email
+
 CONFIG="default.conf.yaml"
 DOTBOT_DIR="dotbot"
 
@@ -29,4 +35,9 @@ elif [ $machine = "Mac"  ]; then
 fi
 
 "${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASEDIR}" -c "${CONFIG}" "${@}"
+
+git config --global user.name $name
+git config --global user.email $email
+
+echo "Restart your terminal..."
 
