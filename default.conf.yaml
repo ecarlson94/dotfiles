@@ -10,7 +10,8 @@
 - clean: ['$HOME']
 
 - shell:
-    - [git submodule update --init --recursive, Installing submodules]
+    - [git submodule init]
+    - [git submodule update, Installing submodules]
     - [pip install --user powerline-status, Installing powerline status]
 
 - link:
