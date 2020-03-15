@@ -1,0 +1,24 @@
+- defaults:
+    link:
+        relink: true
+        create: true
+        force: true
+    shell:
+        stdout: true
+        stderr: true
+
+- clean: ['$HOME']
+
+- shell:
+    - [git submodule update --init --recursive, Installing submodules]
+    - [pip install --user powerline-status, Installing powerline status]
+
+- link:
+    $HOME/.zshrc: zsh/.zshrc
+    $HOME/.bash_aliases: zsh/.bash_aliases
+    $HOME/.vimrc: vim/.vimrc
+    $HOME/.config/nvim: vim/.config/nvim
+    $HOME/.gitconfig: git/.gitconfig
+
+- shell:
+    - [ vim +VimEnter +PlugInstall +qa, Installing vim plugins ]

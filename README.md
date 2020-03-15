@@ -6,34 +6,23 @@
 - Linux
 
 ## Steps
-### Mac
-1. Download and install `iTerm`
-2. Download and install [MesloLGS NF Regular.ttf](https://github.com/romkatv/dotfiles-public/raw/master/.local/share/fonts/NerdFonts/MesloLGS%20NF%20Regular.ttf) font
-3. Open iTerm
-4. `CMD+,`
-5. Click `Profiles`
-6. Click `Text`
-7. Set the font to `MesoLGS NF`
-8. Close Preferences
-9. `git clone git@github.com:ecarlson94/dotfiles.git`
-10. `cd dotfiles`
-11. `./setup.sh` (this could take upwards of 20 minutes)
-12. `exit` (this exits zsh and allows `./setup.sh` to finish)
-13. Close and reopen `iTerm`
-14. Select `y` to install plugins
-15. Follow configuration prompts
-16. `compaudit | xargs chmod g-w`
+1. Open terminal
+2. Run `git clone git@github.com:ecarlson94/dotfiles.git ~/dotfiles`
+3. Run `cd ~/dotfiles`
+4. Run `git submodule init && git submodule update`
 
-### Linux/WSL
-1. (WSL) Download [MesloLGS NF Regular.ttf](https://github.com/romkatv/dotfiles-public/raw/master/.local/share/fonts/NerdFonts/MesloLGS%20NF%20Regular.ttf)
-2. (WSL) Right click file in windows explorer and click `Install`
-3. Start terminal
-4. (WSL) Right click program bar > Properties > set font to `MesloLGS NF`
-5. `git clone git@github.com:ecarlson94/dotfiles.git`
-6. `cd dotfiles`
-7. `./setup.sh` (this could take upwards of 20 minutes)
-8. Answer `y` for the fuzzy prompts
-9. Restart terminal
-10. Select `y` to install plugins
-11. Follow configuration prompts
-12. `compaudit | xargs chmod g-w`
+### Mac
+1. [Install Homebrew](https://brew.sh)
+2. `./install (this could take upwards of 20 minutes)
+3. Close terminal and open `iTerm`
+4. [Install Powerline Font](https://github.com/romkatv/powerlevel10k#fonts)
+5. Select `y` to install plugins
+6. Follow configuration prompts
+
+### Linux and WSL
+1. [Install Powerline Font](https://github.com/romkatv/powerlevel10k#fonts)
+2. Run `./install (this could take upwards of 20 minutes)
+3. Restart terminal
+4. Select `y` to install plugins
+5. Follow configuration prompts
+6. `compaudit | xargs chmod go-w`
