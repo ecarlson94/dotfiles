@@ -3,13 +3,14 @@
 
 - [Windows Subsystem for Linux](https://gist.github.com/ecarlson94/283102ffd2f2473d41e7c9965be8fdd4)
 - Mac
-- Linux
+- Linux (Debian)
 
 ## Steps
 1. Install terminal multiplexer of choice
 2. Install and configure [Powerline Font](https://github.com/romkatv/powerlevel10k#fonts)
 3. Run `git clone git@github.com:ecarlson94/dotfiles.git ~/dotfiles`
 4. Run `cd ~/dotfiles`
+5. Continue to [Mac](#mac), [WSL](#wsl), or [Debian](#debian)
 
 ### Mac
 1. [Install Homebrew](https://brew.sh)
