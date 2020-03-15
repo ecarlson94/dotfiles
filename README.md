@@ -13,7 +13,7 @@
 
 ### Mac
 1. [Install Homebrew](https://brew.sh)
-2. `./install (this could take upwards of 20 minutes)
+2. `./install` (this could take upwards of 20 minutes)
 3. Close terminal and open `iTerm`
 4. [Install Powerline Font](https://github.com/romkatv/powerlevel10k#fonts)
 5. Select `y` to install plugins
@@ -21,7 +21,7 @@
 
 ### Linux and WSL
 1. [Install Powerline Font](https://github.com/romkatv/powerlevel10k#fonts)
-2. Run `./install (this could take upwards of 20 minutes)
+2. Run `./install` (this could take upwards of 20 minutes)
 3. Restart terminal
 4. Select `y` to install plugins
 5. Follow configuration prompts
