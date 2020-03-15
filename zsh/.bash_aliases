@@ -25,6 +25,7 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 alias tfi="terraform init"
 alias tfp="terraform plan"
 alias tfa="terraform apply"
+alias tfaa="terraform apply -auto-approve"
 alias nr="npm run"
 alias wp="nr webpack"
 alias wpw="nr webwatch"
