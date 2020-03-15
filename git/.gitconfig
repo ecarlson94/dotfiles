@@ -38,9 +38,6 @@
   rta = reset .
   rth = reset --hard
   rts = reset --soft
-[user]
-	name = Eric
-	email = e.carlson94@gmail.com
 [merge]
   tool = vimdiff
   conflictstyle = diff3
