@@ -26,6 +26,7 @@
   mt = mergetool
   sh = stash
   sha = stash apply
+  shc = stash clear
   shp = stash pop
   shl = stash list
   st = status
