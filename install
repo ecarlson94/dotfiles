@@ -28,7 +28,7 @@ case "${unameOut}" in
 esac
 
 if [ $machine = "Linux"  ]; then
-  sudo apt-get install python python3-apt
+  sudo apt-get install python python3-apt -y
   sudo "${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASEDIR}" -c "aptget.conf.yaml" --plugin-dir "dotbot-aptget"
 elif [ $machine = "Mac"  ]; then
   echo "This is a mac. Not supported yet."
