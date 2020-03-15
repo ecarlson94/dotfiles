@@ -19,3 +19,6 @@
     $HOME/.vimrc: vim/.vimrc
     $HOME/.config/nvim: vim/.config/nvim
     $HOME/.gitconfig: git/.gitconfig
+
+- shell:
+    - [ vim +VimEnter +PlugInstall +qa, Installing vim plugins ]
