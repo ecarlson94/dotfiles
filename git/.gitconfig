@@ -39,8 +39,8 @@
   rth = reset --hard
   rts = reset --soft
 [user]
-  name = <firstName> <lastName>
-  email = <gitEmail>
+	name = Eric
+	email = e.carlson94@gmail.com
 [merge]
   tool = vimdiff
   conflictstyle = diff3
