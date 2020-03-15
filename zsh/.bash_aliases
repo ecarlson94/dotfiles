@@ -18,10 +18,6 @@ alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
 
-# Add an "alert" alias for long running commands.  Use like so:
-#   sleep 10; alert
-alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
-
 alias tfi="terraform init"
 alias tfp="terraform plan"
 alias tfa="terraform apply"
@@ -32,3 +28,18 @@ alias wpw="nr webwatch"
 alias vimdiff="nvim -d"
 alias vi="nvim"
 alias vim="nvim"
+
+unameOut="$(uname -s)"
+case "${unameOut}" in
+  Linux*)     machine=Linux;;
+  Darwin*)    machine=Mac;;
+  CYGWIN*)    machine=Cygwin;;
+  MINGW*)     machine=MinGw;;
+  *)          machine="UNKNOWN:${unameOut}"
+esac
+# Add an "alert" alias for long running commands.  Use like so:
+#   sleep 10; alert
+if [ machine = "Linux" ]; then
+  alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
+fi
+type powershell.exe &> /dev/null && alias alert='powershell.exe "New-BurntToastNotification -Text \"Task Complete\""'

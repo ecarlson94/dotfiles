@@ -1,0 +1,15 @@
+- defaults:
+    link:
+        relink: true
+        create: true
+        force: true
+    shell:
+        stdout: true
+        stderr: true
+
+# Install BurntToast
+- shell:
+    - [powershell.exe "Set-ExecutionPolicy RemoteSigned -Scope CurrentUser", Setting powershell remote execution policy to allow currnet user]
+    - [powershell.exe "Install-PackageProvider -Name NuGet -MinimumVersion 2.8.5.201 -Force", Adding NuGet Powershell package provider]
+    - [powershell.exe "Install-Module BurntToast -Force", Installing BurntToast powershell module]
+    - [powershell.exe "Import-Module BurntToast", Importing BurntToast module]
