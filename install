@@ -1,0 +1,47 @@
+#!/usr/bin/env bash
+
+set -e
+
+echo "What is first your name:"
+read firstName
+
+echo "What is your last name:"
+read lastName
+
+echo "What is your git email:"
+read email
+
+CONFIG="default.conf.yaml"
+DOTBOT_DIR="dotbot"
+
+DOTBOT_BIN="bin/dotbot"
+BASEDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
+cd "${BASEDIR}"
+git -C "${DOTBOT_DIR}" submodule sync --quiet --recursive
+git submodule update --init --recursive "${DOTBOT_DIR}"
+
+unameOut="$(uname -s)"
+case "${unameOut}" in
+    Linux*)     machine=Linux;;
+    Darwin*)    machine=Mac;;
+    CYGWIN*)    machine=Cygwin;;
+    MINGW*)     machine=MinGw;;
+    *)          machine="UNKNOWN:${unameOut}"
+esac
+
+if [ $machine = "Linux"  ]; then
+  sudo apt-get install python python3-pip python3-apt -y
+  sudo "${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASEDIR}" -c "aptget.conf.yaml" --plugin-dir "dotbot-aptget"
+elif [ $machine = "Mac"  ]; then
+  brew install python
+  "${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASEDIR}" -c "brew.conf.yaml" --plugin-dir "dotbot-brew"
+fi
+
+"${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASEDIR}" -c "${CONFIG}" "${@}"
+
+git config --global user.name "$firstName $lastName"
+git config --global user.email $email
+
+echo "Restart your terminal..."
+
