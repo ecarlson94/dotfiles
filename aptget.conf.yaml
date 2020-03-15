@@ -1,6 +1,6 @@
 # fzf & ripgrep
 - shell:
-    - [ "rm -rf ~/.fzf", Removing existing fzf ]
+    - [ "sudo rm -rf ~/.fzf", Removing existing fzf ]
     - [ "git clone --depth 1 https://github.com/junegunn/fzf.git ${HOME}/.fzf" , Installing fzf ]
     - [ "${HOME}/.fzf/install --key-bindings --completion --no-update-rc" , Setup fzf ]
     - [ "curl -LO https://github.com/BurntSushi/ripgrep/releases/download/11.0.2/ripgrep_11.0.2_amd64.deb", Download ripgrep ]
@@ -11,6 +11,7 @@
     fontconfig:
     zsh:
     python3-dev:
+    python-pip:
     neovim:
     cmake:
     build-essential:
