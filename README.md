@@ -32,8 +32,9 @@ brew doctor`
 4. (WSL) Right click program bar > Properties > set font to `MesloLGS NF`
 6. Run `git clone git@github.com:ecarlson94/dotfiles.git ~/dotfiles`
 7. Run `cd ~/dotfiles`
-8. Run `./install (this could take upwards of 20 minutes)
-9. Restart terminal
-10. Select `y` to install plugins
-11. Follow configuration prompts
-12. `compaudit | xargs chmod go-w`
+8. Run `git submodule init && git submodule update`
+9. Run `./install (this could take upwards of 20 minutes)
+10. Restart terminal
+11. Select `y` to install plugins
+12. Follow configuration prompts
+13. `compaudit | xargs chmod go-w`

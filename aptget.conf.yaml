@@ -11,7 +11,6 @@
     fontconfig:
     zsh:
     python3-dev:
-    python-pip:
     neovim:
     cmake:
     build-essential:
@@ -21,6 +20,6 @@
 
 - shell:
     -
-        command: chsh -s $(which zsh)
+        command: sudo chsh -s $(which zsh)
         stdin: true
         description: Making zsh the default shell
