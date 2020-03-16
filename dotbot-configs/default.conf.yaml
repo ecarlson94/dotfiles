@@ -7,7 +7,14 @@
         stdout: true
         stderr: true
 
-- clean: ['$HOME']
+- create:
+    - $HOME/.config
+
+- clean:
+    $HOME:
+        force: true
+    $HOME/.config:
+        recursive: true
 
 - shell:
     - [pip install --user powerline-status, Installing powerline status]
