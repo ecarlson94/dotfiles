@@ -22,6 +22,8 @@ cd "${BASEDIR}"
 git -C "${DOTBOT_DIR}" submodule sync --quiet --recursive
 git submodule update --init --recursive "${DOTBOT_DIR}"
 
+git submodule update --init --recursive
+
 for conf in ${@} ${DEFAULT_CONFIG_PREFIX}; do
   case $conf in
     mac | default | wsl)
