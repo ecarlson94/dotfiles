@@ -1,3 +1,8 @@
+- defaults
+    shell:
+        stdout: true
+        stderr: true
+
 # fzf & ripgrep
 - shell:
     - [ "sudo rm -rf ~/.fzf", Removing existing fzf ]

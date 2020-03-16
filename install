@@ -26,12 +26,12 @@ git submodule update --init --recursive
 
 for conf in ${@} ${DEFAULT_CONFIG_PREFIX}; do
   case $conf in
-    mac | default | wsl)
-      "${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASEDIR}" -c "${conf}${CONFIG_SUFFIX}" --plugin-dir "dotbot-aptget"
+    debian | aptget)
+      sudo "${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASEDIR}" -c "dotbot-configs/${conf}${CONFIG_SUFFIX}" --plugin-dir "dotbot-aptget"
       ;;
 
     *)
-      sudo "${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASEDIR}" -c "${conf}${CONFIG_SUFFIX}" --plugin-dir "dotbot-aptget"
+      "${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASEDIR}" -c "dotbot-configs/${conf}${CONFIG_SUFFIX}"
       ;;
   esac
 done
