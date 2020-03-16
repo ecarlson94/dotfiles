@@ -11,6 +11,15 @@ fi
 # ZPlug Plugins
 [ -f ~/.zsh_plugins ] && source ~/.zsh_plugins
 
+# Zsh Options
+[ -f ~/.zsh_options ] && source ~/.zsh_options
+
+# Zsh Bindings
+[ -f ~/.zsh_bindings ] && source ~/.zsh_bindings
+
+# Zsh Startup
+[ -f ~/.zsh_startup ] && source ~/.zsh_startup
+
 # ZPlug Completions
 [ -f ~/.zsh_completions ] && source ~/.zsh_completions
 

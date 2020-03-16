@@ -14,8 +14,11 @@
 
 - link:
     $HOME/.zshrc: zsh/.zshrc
-    $HOME/.zsh_completions: zsh/.zsh_completions
     $HOME/.zsh_plugins: zsh/.zsh_plugins
+    $HOME/.zsh_options: zsh/.zsh_options
+    $HOME/.zsh_bindings: zsh/.zsh_bindings
+    $HOME/.zsh_startup: zsh/.zsh_startup
+    $HOME/.zsh_completions: zsh/.zsh_completions
     $HOME/.bash_aliases: zsh/.bash_aliases
     $HOME/.vimrc: vim/.vimrc
     $HOME/.config/nvim: vim/.config/nvim
