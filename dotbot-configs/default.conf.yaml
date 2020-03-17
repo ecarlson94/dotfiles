@@ -18,6 +18,7 @@
 
 - shell:
     - [pip install --user powerline-status, Installing powerline status]
+    - [pip3 install --user --upgrade pynvim]
 
 - link:
     $HOME/.zshrc: zsh/.zshrc

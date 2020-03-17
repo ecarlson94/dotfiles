@@ -1,4 +1,6 @@
-"Plug Scripts-----------------------------
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Plug Scripts
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 if &compatible
   set nocompatible               " Be iMproved
 endif
@@ -78,6 +80,8 @@ let g:airline_theme = 'simple'
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Snippets
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Plug 'Shougo/neosnippet.vim'
+Plug 'Shougo/neosnippet-snippets'
 Plug 'honza/vim-snippets'
 let g:UltiSnipsExpandTrigger="<c-j>"
 let g:UltiSnipsJumpForwardTrigger="<c-j>"
@@ -98,9 +102,7 @@ Plug 'maksimr/vim-jsbeautify'
 Plug 'pangloss/vim-javascript'
 let javascript_enable_domhtmlcss=1
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " JSX
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Plug 'mxw/vim-jsx'
 Plug 'maxmellon/vim-jsx-pretty'
 let g:vim_jsx_pretty_colorful_config = 1
@@ -176,8 +178,6 @@ Plug 'ryanoasis/vim-devicons'
 " Misc
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Plug 'mileszs/ack.vim'
-Plug 'Shougo/neosnippet.vim'
-Plug 'Shougo/neosnippet-snippets'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'wesQ3/vim-windowswap'

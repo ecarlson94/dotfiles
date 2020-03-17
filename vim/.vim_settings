@@ -24,11 +24,29 @@ endif
 set incsearch          " Show best match while typing a search
 set ignorecase          " Case insensitive search
 set smartcase          " Unless uppercase used in search expr.
-" set gdefault            " Default to /g global replace
+set gdefault            " Default to /g global replace
 set hlsearch            " Highlight searches and search results
 set fen                 " Folding enabled
 set fdc=4               " Fold gutter size
 set fdm=manual          " Fold Method
+set path+=**
+
+" ctags
+command! MakeTags !ctags -R .
+
+" netrw File Explorer
+let g:netrw_banner=0       " disable annoying banner
+let g:netrw_browse_split=4 " open in prior window
+let g:netrw_altv=1         " open splits to the right
+let g:netrw_liststyle=3    " tree view
+let g:netrw_listhide=netrw_gitignore#Hide()
+let g:netrw_listhide.=',(^\|\s\s\)\zs\.\S\+'
+
+" NERDTree
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | exec 'NERDTree' | endif " open NERDTree if nothing is specified
+autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | wincmd p | ene | exe 'NERDTree' argv()[0] | endif " open NERDTree if directory is specified
+autocmd BufEnter * if bufname('#') =~# "^NERD_tree_" && winnr('$') > 1 | b# | endif " don't open new buffers in NERDTree window
 
 " clear highlighted search using the space bar
 :nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
@@ -36,12 +54,7 @@ set fdm=manual          " Fold Method
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Display
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set guifont=DroidSansMono_Nerd_Font:h10
-if has("gui_gtk2")
-  set guifont=Ubuntu\ Mono\ 11,Anonymous\ Pro\ 11,DroidSansMono\ Nerd\ Font\ 11
-elseif has("gui_win32")
-  set guifont=DroidSansMono_Nerd_Font:h11,Ubuntu_Mono:h11,Anonymous_Pro:h11,Consolas:h11
-endif
+set guifont=MesloLGS_NF:h10
 
 " Line Numbers
 set number relativenumber " Show line numbers
