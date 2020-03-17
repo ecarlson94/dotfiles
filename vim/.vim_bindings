@@ -64,7 +64,7 @@ map <TAB> :NERDTreeToggle<CR>
 map <leader>f :call JsBeautify()<cr>
 
 " FZF map
-map <c-p> :FZF<CR>
+map <c-p> :Files<CR>
 
 " Syntastic Debug
 map <leader>esd :let g:syntastic_debug = 3<CR>
