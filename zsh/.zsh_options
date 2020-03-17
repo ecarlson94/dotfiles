@@ -72,7 +72,7 @@ KEYTIMEOUT=1
 WORDCHARS='*?_-[]~=./&;!#$%^(){}<>'
 
 # Fuzzy Find
-FZF_DEFAULT_COMMAND='rg --hidden -l ""'
+export FZF_DEFAULT_COMMAND='rg --hidden -l ""'
 
 #zshaddhistory() { whence ${${(z)1}[1]} >| /dev/null || return 1 }
 
