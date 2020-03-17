@@ -1,0 +1,203 @@
+"Plug Scripts-----------------------------
+if &compatible
+  set nocompatible               " Be iMproved
+endif
+
+" Install Vim Plug
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  silent !curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
+
+" Required:
+call plug#begin('~/.vim/plugged')
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" FZF (Fuzzy Finder): requires ripgrep
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
+
+" --column: Show column number
+" --line-number: Show line number
+" --no-heading: Do not show file headings in results
+" --fixed-strings: Search term as a literal string
+" --ignore-case: Case insensitive search
+" --no-ignore: Do not respect .gitignore, etc...
+" --hidden: Search hidden files and folders
+" --follow: Follow symlinks
+" --glob: Additional conditions for search (in this case ignore everything in the .git/ folder)
+" --color: Search color options
+command! -bang -nargs=* Rg
+      \ call fzf#vim#grep(
+      \   'rg --hidden --column --line-number --no-heading --color=always --ignore-case '.shellescape(<q-args>), 1,
+      \   <bang>0 ? fzf#vim#with_preview('up:60%')
+      \           : fzf#vim#with_preview('right:50%:hidden', '?'),
+      \   <bang>0)
+
+nnoremap <C-p><C-a> :Rg<cr>
+nnoremap <leader>o :Files<cr>
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" NERDTree
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+let Tlist_GainFocus_On_ToggleOpen=1
+let NERDTreeQuitOnOpen=1
+let NERDTreeShowHidden=1
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Display
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Plug 'gosukiwi/vim-atom-dark'
+Plug 'changyuheng/color-scheme-holokai-for-vim'
+Plug 'flazz/vim-colorschemes'
+Plug 'fielding/vice'
+Plug 'xdg/vim-darkluma'
+Plug 'atahabaki/archman-vim'
+Plug 'Mizux/vim-colorschemes', { 'as': 'mizux' }
+
+" Rainbow brackets
+Plug 'frazrepo/vim-rainbow'
+let g:rainbow_active=1
+
+Plug 'nathanaelkane/vim-indent-guides'
+let g:indent_guides_enable_on_vim_startup=1
+
+" Airline
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+let g:airline_powerline_fonts = 1
+let g:airline_theme = 'simple'
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Snippets
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Plug 'honza/vim-snippets'
+let g:UltiSnipsExpandTrigger="<c-j>"
+let g:UltiSnipsJumpForwardTrigger="<c-j>"
+let g:UltiSnipsJumpBackwardTrigger="<c-k>"
+let g:UltiSnipsSnippetsDir='~/.vim/snippets'
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" LESS / CSS
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Plug 'groenewege/vim-less'
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Javascript
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Plug 'othree/javascript-libraries-syntax.vim'
+Plug 'maksimr/vim-jsbeautify'
+
+Plug 'pangloss/vim-javascript'
+let javascript_enable_domhtmlcss=1
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" JSX
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Plug 'mxw/vim-jsx'
+Plug 'maxmellon/vim-jsx-pretty'
+let g:vim_jsx_pretty_colorful_config = 1
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Terraform
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Plug 'hashivim/vim-terraform'
+let g:terraform_align=1
+let g:terraform_fold_sections=0
+let g:terraform_fmt_on_save=1
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" C#
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Plug 'OmniSharp/omnisharp-vim'
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Debugging
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Plug 'puremourning/vimspector', { 'do' : './install_gadgetpy --all --disable-tcl'}
+let g:vimspector_enable_mappings = 'VISUAL_STUDIO'
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Syntax
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Plug 'scrooloose/syntastic'
+Plug 'mtscout6/syntastic-local-eslint.vim'
+Plug 'editorconfig/editorconfig-vim'
+
+Plug 'janko/vim-test'
+let g:test#preserve_screen=1
+
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_mode_map = {'mode': 'pasive'}
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_enable_signs = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_error_symbol = "✗"
+let g:syntastic_warning_symbol = "⚠"
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" You Complete Me (intellisense)
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+function! BuildYCM(info)
+  " info is a dictionary with 3 fields
+  " - name:   name of the plugin
+  " - status: 'installed', 'updated', or 'unchanged'
+  " - force:  set on PlugInstall! or PlugUpdate!
+  if a:info.status == 'installed' || a:info.force
+    !./install.py --tern-completer --js-completer --ts-completer --cs-completer
+  endif
+endfunction
+Plug 'Valloric/YouCompleteMe', { 'do' : function('BuildYCM')}
+
+set completeopt-=preview
+let g:ycm_add_preview_to_completeopt = 0
+let g:ycm_filetype_blacklist = { 'cake': 1 }
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Fonts
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Plug 'powerline/fonts', { 'do' : './install.sh' }
+Plug 'ryanoasis/vim-devicons'
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Misc
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Plug 'mileszs/ack.vim'
+Plug 'Shougo/neosnippet.vim'
+Plug 'Shougo/neosnippet-snippets'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-surround'
+Plug 'wesQ3/vim-windowswap'
+Plug 'christoomey/vim-tmux-navigator'
+Plug 'jiangmiao/auto-pairs'
+Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
+
+" NerdCommenter
+Plug 'preservim/nerdcommenter'
+let NERDSpaceDelims=1
+
+" closetag
+Plug 'alvan/vim-closetag', { 'for': [ 'html', 'xml', 'javascript' ] }
+let g:closetag_filenames = "*.html, *.js, *.xml"
+
+" You can specify revision/branch/tag.
+Plug 'Shougo/vimshell', { 'rev' : '3787e5'  }
+
+set encoding=utf8
+" fonts end
+
+" Required:
+call plug#end()

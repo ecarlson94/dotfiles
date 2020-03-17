@@ -28,6 +28,9 @@
     $HOME/.zsh_completions: zsh/.zsh_completions
     $HOME/.bash_aliases: zsh/.bash_aliases
     $HOME/.vimrc: vim/.vimrc
+    $HOME/.vim_plugins: vim/.vim_plugins
+    $HOME/.vim_settings: vim/.vim_settings
+    $HOME/.vim_bindings: vim/.vim_bindings
     $HOME/.config/nvim: vim/.config/nvim
     $HOME/.gitconfig: git/.gitconfig
 
