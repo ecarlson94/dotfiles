@@ -1,0 +1,71 @@
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Windowing
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+map <C-h> <C-w>h
+map <C-j> <C-w>j
+map <C-k> <C-w>k
+map <C-l> <C-w>l
+" and lets make these all work in insert mode too ( <C-O> makes next cmd happen as if in command mode )
+imap <C-W> <C-O><C-W>
+
+" Window resizing made easy
+map <A-k> <C-w>+
+map <A-j> <C-w>-
+map <A-l> <C-w>>
+map <A-h> <C-w><
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Vim Tabs
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+map th :tabfirst<CR>
+map tk :tabnext<CR>
+map tj :tabprev<CR>
+map tl :tablast<CR>
+map tt :tabedit<Space>
+map tn :tabnext<Space>
+map tm :tabm<Space>
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Misc
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+if has('nvim')
+ let $NVIM_TUI_ENABLE_TRUE_COLOR = 1
+ let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
+ nmap <BS> <C-W>h
+else
+ map <C-H> <C-W><C-H>
+endif
+
+nnoremap <Leader>m :w <BAR> !lessc % > %:t:r.css<cr><space>
+
+" ,v brings up .vimrc (thanks, sontek)
+map <leader>v :sp ~/.vimrc<CR><C-W>
+
+" ,V reloads it (as long as you remember to save it first)
+map <silent> <leader>V :source ~/.vimrc<CR>:filetype detect<CR>:exe ":echo 'vimrc reloaded'"<CR>
+
+" set working directory
+nnoremap <leader>. :lcd %:p:h<CR>
+
+" Paste from clipboard
+map <leader>p "+gP
+
+" Remove trailing whitespace
+map <leader>e :%s/\s\+$//<CR>:let @/=''<CR>
+
+" Toggle tasklist
+map <leader>td <Plug>TaskList
+
+" NERD Tree Settings
+map <F4> :NERDTreeFind<CR>
+map <TAB> :NERDTreeToggle<CR>
+
+" JSBeautify
+map <leader>f :call JsBeautify()<cr>
+
+" FZF map
+map <c-p> :FZF<CR>
+
+" Syntastic Debug
+map <leader>esd :let g:syntastic_debug = 3<CR>
+map <leader>esp :let g:syntastic_debug = 0<CR>

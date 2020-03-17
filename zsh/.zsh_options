@@ -71,5 +71,8 @@ REPORTTIME=5          # Display usage statistics for commands running > 5 sec.
 KEYTIMEOUT=1
 WORDCHARS='*?_-[]~=./&;!#$%^(){}<>'
 
+# Fuzzy Find
+FZF_DEFAULT_COMMAND='rg --hidden -l ""'
+
 #zshaddhistory() { whence ${${(z)1}[1]} >| /dev/null || return 1 }
 
