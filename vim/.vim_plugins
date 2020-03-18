@@ -186,8 +186,7 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
 
 " NerdCommenter
-Plug 'preservim/nerdcommenter'
-let NERDSpaceDelims=1
+Plug 'tpope/vim-commentary'
 
 " closetag
 Plug 'alvan/vim-closetag', { 'for': [ 'html', 'xml', 'javascript' ] }

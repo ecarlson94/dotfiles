@@ -188,6 +188,12 @@ set noswapfile
 set nocompatible        " vim > vi mode.
 let mapleader = ","    " change <leader> from \ to ,
 
+set splitbelow
+
+" Terminal
+autocmd BufWinEnter,WinEnter term://* startinsert
+autocmd BufLeave term://* stopinsert
+
 " Ctrl P Ignore
 "set wildmode=list:longest,full
 "set wildignore+=*.o,*.obj,.git,*.pyc.
