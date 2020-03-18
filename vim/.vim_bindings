@@ -15,6 +15,29 @@ map <A-l> <C-w>>
 map <A-h> <C-w><
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Terminal
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+if has("nvim")
+  " Exit terminal mode (enter normal mode)
+  tnoremap <Esc> <C-\><C-n>
+  " Send escape to terminal
+  tnoremap <M-[> <Esc>
+  "Exit terminal
+  tnoremap <C-x> <C-\><C-n>:q<CR>
+  " Windowing
+  tnoremap <C-h> <c-\><c-n><c-w>h
+  tnoremap <C-j> <c-\><c-n><c-w>j
+  tnoremap <C-k> <c-\><c-n><c-w>k
+  tnoremap <C-l> <c-\><c-n><c-w>l
+endif
+
+function NewTerminal()
+  " Open terminal in new bottom window 1/4th the size of the current window
+  return "botright ".(winheight(0)/4)."new | terminal"
+endfunction
+nnoremap <leader>t :exec NewTerminal()<CR>i
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Vim Tabs
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 map th :tabfirst<CR>
