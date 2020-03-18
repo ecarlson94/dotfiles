@@ -115,10 +115,17 @@ let g:terraform_align=1
 let g:terraform_fold_sections=0
 let g:terraform_fmt_on_save=1
 
+Plug 'juliosueiras/vim-terraform-completion'
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " C#
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Plug 'OmniSharp/omnisharp-vim'
+let g:OmniSharp_server_use_mono=1
+let g:OmniSharp_server_stdio=1
+
+" let g:OmniSharp_selector_ui = 'fzf'    " Use fzf.vim
+let g:OmniSharp_selector_ui = ''       " Use vim - command line, quickfix etc.
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Debugging
@@ -140,13 +147,16 @@ set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
+" Checkers
+let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_cs_checkers = ['code_checker']
+
 let g:syntastic_mode_map = {'mode': 'pasive'}
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_enable_signs = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
-let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_error_symbol = "✗"
 let g:syntastic_warning_symbol = "⚠"
 
@@ -159,14 +169,13 @@ function! BuildYCM(info)
   " - status: 'installed', 'updated', or 'unchanged'
   " - force:  set on PlugInstall! or PlugUpdate!
   if a:info.status == 'installed' || a:info.force
-    !./install.py --tern-completer --js-completer --ts-completer --cs-completer
+    !./install.py --ts-completer
   endif
 endfunction
 Plug 'Valloric/YouCompleteMe', { 'do' : function('BuildYCM')}
 
-set completeopt-=preview
 let g:ycm_add_preview_to_completeopt = 0
-let g:ycm_filetype_blacklist = { 'cake': 1 }
+let g:ycm_filetype_blacklist = { 'cake': 1, 'cs': 1 }
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Fonts

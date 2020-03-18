@@ -72,7 +72,6 @@ set cursorline
 colorscheme blade_runner
 
 set t_Co=256 " For 256 color mode support
-syntax on
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Messages, Info, & Status
@@ -186,9 +185,13 @@ endif
 set noswapfile
 
 set nocompatible        " vim > vi mode.
+syntax on
 let mapleader = ","    " change <leader> from \ to ,
 
 set splitbelow
+
+" Remove Info (Preview) Window
+set completeopt-=preview
 
 " Terminal
 autocmd BufWinEnter,WinEnter term://* startinsert
