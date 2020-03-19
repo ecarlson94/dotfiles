@@ -90,9 +90,9 @@ set ruler              " Display position in the file
 " Tabs / indentation
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set smartindent
-set tabstop=2          " Use 2 spaces for <tab>
-set shiftwidth=2        " Indent level is 2 spaces wide
-set softtabstop=2      " <BS> over an autoindent deletes shiftwidth worth of spaces
+" set tabstop=2          " Use 2 spaces for <tab>
+" set shiftwidth=2        " Indent level is 2 spaces wide
+" set softtabstop=2      " <BS> over an autoindent deletes shiftwidth worth of spaces
 set smarttab            " Insert blanks properly at beginning of a line
 set autoindent          " Copy indent from current line when starting a new line
 set expandtab          " Use spaces not tabs
@@ -100,7 +100,7 @@ set listchars=tab:>.,trail:.,extends:#,nbsp:.
 set list
 
 " Some file type really do require explicit tabs
-autocmd FileType make      set noexpandtab
+autocmd FileType make <buffer> set noexpandtab
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Reading/Writing
@@ -152,6 +152,44 @@ autocmd FileType php set omnifunc=phpcomplete#CompletePHP
 autocmd FileType c set omnifunc=ccomplete#Complete
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" CoC.nvim Autocomplete Engine
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" TextEdit might fail if hidden is not set.
+set hidden
+
+" Some servers have issues with backup files, see #649.
+set nobackup
+set nowritebackup
+
+" Give more space for displaying messages.
+set cmdheight=2
+
+" Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
+" delays and poor user experience.
+set updatetime=300
+
+" Don't pass messages to |ins-completion-menu|.
+set shortmess+=c
+
+" Always show the signcolumn, otherwise it would shift the text each time
+" diagnostics appear/become resolved.
+set signcolumn=yes
+
+" Add `:Format` command to format current buffer.
+command! -nargs=0 Format :call CocAction('format')
+
+" Add `:Fold` command to fold current buffer.
+command! -nargs=? Fold :call     CocAction('fold', <f-args>)
+
+" Add `:OR` command for organize imports of the current buffer.
+command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organizeImport')
+
+" Add (Neo)Vim's native statusline support.
+" NOTE: Please see `:h coc-status` for integrations with external plugins that
+" provide custom statusline: lightline.vim, vim-airline.
+set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Python tweaks (from Sontek - http://github.com/sontek/dotfiles)
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 80 column rst format
@@ -190,8 +228,13 @@ let mapleader = ","    " change <leader> from \ to ,
 
 set splitbelow
 
-" Remove Info (Preview) Window
-set completeopt-=preview
+" Don't autoselect first omnicomplete option, show options even if there is only
+" one (so the preview documentation is accessible). Remove 'preview' if you
+" don't want to see any documentation whatsoever.
+set completeopt=longest,menuone,preview
+
+" Set desired preview window height for viewing documentation.
+set previewheight=5
 
 " Terminal
 autocmd BufWinEnter,WinEnter term://* startinsert
