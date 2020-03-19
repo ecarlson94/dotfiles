@@ -28,6 +28,7 @@
     python-pip:
     tmux:
     zsh:
+    yarn:
 
 - shell:
     -
