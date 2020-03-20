@@ -37,9 +37,3 @@ case "${unameOut}" in
   MINGW*)     machine=MinGw;;
   *)          machine="UNKNOWN:${unameOut}"
 esac
-# Add an "alert" alias for long running commands.  Use like so:
-#   sleep 10; alert
-if [ machine = "Linux" ]; then
-  alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
-fi
-type powershell.exe &> /dev/null && alias alert='powershell.exe "New-BurntToastNotification -Text \"Task Complete\""'
