@@ -1,8 +1,15 @@
-" Plugins
-source ~/.vim_plugins
+let mapleader = ","    " change <leader> from \ to ,
 
-" Settings
-source ~/.vim_settings
+if !exists('g:vscode')
+  " Plugins
+  source ~/.vim_plugins
+
+  " Settings
+  source ~/.vim_settings
+else
+ " VS Code
+ source ~/.vim_plugins
+endif
 
 " Bindings
 source ~/.vim_bindings

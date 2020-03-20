@@ -14,7 +14,6 @@ if empty(glob('~/.vim/autoload/plug.vim'))
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
-
 " Required:
 call plug#begin('~/.vim/plugged')
 
@@ -129,16 +128,6 @@ let g:OmniSharp_selector_ui = 'fzf'    " Use fzf.vim
 " let g:OmniSharp_selector_ui = ''       " Use vim - command line, quickfix etc.
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Debugging
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" https://puremourning.github.io/vimspector-web/
-Plug 'puremourning/vimspector', { 'do' : './install_gadgetpy --all --disable-tcl'}
-
-" https://github.com/puremourning/vimspector#human-mode
-let g:vimspector_enable_mappings = 'HUMAN'
-
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Testing
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Plug 'janko/vim-test'
@@ -188,7 +177,7 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'jiangmiao/auto-pairs'
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
 
-" NerdCommenter
+" Comments
 Plug 'tpope/vim-commentary'
 
 " closetag

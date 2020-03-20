@@ -224,7 +224,6 @@ set noswapfile
 
 set nocompatible        " vim > vi mode.
 syntax on
-let mapleader = ","    " change <leader> from \ to ,
 
 set splitbelow
 

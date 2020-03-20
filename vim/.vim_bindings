@@ -8,20 +8,30 @@ map <C-l> <C-w>l
 " and lets make these all work in insert mode too ( <C-O> makes next cmd happen as if in command mode )
 imap <C-W> <C-O><C-W>
 
-" Window resizing made easy
-map <A-k> <C-w>+
-map <A-j> <C-w>-
-map <A-l> <C-w>>
-map <A-h> <C-w><
-
 " Quick commands
-map <leader>x :q<CR> " Close window
-map <leader>s :w<CR> " Save file
+map <expr> <leader>qq (exists('g:vscode')) ? ":call VSCodeNotify('workbench.action.closeActiveEditor')<CR>" : ":q<CR>" " Close window
+map <expr> <leader>qa (exists('g:vscode')) ? ":call VSCodeNotify('workbench.action.closeAllEditors')<CR>" : ":q<CR>" " Close window
+map <expr> <leader>ss (exists('g:vscode')) ? ":call VSCodeNotify('workbench.action.files.save')<CR>" : ":w<CR>" " Save buffer
+map <expr> <leader>sa (exists('g:vscode')) ? ":call VSCodeNotify('workbench.action.files.saveAll')<CR>" : ":wa<CR>" "Save all buffers
+
+if !exists('g:vscode')
+  " ,v brings up .vimrc (thanks, sontek)
+  map <leader>v :sp ~/.vimrc<CR><C-W>
+
+  " ,V reloads it (as long as you remember to save it first)
+  map <silent> <leader>V :source ~/.vimrc<CR>:filetype detect<CR>:exe ":echo 'vimrc reloaded'"<CR>
+
+  " Window resizing made easy
+  map <A-k> <C-w>+
+  map <A-j> <C-w>-
+  map <A-l> <C-w>>
+  map <A-h> <C-w><
+endif
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Terminal
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-if has("nvim")
+if has("nvim") && !exists('g:vscode')
   " Send escape to terminal
   tnoremap <expr> <A-[> (&filetype == "fzf") ? "<Nul>" : "<Esc>"
   " Exit terminal mode (enter normal mode)
@@ -40,215 +50,207 @@ function NewTerminal()
   " Open terminal in new bottom window 1/4th the size of the current window
   return "botright ".(winheight(0)/4)."new | terminal"
 endfunction
-nnoremap <leader>t :exec NewTerminal()<CR>i
+nnoremap <expr> <leader>t (exists('g:vscode')) ? ":call VSCodeNotify('workbench.action.terminal.toggleTerminal')<CR>" : ":exec NewTerminal()<CR>i"
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Vim Tabs
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-map th :tabfirst<CR>
-map tk :tabnext<CR>
-map tj :tabprev<CR>
-map tl :tablast<CR>
-map tt :tabedit<Space>
-map tn :tabnext<Space>
-map tm :tabm<Space>
+if !exists('g:vscode')
+  """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+  " Vim Tabs
+  """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+  map th :tabfirst<CR>
+  map tk :tabnext<CR>
+  map tj :tabprev<CR>
+  map tl :tablast<CR>
+  map tt :tabedit<Space>
+  map tn :tabnext<Space>
+  map tm :tabm<Space>
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Omnisharp
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-augroup omnisharp_commands
-    autocmd!
+  """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+  " Omnisharp
+  """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+  augroup omnisharp_commands
+      autocmd!
 
-    " Show type information automatically when the cursor stops moving.
-    " Note that the type is echoed to the Vim command line, and will overwrite
-    " any other messages in this space including e.g. ALE linting messages.
-    autocmd CursorHold *.cs OmniSharpTypeLookup
+      " Show type information automatically when the cursor stops moving.
+      " Note that the type is echoed to the Vim command line, and will overwrite
+      " any other messages in this space including e.g. ALE linting messages.
+      autocmd CursorHold *.cs OmniSharpTypeLookup
 
-    " The following commands are contextual, based on the cursor position.
-    autocmd FileType cs nnoremap <buffer> gd :OmniSharpGotoDefinition<CR>
-    autocmd FileType cs nnoremap <buffer> <Leader>fi :OmniSharpFindImplementations<CR>
-    autocmd FileType cs nnoremap <buffer> <Leader>fs :OmniSharpFindSymbol<CR>
-    autocmd FileType cs nnoremap <buffer> <Leader>fu :OmniSharpFindUsages<CR>
+      " The following commands are contextual, based on the cursor position.
+      autocmd FileType cs nnoremap <buffer> gd :OmniSharpGotoDefinition<CR>
+      autocmd FileType cs nnoremap <buffer> <Leader>fi :OmniSharpFindImplementations<CR>
+      autocmd FileType cs nnoremap <buffer> <Leader>fs :OmniSharpFindSymbol<CR>
+      autocmd FileType cs nnoremap <buffer> <Leader>fu :OmniSharpFindUsages<CR>
 
-    " Finds members in the current buffer
-    autocmd FileType cs nnoremap <buffer> <Leader>fm :OmniSharpFindMembers<CR>
+      " Finds members in the current buffer
+      autocmd FileType cs nnoremap <buffer> <Leader>fm :OmniSharpFindMembers<CR>
 
-    autocmd FileType cs nnoremap <buffer> <Leader>fx :OmniSharpFixUsings<CR>
-    autocmd FileType cs nnoremap <buffer> <Leader>tt :OmniSharpTypeLookup<CR>
-    autocmd FileType cs nnoremap <buffer> <Leader>dc :OmniSharpDocumentation<CR>
-    autocmd FileType cs nnoremap <buffer> <C-\> :OmniSharpSignatureHelp<CR>
-    autocmd FileType cs inoremap <buffer> <C-\> <C-o>:OmniSharpSignatureHelp<CR>
+      autocmd FileType cs nnoremap <buffer> <Leader>fx :OmniSharpFixUsings<CR>
+      autocmd FileType cs nnoremap <buffer> <Leader>tt :OmniSharpTypeLookup<CR>
+      autocmd FileType cs nnoremap <buffer> <Leader>dc :OmniSharpDocumentation<CR>
+      autocmd FileType cs nnoremap <buffer> <C-\> :OmniSharpSignatureHelp<CR>
+      autocmd FileType cs inoremap <buffer> <C-\> <C-o>:OmniSharpSignatureHelp<CR>
 
-    " Navigate up and down by method/property/field
-    autocmd FileType cs nnoremap <buffer> <S-k> :OmniSharpNavigateUp<CR>
-    autocmd FileType cs nnoremap <buffer> <S-j> :OmniSharpNavigateDown<CR>
+      " Navigate up and down by method/property/field
+      autocmd FileType cs nnoremap <buffer> <S-k> :OmniSharpNavigateUp<CR>
+      autocmd FileType cs nnoremap <buffer> <S-j> :OmniSharpNavigateDown<CR>
 
-    " Find all code errors/warnings for the current solution and populate the quickfix window
-    autocmd FileType cs nnoremap <buffer> <Leader>cc :OmniSharpGlobalCodeCheck<CR>
-augroup END
+      " Find all code errors/warnings for the current solution and populate the quickfix window
+      autocmd FileType cs nnoremap <buffer> <Leader>cc :OmniSharpGlobalCodeCheck<CR>
+  augroup END
 
-" Contextual code actions (uses fzf, CtrlP or unite.vim when available)
-nnoremap <Leader><Space> :OmniSharpGetCodeActions<CR>
-" Run code actions with text selected in visual mode to extract method
-xnoremap <Leader><Space> :call OmniSharp#GetCodeActions('visual')<CR>
+  " Contextual code actions (uses fzf, CtrlP or unite.vim when available)
+  nnoremap <Leader><Space> :OmniSharpGetCodeActions<CR>
+  " Run code actions with text selected in visual mode to extract method
+  xnoremap <Leader><Space> :call OmniSharp#GetCodeActions('visual')<CR>
 
-" Rename with dialog
-nnoremap <Leader>nm :OmniSharpRename<CR>
-nnoremap <F2> :OmniSharpRename<CR>
-" Rename without dialog - with cursor on the symbol to rename: `:Rename newname`
-command! -nargs=1 Rename :call OmniSharp#RenameTo("<args>")
+  " Rename with dialog
+  nnoremap <Leader>nm :OmniSharpRename<CR>
+  nnoremap <F2> :OmniSharpRename<CR>
+  " Rename without dialog - with cursor on the symbol to rename: `:Rename newname`
+  command! -nargs=1 Rename :call OmniSharp#RenameTo("<args>")
 
-nnoremap <Leader>cf :OmniSharpCodeFormat<CR>
+  nnoremap <Leader>cf :OmniSharpCodeFormat<CR>
 
-" Start the omnisharp server for the current solution
-nnoremap <Leader>ss :OmniSharpStartServer<CR>
-nnoremap <Leader>sp :OmniSharpStopServer<CR>
+  " Start the omnisharp server for the current solution
+  nnoremap <Leader>ss :OmniSharpStartServer<CR>
+  nnoremap <Leader>sp :OmniSharpStopServer<CR>
 
-" Enable snippet completion
-" let g:OmniSharp_want_snippet=1
+  " Enable snippet completion
+  " let g:OmniSharp_want_snippet=1
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" CoC.nvim Autocomplete Engine
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Use tab for trigger completion with characters ahead and navigate.
-" NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
-" other plugin before putting this into your config.
-inoremap <silent><expr> <TAB>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
-      \ coc#refresh()
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+  """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+  " CoC.nvim Autocomplete Engine
+  """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+  " Use tab for trigger completion with characters ahead and navigate.
+  " NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
+  " other plugin before putting this into your config.
+  inoremap <silent><expr> <TAB>
+        \ pumvisible() ? "\<C-n>" :
+        \ <SID>check_back_space() ? "\<TAB>" :
+        \ coc#refresh()
+  inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 
-function! s:check_back_space() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~# '\s'
-endfunction
+  function! s:check_back_space() abort
+    let col = col('.') - 1
+    return !col || getline('.')[col - 1]  =~# '\s'
+  endfunction
 
-" Use <c-space> to trigger completion.
-inoremap <silent><expr> <c-space> coc#refresh()
+  " Use <c-space> to trigger completion.
+  inoremap <silent><expr> <c-space> coc#refresh()
 
-" Use <cr> to confirm completion, `<C-g>u` means break undo chain at current
-" position. Coc only does snippet and additional edit on confirm.
-if has('patch8.1.1068')
-  " Use `complete_info` if your (Neo)Vim version supports it.
-  inoremap <expr> <cr> complete_info()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<CR>"
-else
-  imap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
-endif
-
-" Use `[g` and `]g` to navigate diagnostics
-nmap <silent> [g <Plug>(coc-diagnostic-prev)
-nmap <silent> ]g <Plug>(coc-diagnostic-next)
-
-" GoTo code navigation.
-nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gy <Plug>(coc-type-definition)
-nmap <silent> gi <Plug>(coc-implementation)
-nmap <silent> gr <Plug>(coc-references)
-
-" Use K to show documentation in preview window.
-nnoremap <silent> K :call <SID>show_documentation()<CR>
-
-function! s:show_documentation()
-  if (index(['vim','help'], &filetype) >= 0)
-    execute 'h '.expand('<cword>')
+  " Use <cr> to confirm completion, `<C-g>u` means break undo chain at current
+  " position. Coc only does snippet and additional edit on confirm.
+  if has('patch8.1.1068')
+    " Use `complete_info` if your (Neo)Vim version supports it.
+    inoremap <expr> <cr> complete_info()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<CR>"
   else
-    call CocAction('doHover')
+    imap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
   endif
-endfunction
 
-" Highlight the symbol and its references when holding the cursor.
-autocmd CursorHold * silent call CocActionAsync('highlight')
+  " Use `[g` and `]g` to navigate diagnostics
+  nmap <silent> [g <Plug>(coc-diagnostic-prev)
+  nmap <silent> ]g <Plug>(coc-diagnostic-next)
 
-" Symbol renaming.
-nmap <leader>rn <Plug>(coc-rename)
+  " GoTo code navigation.
+  nmap <silent> gd <Plug>(coc-definition)
+  nmap <silent> gy <Plug>(coc-type-definition)
+  nmap <silent> gi <Plug>(coc-implementation)
+  nmap <silent> gr <Plug>(coc-references)
 
-" Formatting selected code.
-xmap <leader>f  <Plug>(coc-format-selected)
-nmap <leader>f  <Plug>(coc-format-selected)
+  " Use K to show documentation in preview window.
+  nnoremap <silent> K :call <SID>show_documentation()<CR>
 
-augroup mygroup
-  autocmd!
-  " Setup formatexpr specified filetype(s).
-  autocmd FileType typescript,json setl formatexpr=CocAction('formatSelected')
-  " Update signature help on jump placeholder.
-  autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
-augroup end
+  function! s:show_documentation()
+    if (index(['vim','help'], &filetype) >= 0)
+      execute 'h '.expand('<cword>')
+    else
+      call CocAction('doHover')
+    endif
+  endfunction
 
-" Applying codeAction to the selected region.
-" Example: `<leader>aap` for current paragraph
-xmap <leader>a  <Plug>(coc-codeaction-selected)
-nmap <leader>a  <Plug>(coc-codeaction-selected)
+  " Highlight the symbol and its references when holding the cursor.
+  autocmd CursorHold * silent call CocActionAsync('highlight')
 
-" Remap keys for applying codeAction to the current line.
-nmap <leader>ac  <Plug>(coc-codeaction)
-" Apply AutoFix to problem on the current line.
-nmap <leader>qf  <Plug>(coc-fix-current)
+  " Symbol renaming.
+  nmap <leader>rn <Plug>(coc-rename)
 
-" Introduce function text object
-" NOTE: Requires 'textDocument.documentSymbol' support from the language server.
-xmap if <Plug>(coc-funcobj-i)
-xmap af <Plug>(coc-funcobj-a)
-omap if <Plug>(coc-funcobj-i)
-omap af <Plug>(coc-funcobj-a)
+  " Formatting selected code.
+  xmap <leader>f  <Plug>(coc-format-selected)
+  nmap <leader>f  <Plug>(coc-format-selected)
 
-" Mappings using CoCList:
-" Show all diagnostics.
-nnoremap <silent> <space>a  :<C-u>CocList diagnostics<cr>
-" Manage extensions.
-nnoremap <silent> <space>e  :<C-u>CocList extensions<cr>
-" Show commands.
-nnoremap <silent> <space>c  :<C-u>CocList commands<cr>
-" Find symbol of current document.
-nnoremap <silent> <space>o  :<C-u>CocList outline<cr>
-" Search workspace symbols.
-nnoremap <silent> <space>s  :<C-u>CocList -I symbols<cr>
-" Do default action for next item.
-nnoremap <silent> <space>j  :<C-u>CocNext<CR>
-" Do default action for previous item.
-nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
-" Resume latest coc list.
-nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
+  augroup mygroup
+    autocmd!
+    " Setup formatexpr specified filetype(s).
+    autocmd FileType typescript,json setl formatexpr=CocAction('formatSelected')
+    " Update signature help on jump placeholder.
+    autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
+  augroup end
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Misc
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-if has('nvim')
- nmap <BS> <C-W>h
-else
- map <C-H> <C-W><C-H>
+  " Applying codeAction to the selected region.
+  " Example: `<leader>aap` for current paragraph
+  xmap <leader>a  <Plug>(coc-codeaction-selected)
+  nmap <leader>a  <Plug>(coc-codeaction-selected)
+
+  " Remap keys for applying codeAction to the current line.
+  nmap <leader>ac  <Plug>(coc-codeaction)
+  " Apply AutoFix to problem on the current line.
+  nmap <leader>qf  <Plug>(coc-fix-current)
+
+  " Introduce function text object
+  " NOTE: Requires 'textDocument.documentSymbol' support from the language server.
+  xmap if <Plug>(coc-funcobj-i)
+  xmap af <Plug>(coc-funcobj-a)
+  omap if <Plug>(coc-funcobj-i)
+  omap af <Plug>(coc-funcobj-a)
+
+  " Mappings using CoCList:
+  " Show all diagnostics.
+  nnoremap <silent> <space>a  :<C-u>CocList diagnostics<cr>
+  " Manage extensions.
+  nnoremap <silent> <space>e  :<C-u>CocList extensions<cr>
+  " Show commands.
+  nnoremap <silent> <space>c  :<C-u>CocList commands<cr>
+  " Find symbol of current document.
+  nnoremap <silent> <space>o  :<C-u>CocList outline<cr>
+  " Search workspace symbols.
+  nnoremap <silent> <space>s  :<C-u>CocList -I symbols<cr>
+  " Do default action for next item.
+  nnoremap <silent> <space>j  :<C-u>CocNext<CR>
+  " Do default action for previous item.
+  nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
+  " Resume latest coc list.
+  nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
+
+  """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+  " Misc
+  """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+  if has('nvim')
+   nmap <BS> <C-W>h
+  else
+   map <C-H> <C-W><C-H>
+  endif
+
+  nnoremap <Leader>m :w <BAR> !lessc % > %:t:r.css<cr><space>
+
+  " set working directory
+  nnoremap <leader>. :lcd %:p:h<CR>
+
+  " Paste from clipboard
+  map <leader>p "+gP
+
+  " Remove trailing whitespace
+  map <leader>e :%s/\s\+$//<CR>:let @/=''<CR>
+
+  " Toggle tasklist
+  map <leader>td <Plug>TaskList
+
+  " NERD Tree Settings
+  map <F4> :NERDTreeFind<CR>
+  map <C-n> :NERDTreeToggle<CR>
+
+  " JSBeautify
+  map <leader>f :call JsBeautify()<cr>
+
+  " FZF map
+  map <c-p> :Files<CR>
 endif
-
-nnoremap <Leader>m :w <BAR> !lessc % > %:t:r.css<cr><space>
-
-" Quality of Life
-nmap <C-x> :q<CR>
-nmap <C-s> :w<CR>
-
-" ,v brings up .vimrc (thanks, sontek)
-map <leader>v :sp ~/.vimrc<CR><C-W>
-
-" ,V reloads it (as long as you remember to save it first)
-map <silent> <leader>V :source ~/.vimrc<CR>:filetype detect<CR>:exe ":echo 'vimrc reloaded'"<CR>
-
-" set working directory
-nnoremap <leader>. :lcd %:p:h<CR>
-
-" Paste from clipboard
-map <leader>p "+gP
-
-" Remove trailing whitespace
-map <leader>e :%s/\s\+$//<CR>:let @/=''<CR>
-
-" Toggle tasklist
-map <leader>td <Plug>TaskList
-
-" NERD Tree Settings
-map <F4> :NERDTreeFind<CR>
-map <C-n> :NERDTreeToggle<CR>
-
-" JSBeautify
-map <leader>f :call JsBeautify()<cr>
-
-" FZF map
-map <c-p> :Files<CR>
