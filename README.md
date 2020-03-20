@@ -22,7 +22,7 @@
 
 ### WSL
 1. Run `sudo apt-get install python3 python3-apt`
-2. Run `./install wsl aptget` (this could take upwards of 20 minutes)
+2. Run `./install aptget` (this could take upwards of 20 minutes)
 3. Restart terminal
 4. Select `y` to install plugins
 5. Follow configuration prompts
