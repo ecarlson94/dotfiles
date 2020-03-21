@@ -69,11 +69,6 @@ zplug "arzzen/calc.plugin.zsh"
 zplug "seebi/dircolors-solarized", ignore:"*", as:plugin
 zplug "pinelibg/dircolors-solarized-zsh"
 
-# ZSH history database
-HISTDB_TABULATE_CMD=(sed -e $'s/\x1f/\t/g')
-#zplug "larkery/zsh-histdb", use:sqlite-history.zsh, hook-load:"histdb-update-outcome"
-zplug "larkery/zsh-histdb", use:"{sqlite-history,histdb-interactive}.zsh", hook-load:"histdb-update-outcome"
-
 zplug "zdharma/fast-syntax-highlighting"
 
 zplug "plugins/common-aliase",     from:oh-my-zsh

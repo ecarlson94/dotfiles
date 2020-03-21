@@ -25,15 +25,7 @@ git submodule update --init --recursive "${DOTBOT_DIR}"
 git submodule update --init --recursive
 
 for conf in ${@} ${DEFAULT_CONFIG_PREFIX}; do
-  case $conf in
-    debian | aptget)
-      sudo "${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASEDIR}" -c "dotbot-configs/${conf}${CONFIG_SUFFIX}" --plugin-dir "dotbot-aptget"
-      ;;
-
-    *)
-      "${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASEDIR}" -c "dotbot-configs/${conf}${CONFIG_SUFFIX}"
-      ;;
-  esac
+  "${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASEDIR}" -c "dotbot-configs/${conf}${CONFIG_SUFFIX}"
 done
 
 git config --global user.name "$firstName $lastName"
