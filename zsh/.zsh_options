@@ -1,9 +1,8 @@
 # =============================================================================
 #                                   Options
 # =============================================================================
-# required for zsh-histdb
+# required 
 autoload -Uz add-zsh-hook
-add-zsh-hook precmd histdb-update-outcome
 
 #autoload -U add-zsh-hook
 #add-zsh-hook precmd  theme_precmd
