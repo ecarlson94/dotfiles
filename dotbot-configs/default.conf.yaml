@@ -20,15 +20,9 @@
     - [ npm install -g neovim ]
     - [ pip install --user powerline-status, Installing powerline status ]
     - [ pip3 install --user --upgrade pynvim ]
-    -
-        command: echo $(which zsh) | sudo tee -a /etc/shells
-        stdin: true
-    -
-        command: chsh -s $(which zsh)
-        stdin: true
-        description: Making zsh the default shell
 
 - link:
+    $HOME/.bashrc: zsh/.bashrc
     $HOME/.zshrc: zsh/.zshrc
     $HOME/.zsh_plugins: zsh/.zsh_plugins
     $HOME/.zsh_options: zsh/.zsh_options
