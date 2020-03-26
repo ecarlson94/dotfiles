@@ -13,17 +13,12 @@
 5. Continue to [Mac](#mac) or [WSL & Debian](#wsl-&-debian)
 
 ### Mac
-1. [Install Homebrew](https://brew.sh)
-3. Run `brew install python`
-2. Run `./install mac` (this could take upwards of 20 minutes)
-3. Restart terminal
-4. Select `y` to install plugins
-5. Follow configuration prompts
+1. Run `./install mac` (this could take upwards of 20 minutes)
+2. Restart terminal
+3. Select `y` to install plugins
 
 ### WSL & Debian
-1. [Install Linuxbrew](https://gist.github.com/ecarlson94/283102ffd2f2473d41e7c9965be8fdd4#install-homebrew)
-2. Run `./install linux` (this could take upwards of 20 minutes)
-3. Restart terminal
-4. Select `y` to install plugins
-5. Follow configuration prompts
-6. `compaudit | xargs chmod go-w`
+1. Run `./install linux` (this could take upwards of 20 minutes)
+2. Restart terminal
+3. Select `y` to install plugins
+4. `compaudit | xargs chmod go-w`

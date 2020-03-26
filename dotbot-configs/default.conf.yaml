@@ -29,6 +29,7 @@
     $HOME/.zsh_bindings: zsh/.zsh_bindings
     $HOME/.zsh_startup: zsh/.zsh_startup
     $HOME/.zsh_completions: zsh/.zsh_completions
+    $HOME/.p10k.zsh: zsh/.p10k.zsh
     $HOME/.bash_aliases: zsh/.bash_aliases
     $HOME/.vimrc: vim/.vimrc
     $HOME/.vim_plugins: vim/.vim_plugins
