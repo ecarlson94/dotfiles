@@ -1,10 +1,8 @@
 - shell:
-    - [ sh -c "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install.sh)", Installing Linuxbrew ]
-    - [ test -d ~/.linuxbrew && eval $(~/.linuxbrew/bin/brew shellenv) ]
-    - [ test -d /home/linuxbrew/.linuxbrew && eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv) ]
-    - [ test -r ~/.bash_profile && echo "test -f $(brew --prefix)/bin/brew && eval \$($(brew --prefix)/bin/brew shellenv)" >>~/.bash_profile ]
+    - [ printf '\n' | sh -c "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install.sh)", Installing Linuxbrew ]
+    - [ '[ -d /home/linuxbrew/.linuxbrew ] && eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)' ]
     - [ echo "test -f $(brew --prefix)/bin/brew && eval \$($(brew --prefix)/bin/brew shellenv)" >>~/.profile ]
-    - [ sudo apt-get install build-essential curl file git ]
+    - [ sudo apt-get install build-essential curl file git -y ]
     - [ "curl -LO https://github.com/BurntSushi/ripgrep/releases/download/11.0.2/ripgrep_11.0.2_amd64.deb", Download ripgrep ]
     - [ "sudo dpkg -i ripgrep_11.0.2_amd64.deb", Install ripgrep ]
     - [ "rm ripgrep*" ]

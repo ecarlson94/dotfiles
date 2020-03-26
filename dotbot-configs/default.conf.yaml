@@ -37,7 +37,6 @@
     $HOME/.vim_bindings: vim/.vim_bindings
     $HOME/.vim_vscode: vim/.vim_vscode
     $HOME/.config/nvim: vim/.config/nvim
-    $HOME/.gitconfig: git/.gitconfig
 
 - shell:
     - [ vim +VimEnter +PlugInstall +qa, Installing vim plugins ]

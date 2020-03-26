@@ -2,15 +2,6 @@
 
 set -e
 
-echo "What is first your name:"
-read firstName
-
-echo "What is your last name:"
-read lastName
-
-echo "What is your git email:"
-read email
-
 DEFAULT_CONFIG_PREFIX="default"
 CONFIG_SUFFIX=".conf.yaml"
 DOTBOT_DIR="dotbot"
@@ -27,9 +18,6 @@ git submodule update --init --recursive
 for conf in ${@} ${DEFAULT_CONFIG_PREFIX}; do
   "${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASEDIR}" -c "dotbot-configs/${conf}${CONFIG_SUFFIX}"
 done
-
-git config --global user.name "$firstName $lastName"
-git config --global user.email $email
 
 echo "Restart your terminal..."
 

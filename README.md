@@ -13,12 +13,12 @@
 5. Continue to [Mac](#mac) or [WSL & Debian](#wsl-&-debian)
 
 ### Mac
-1. Run `./install mac` (this could take upwards of 20 minutes)
+1. Run `./install git mac` (this could take upwards of 20 minutes)
 2. Restart terminal
 3. Select `y` to install plugins
 
 ### WSL & Debian
-1. Run `./install linux` (this could take upwards of 20 minutes)
+1. Run `./install git linux` (this could take upwards of 20 minutes)
 2. Restart terminal
 3. Select `y` to install plugins
 4. `compaudit | xargs chmod go-w`
