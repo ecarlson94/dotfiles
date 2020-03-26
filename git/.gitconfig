@@ -48,3 +48,5 @@
   tool = vimdiff
 [difftool "vimdiff"]
   cmd = vimdiff $LOCAL $REMOTE
+[core]
+	autocrlf = input
