@@ -8,11 +8,23 @@ map <C-l> <C-w>l
 " and lets make these all work in insert mode too ( <C-O> makes next cmd happen as if in command mode )
 imap <C-W> <C-O><C-W>
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Quick commands
-map <expr> <leader>qq (exists('g:vscode')) ? ":call VSCodeNotify('workbench.action.closeActiveEditor')<CR>" : ":q<CR>" " Close window
-map <expr> <leader>qa (exists('g:vscode')) ? ":call VSCodeNotify('workbench.action.closeAllEditors')<CR>" : ":q<CR>" " Close window
-map <expr> <leader>ss (exists('g:vscode')) ? ":call VSCodeNotify('workbench.action.files.save')<CR>" : ":w<CR>" " Save buffer
-map <expr> <leader>sa (exists('g:vscode')) ? ":call VSCodeNotify('workbench.action.files.saveAll')<CR>" : ":wa<CR>" "Save all buffers
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Close window
+map <expr> <leader>qq (exists('g:vscode')) ? ":call VSCodeNotify('workbench.action.closeActiveEditor')<CR>" : ":q<CR>"
+" Close all windows
+map <expr> <leader>qa (exists('g:vscode')) ? ":call VSCodeNotify('workbench.action.closeAllEditors')<CR>" : ":qa<CR>"
+" Save buffer
+map <expr> <leader>ss (exists('g:vscode')) ? ":call VSCodeNotify('workbench.action.files.save')<CR>" : ":w<CR>"
+" Save all buffers
+map <expr> <leader>sa (exists('g:vscode')) ? ":call VSCodeNotify('workbench.action.files.saveAll')<CR>" : ":wa<CR>"
+" Trim all trailing whitespace
+nnoremap <leader>ta :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
+" Trim trailing whitespace following ';'
+nnoremap <leader>ts :let _s=@/<Bar>:%s/;\s\+$/;/e<Bar>:let @/=_s<Bar><CR>
+" Replace currently selected text
+vnoremap <leader>rr "hy:%s/<C-r>h//gc<left><left><left>
 
 if !exists('g:vscode')
   " ,v brings up .vimrc (thanks, sontek)
@@ -48,7 +60,7 @@ endif
 
 function NewTerminal()
   " Open terminal in new bottom window 1/4th the size of the current window
-  return "botright ".(winheight(0)/4)."new | terminal"
+  return "botright ".(winheight(0)/3)."new | terminal"
 endfunction
 nnoremap <expr> <leader>t (exists('g:vscode')) ? ":call VSCodeNotify('workbench.action.terminal.toggleTerminal')<CR>" : ":exec NewTerminal()<CR>i"
 
@@ -112,7 +124,7 @@ if !exists('g:vscode')
   nnoremap <Leader>cf :OmniSharpCodeFormat<CR>
 
   " Start the omnisharp server for the current solution
-  nnoremap <Leader>ss :OmniSharpStartServer<CR>
+  nnoremap <Leader>so :OmniSharpStartServer<CR>
   nnoremap <Leader>sp :OmniSharpStopServer<CR>
 
   " Enable snippet completion
