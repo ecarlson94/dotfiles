@@ -18,6 +18,7 @@ alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
 
+# Terraform
 alias tfi="terraform init"
 alias tfp="terraform plan"
 alias tfa="terraform apply"
@@ -26,6 +27,10 @@ alias tfd="terraform destroy"
 alias tfda="terraform destroy -auto-approve"
 alias tft="terraform taint"
 alias tfs="terraform show"
+alias tfsl="terraform state list"
+alias tfsr="terraform state remove"
+alias tfr="terraform refresh"
+
 alias nr="npm run"
 alias wp="nr webpack"
 alias wpw="nr webwatch"
