@@ -88,23 +88,20 @@ let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 let g:UltiSnipsSnippetsDir='~/.vim/snippets'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Autocomplete Engine
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Plug 'neoclide/coc.nvim', { 'branch': 'release' }
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " LESS / CSS
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Plug 'groenewege/vim-less'
+Plug 'neoclide/coc-css', {'do': 'yarn install --frozen-lockfile'}
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Javascript
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Plug 'othree/javascript-libraries-syntax.vim'
-Plug 'maksimr/vim-jsbeautify'
-
-Plug 'pangloss/vim-javascript'
-let javascript_enable_domhtmlcss=1
-
-" JSX
-Plug 'mxw/vim-jsx'
-Plug 'maxmellon/vim-jsx-pretty'
-let g:vim_jsx_pretty_colorful_config = 1
+Plug 'neoclide/coc-tsserver', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc-eslint', {'do': 'yarn install --frozen-lockfile'}
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Terraform
@@ -154,11 +151,6 @@ let g:ale_fixers = {
 
 Plug 'sheerun/vim-polyglot'
 Plug 'editorconfig/editorconfig-vim'
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Autocomplete Engine
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Fonts

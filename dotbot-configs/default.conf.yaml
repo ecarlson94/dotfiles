@@ -32,10 +32,8 @@
     $HOME/.p10k.zsh: zsh/.p10k.zsh
     $HOME/.bash_aliases: zsh/.bash_aliases
     $HOME/.vimrc: vim/.vimrc
-    $HOME/.vim_plugins: vim/.vim_plugins
-    $HOME/.vim_settings: vim/.vim_settings
-    $HOME/.vim_bindings: vim/.vim_bindings
-    $HOME/.vim_vscode: vim/.vim_vscode
+    $HOME/.vim/custom: vim/custom
+    $HOME/.vim/ftplugin: vim/ftplugin
     $HOME/.config/nvim: vim/.config/nvim
 
 - shell:

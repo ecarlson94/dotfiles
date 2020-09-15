@@ -11,7 +11,6 @@ if has("unnamedplus") " X11 support
   set clipboard+=unnamedplus
 endif
 
-if !exists('g:vscode')
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Search / Replace
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

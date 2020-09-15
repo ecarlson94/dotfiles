@@ -21,14 +21,11 @@ endif
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Search / Replace
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set incsearch          " Show best match while typing a search
+set incsearch           " Show best match while typing a search
 set ignorecase          " Case insensitive search
-set smartcase          " Unless uppercase used in search expr.
+set smartcase           " Unless uppercase used in search expr.
 set gdefault            " Default to /g global replace
 set hlsearch            " Highlight searches and search results
-set fen                 " Folding enabled
-set fdc=4               " Fold gutter size
-set fdm=manual          " Fold Method
 set path+=**
 
 " ctags
@@ -90,12 +87,12 @@ set ruler              " Display position in the file
 " Tabs / indentation
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set smartindent
-" set tabstop=2          " Use 2 spaces for <tab>
-" set shiftwidth=2        " Indent level is 2 spaces wide
-" set softtabstop=2      " <BS> over an autoindent deletes shiftwidth worth of spaces
+set tabstop=2           " Use 2 spaces for <tab>
+set shiftwidth=2        " Indent level is 2 spaces wide
+set softtabstop=2       " <BS> over an autoindent deletes shiftwidth worth of spaces
 set smarttab            " Insert blanks properly at beginning of a line
 set autoindent          " Copy indent from current line when starting a new line
-set expandtab          " Use spaces not tabs
+set expandtab           " Use spaces not tabs
 set listchars=tab:>.,trail:.,extends:#,nbsp:.
 set list
 
@@ -130,7 +127,7 @@ set wildignore+=.git\*,Build\*,.sass-cache\*
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Per-Filetype Scripts
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-filetype on            " File type detection on
+filetype on             " File type detection on
 filetype indent on      " Use filetype-specific indenting when available
 filetype plugin on      " Load filetype plugins
 
@@ -141,8 +138,6 @@ autocmd BufRead *.spark set filetype=html
 autocmd BufRead *.vue set filetype=html
 autocmd BufRead .vim* set filetype=vim
 autocmd BufRead *.rst set tw=80
-autocmd FileType python set omnifunc=pythoncomplete#Complete
-autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
 autocmd FileType spark set omnifunc=htmlcomplete#CompleteTags
 autocmd FileType css set omnifunc=csscomplete#CompleteCSS
@@ -150,72 +145,6 @@ autocmd FileType scss set omnifunc=csscomplete#CompleteCSS
 autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
 autocmd FileType php set omnifunc=phpcomplete#CompletePHP
 autocmd FileType c set omnifunc=ccomplete#Complete
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" CoC.nvim Autocomplete Engine
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" TextEdit might fail if hidden is not set.
-set hidden
-
-" Some servers have issues with backup files, see #649.
-set nobackup
-set nowritebackup
-
-" Give more space for displaying messages.
-set cmdheight=2
-
-" Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
-" delays and poor user experience.
-set updatetime=300
-
-" Don't pass messages to |ins-completion-menu|.
-set shortmess+=c
-
-" Always show the signcolumn, otherwise it would shift the text each time
-" diagnostics appear/become resolved.
-set signcolumn=yes
-
-" Add `:Format` command to format current buffer.
-command! -nargs=0 Format :call CocAction('format')
-
-" Add `:Fold` command to fold current buffer.
-command! -nargs=? Fold :call     CocAction('fold', <f-args>)
-
-" Add `:OR` command for organize imports of the current buffer.
-command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organizeImport')
-
-" Add (Neo)Vim's native statusline support.
-" NOTE: Please see `:h coc-status` for integrations with external plugins that
-" provide custom statusline: lightline.vim, vim-airline.
-set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Python tweaks (from Sontek - http://github.com/sontek/dotfiles)
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" 80 column rst format
-autocmd BufRead *.rst set tw=80
-
-" treat html files as django templates
-autocmd BufRead *.html set filetype=htmldjango
-
-autocmd FileType python set omnifunc=pythoncomplete#Complete
-autocmd BufRead *.py set makeprg=python\ -c\ \"import\ py_compile,sys;\ sys.stderr=sys.stdout;\ py_compile.compile(r'%')\"
-autocmd BufRead *.py set efm=%C\ %.%#,%A\ \ File\ \"%f\"\\,\ line\ %l%.%#,%Z%[%^\ ]%\\@=%m
-if has("python")
-python << EOF
-import os
-import sys
-import vim
-# lets us use 'gf' to go to files imported
-for p in sys.path:
-    if os.path.isdir(p):
-        vim.command(r"set path+=%s" % (p.replace(" ", r"\ ")))
-
-# lets us execute the highlighted portion of the script
-def EvaluateCurrentRange():
-  eval(compile('\n'.join(vim.current.range),'','exec'),globals())
-EOF
-endif
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Misc

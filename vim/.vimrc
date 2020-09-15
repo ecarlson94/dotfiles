@@ -2,14 +2,14 @@ let mapleader = ","    " change <leader> from \ to ,
 
 if !exists('g:vscode')
   " Plugins
-  source ~/.vim_plugins
+  source ~/.vim/custom/plugins.vim
 
   " Settings
-  source ~/.vim_settings
+  source ~/.vim/custom/settings.vim
 else
- " VS Code
- source ~/.vim_plugins
+  " VS Code
+  source ~/.vim/custom/vscode.vim
 endif
 
 " Bindings
-source ~/.vim_bindings
+source ~/.vim/custom/bindings.vim
