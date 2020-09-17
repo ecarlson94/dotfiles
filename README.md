@@ -35,3 +35,35 @@ You can run the above installation commands safely multiple times, if you think 
 1. Restart terminal
 1. Select `y` to install plugins
 1. (Linux) Run `compaudit | xargs chmod go-w`
+
+## Contents
+
+### Profiles
+```
+meta/profiles
+├── linux
+├── linux-no-deps (Doesn't install dependencies)
+├── mac
+└── mac-no-deps (Doesn't install dependencies)
+```
+
+### Configs
+```
+meta
+├── base.json
+└── configs
+      ├── bash.yaml
+      ├── git-override.yaml (Allows setting user.name and user.email)
+      ├── git.yaml
+      ├── homebrew.yaml
+      ├── linux-dependencies.yaml
+      ├── linuxbrew.yaml
+      ├── macos-dependencies.yaml
+      ├── vim-dependencies.yaml
+      ├── vim.yaml
+      └── zsh.yaml
+```
+
+## License
+This software is hereby released into the public domain. That means you can do
+whatever you want with it without restriction. See `LICENSE` for details.
