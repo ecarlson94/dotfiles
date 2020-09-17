@@ -11,7 +11,7 @@ Structure of this repository is strongly inspired by [vsund](https://github.com/
 ## Installation
 
 ```bash
-~$ git clone --recursive https://github.com/magicmonty/dotfiles_dotbot .dotfiles
+~$ git clone --recursive https://github.com/ecarlson94/dotfiles ~/.dotfiles
 ~$ cd ~/.dotfiles
 ```
 
@@ -52,16 +52,16 @@ meta/profiles
 meta
 ├── base.json
 └── configs
-      ├── bash.yaml
-      ├── git-override.yaml (Allows setting user.name and user.email)
-      ├── git.yaml
-      ├── homebrew.yaml
-      ├── linux-dependencies.yaml
-      ├── linuxbrew.yaml
-      ├── macos-dependencies.yaml
-      ├── vim-dependencies.yaml
-      ├── vim.yaml
-      └── zsh.yaml
+    ├── bash.yaml
+    ├── git-override.yaml (Allows setting user.name and user.email)
+    ├── git.yaml
+    ├── homebrew.yaml
+    ├── linux-dependencies.yaml
+    ├── linuxbrew.yaml
+    ├── macos-dependencies.yaml
+    ├── vim-dependencies.yaml
+    ├── vim.yaml
+    └── zsh.yaml
 ```
 
 ## License
