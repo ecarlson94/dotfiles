@@ -9,19 +9,19 @@ fi
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # ZPlug Plugins
-[ -f ~/.zsh_plugins ] && source ~/.zsh_plugins
+[ -f ~/.zsh/custom/plugins.zsh ] && source ~/.zsh/custom/plugins.zsh
 
 # Zsh Options
-[ -f ~/.zsh_options ] && source ~/.zsh_options
+[ -f ~/.zsh/custom/options.zsh ] && source ~/.zsh/custom/options.zsh
 
 # Zsh Bindings
-[ -f ~/.zsh_bindings ] && source ~/.zsh_bindings
+[ -f ~/.zsh/custom/bindings.zsh ] && source ~/.zsh/custom/bindings.zsh
 
 # Zsh Startup
-[ -f ~/.zsh_startup ] && source ~/.zsh_startup
+[ -f ~/.zsh/custom/startup.zsh ] && source ~/.zsh/custom/startup.zsh
 
 # ZPlug Completions
-[ -f ~/.zsh_completions ] && source ~/.zsh_completions
+[ -f ~/.zsh/custom/completions.zsh ] && source ~/.zsh/custom/completions.zsh
 
 #ZLE_RPROMPT_INDENT=0
 
@@ -29,6 +29,18 @@ fi
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+if [ -f ~/.p10k.zsh ]; then
+  source ~/.p10k.zsh
+elif [ -f ~/.zsh/custom/p10k.zsh ]; then
+  source ~/.zsh/custom/p10k.zsh
+fi
 
-test -f /home/linuxbrew/.linuxbrew/bin/brew && eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+brewBin="/bin/brew"
+brewPrefix=
+if [ -f "/home/linuxbrew/.linuxbrew$brewBin" ]; then
+  brewPrefix="/home/linuxbrew/.linuxbrew"
+elif [ -f "/usr/local$brewBin" ]; then
+  brewPrefix="/usr/local"
+fi
+
+[ ! -z "$brewPrefix" ] && eval $("$brewPrefix$brewBin" shellenv)

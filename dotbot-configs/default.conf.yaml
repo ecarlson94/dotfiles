@@ -22,19 +22,14 @@
     - [ pip3 install --user --upgrade pynvim ]
 
 - link:
-    $HOME/.bashrc: zsh/.bashrc
-    $HOME/.zshrc: zsh/.zshrc
-    $HOME/.zsh_plugins: zsh/.zsh_plugins
-    $HOME/.zsh_options: zsh/.zsh_options
-    $HOME/.zsh_bindings: zsh/.zsh_bindings
-    $HOME/.zsh_startup: zsh/.zsh_startup
-    $HOME/.zsh_completions: zsh/.zsh_completions
-    $HOME/.p10k.zsh: zsh/.p10k.zsh
-    $HOME/.bash_aliases: zsh/.bash_aliases
-    $HOME/.vimrc: vim/.vimrc
+    $HOME/.bashrc: zsh/bashrc
+    $HOME/.bash_aliases: zsh/bash_aliases
+    $HOME/.zshrc: zsh/zshrc
+    $HOME/.zsh/custom: zsh/custom
+    $HOME/.vimrc: vim/vimrc
     $HOME/.vim/custom: vim/custom
     $HOME/.vim/ftplugin: vim/ftplugin
-    $HOME/.config/nvim: vim/.config/nvim
+    $HOME/.config/nvim: vim/config/nvim
 
 - shell:
     - [ vim +VimEnter +PlugInstall +qa, Installing vim plugins ]
