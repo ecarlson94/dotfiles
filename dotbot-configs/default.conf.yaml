@@ -22,8 +22,8 @@
     - [ pip3 install --user --upgrade pynvim ]
 
 - link:
-    $HOME/.bashrc: zsh/bashrc
-    $HOME/.bash_aliases: zsh/bash_aliases
+    $HOME/.bashrc: bash/bashrc
+    $HOME/.bash_aliases: bash/bash_aliases
     $HOME/.zshrc: zsh/zshrc
     $HOME/.zsh/custom: zsh/custom
     $HOME/.vimrc: vim/vimrc
