@@ -1,7 +1,0 @@
-- shell:
-    - [ brew bundle --file Brewfile.mac, Install dependencies]
-    -
-        command: sudo easy_install pip
-        stdin: true
-        description: Installing pip
-    - [ $(which fzf)/install --key-bindings --completion --no-update-rc, Install fzf (Fuzzy Find) ]
