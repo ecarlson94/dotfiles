@@ -11,7 +11,7 @@ Structure of this repository is strongly inspired by [vsund](https://github.com/
 ## Installation
 
 ```bash
-~$ git clone --recursive https://github.com/ecarlson94/dotfiles ~/.dotfiles
+~$ git clone --recursive git@github.com:ecarlson94/dotfiles.git ~/.dotfiles
 ~$ cd ~/.dotfiles
 ```
 
@@ -42,9 +42,8 @@ You can run the above installation commands safely multiple times, if you think 
 ```
 meta/profiles
 ├── linux
-├── linux-no-deps (Doesn't install dependencies)
 ├── mac
-└── mac-no-deps (Doesn't install dependencies)
+└── no-deps (Skips dependency install, requires another profile be run first)
 ```
 
 ### Configs
@@ -55,6 +54,7 @@ meta
     ├── bash.yaml
     ├── git-override.yaml (Allows setting user.name and user.email)
     ├── git.yaml
+    ├── github.yaml
     ├── homebrew.yaml
     ├── linux-dependencies.yaml
     ├── linuxbrew.yaml

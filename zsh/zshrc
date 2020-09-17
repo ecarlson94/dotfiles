@@ -44,3 +44,6 @@ elif [ -f "/usr/local$brewBin" ]; then
 fi
 
 [ ! -z "$brewPrefix" ] && eval $("$brewPrefix$brewBin" shellenv)
+
+gh=$(which gh)
+[ -f $gh ] && eval $($gh completion -s zsh)
