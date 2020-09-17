@@ -1,12 +1,3 @@
-- defaults:
-    link:
-        relink: true
-        create: true
-        force: true
-    shell:
-        stdout: true
-        stderr: true
-
 - shell:
     - [ pip install --user powerline-status, Installing powerline status ]
 

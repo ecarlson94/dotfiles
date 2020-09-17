@@ -1,6 +1,2 @@
-- defaults:
-    shell:
-        stdout: true
-        stderr: true
 - shell:
     - [ brew bundle --file Brewfile.linux, Install dependencies ]
