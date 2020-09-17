@@ -49,4 +49,6 @@
 [difftool "vimdiff"]
   cmd = vimdiff $LOCAL $REMOTE
 [core]
-	autocrlf = input
+  autocrlf = input
+[pull]
+  rebase = false
