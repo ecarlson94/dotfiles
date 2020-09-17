@@ -1,0 +1,14 @@
+- defaults:
+    link:
+        relink: true
+        create: true
+        force: true
+
+- create:
+    - $HOME/.config
+
+- clean:
+    $HOME:
+        force: true
+    $HOME/.config:
+        recursive: true

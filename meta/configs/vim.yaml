@@ -1,0 +1,21 @@
+- defaults:
+    link:
+        relink: true
+        create: true
+        force: true
+    shell:
+        stdout: true
+        stderr: true
+
+- shell:
+    - [ npm install -g neovim, Install neovim node client ]
+    - [ pip3 install --user --upgrade pynvim, Install neovim plugin manager ]
+
+- link:
+    $HOME/.vimrc: vim/vimrc
+    $HOME/.vim/custom: vim/custom
+    $HOME/.vim/ftplugin: vim/ftplugin
+    $HOME/.config/nvim: vim/config/nvim
+
+- shell:
+    - [ vim +VimEnter +PlugInstall +qa > /dev/null, Installing vim plugins ]

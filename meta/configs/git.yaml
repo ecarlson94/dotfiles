@@ -1,0 +1,8 @@
+- defaults:
+    link:
+        relink: true
+        create: true
+        force: true
+
+- link:
+    $HOME/.gitconfig: git/gitconfig
