@@ -52,3 +52,6 @@
   autocrlf = input
 [pull]
   rebase = false
+[user]
+  name = Eric Carlson
+  email = e.carlson94@gmail.com
