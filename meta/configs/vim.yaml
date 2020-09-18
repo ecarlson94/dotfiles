@@ -3,6 +3,3 @@
     $HOME/.vim/custom: vim/custom
     $HOME/.vim/ftplugin: vim/ftplugin
     $HOME/.config/nvim: vim/config/nvim
-
-- shell:
-    - [ vim +VimEnter +PlugInstall +qa > /dev/null, Installing vim plugins ]

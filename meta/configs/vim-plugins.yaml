@@ -1,0 +1,2 @@
+- shell:
+    - [ vim +VimEnter +PlugInstall +qa > /dev/null, Installing vim plugins ]

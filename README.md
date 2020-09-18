@@ -60,6 +60,7 @@ meta
     ├── linuxbrew.yaml
     ├── macos-dependencies.yaml
     ├── vim-dependencies.yaml
+    ├── vim-plugins.yaml
     ├── vim.yaml
     └── zsh.yaml
 ```
