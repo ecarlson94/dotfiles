@@ -6,4 +6,6 @@ editor: !!null vim
 aliases:
     co: pr checkout
     ro: repo view --web
+    pro: pr view --web
+    prm: pr merge -m
 prompt: disabled
