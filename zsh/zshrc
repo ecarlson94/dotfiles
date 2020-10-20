@@ -47,3 +47,5 @@ fi
 
 gh=$(which gh)
 [ -f $gh ] && eval $($gh completion -s zsh)
+
+export GPG_TTY=$(tty)
