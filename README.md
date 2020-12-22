@@ -3,7 +3,6 @@
 Dotfile management using [Dotbot](https://github.com/anishathalye/dotbot).
 Structure of this repository is heavily inspired by [vsund](https://github.com/vsund/dotfiles) and [vbrandl](https://github.com/vbrandl/dotfiles).
 
-
 <!-- TOC GFM -->
 
 - [Dependencies](#dependencies)
