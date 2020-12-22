@@ -1,5 +1,5 @@
 [alias]
-  aa = add .
+  aa = add -A
   b = branch
   bd = branch -D
   btb = bisect bad

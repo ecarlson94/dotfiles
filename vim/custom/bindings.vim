@@ -26,6 +26,8 @@ nnoremap <leader>ts :let _s=@/<Bar>:%s/;\s\+$/;/e<Bar>:let @/=_s<Bar><CR>
 " Replace currently selected text
 vnoremap <leader>rr "hy:%s/<C-r>h//gc<left><left><left>
 
+nnoremap <leader>tc :GenTocGFM<CR>
+
 if !exists('g:vscode')
   " ,v brings up .vimrc (thanks, sontek)
   map <leader>v :sp ~/.vimrc<CR><C-W>

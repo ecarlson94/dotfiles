@@ -125,6 +125,15 @@ let g:OmniSharp_selector_ui = 'fzf'    " Use fzf.vim
 " let g:OmniSharp_selector_ui = ''       " Use vim - command line, quickfix etc.
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Markdown
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Plug 'mzlogin/vim-markdown-toc'
+let g:vmt_fence_hidden_markdown_style='GFM'
+let g:vmt_list_item_char='-'
+let g:vmt_fence_text = 'TOC'
+let g:vmt_fence_closing_text = '/TOC'
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Testing
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Plug 'janko/vim-test'
