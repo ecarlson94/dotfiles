@@ -1,16 +1,17 @@
 [merge]
-  tool = vimdiff
-  conflictstyle = diff3
+	tool = vimdiff
+	conflictstyle = diff3
 [mergetool "vimdiff"]
-  cmd = vimdiff $BASE $LOCAL $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
+	cmd = vimdiff $BASE $LOCAL $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
 [diff]
-  tool = vimdiff
+	tool = vimdiff
 [difftool "vimdiff"]
-  cmd = vimdiff $LOCAL $REMOTE
+	cmd = vimdiff $LOCAL $REMOTE
 [core]
-  autocrlf = input
+	autocrlf = input
+	editor = nvim
 [pull]
-  rebase = false
+	rebase = false
 [user]
-  name = Eric Carlson
-  email = e.carlson94@gmail.com
+	name = Eric Carlson
+	email = e.carlson94@gmail.com
