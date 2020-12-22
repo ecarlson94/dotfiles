@@ -4,8 +4,6 @@ Dotfile management using [Dotbot](https://github.com/anishathalye/dotbot).
 Structure of this repository is strongly inspired by [vsund](https://github.com/vsund/dotfiles) and [vbrandl](https://github.com/vbrandl/dotfiles).
 
 ## Dependencies
-* [Homebrew](https://brew.sh) (OSX)
-* [Linuxbrew](https://gist.github.com/ecarlson94/283102ffd2f2473d41e7c9965be8fdd4#install-homebrew) (Linux)
 * [Powerline Font](https://github.com/romkatv/powerlevel10k#fonts)
 
 ## Installation
