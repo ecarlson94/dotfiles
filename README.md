@@ -1,7 +1,23 @@
 # Dotfiles
 
 Dotfile management using [Dotbot](https://github.com/anishathalye/dotbot).
-Structure of this repository is strongly inspired by [vsund](https://github.com/vsund/dotfiles) and [vbrandl](https://github.com/vbrandl/dotfiles).
+Structure of this repository is heavily inspired by [vsund](https://github.com/vsund/dotfiles) and [vbrandl](https://github.com/vbrandl/dotfiles).
+
+
+<!-- TOC GFM -->
+
+- [Dependencies](#dependencies)
+- [Installation](#installation)
+  - [For installing a predefined profile:](#for-installing-a-predefined-profile)
+    - [Set global git user name and email](#set-global-git-user-name-and-email)
+  - [For installing single configurations:](#for-installing-single-configurations)
+  - [Post-Installation](#post-installation)
+- [Contents](#contents)
+  - [Profiles](#profiles)
+  - [Configs](#configs)
+- [License](#license)
+
+<!-- /TOC -->
 
 ## Dependencies
 * [Powerline Font](https://github.com/romkatv/powerlevel10k#fonts)
@@ -19,6 +35,13 @@ Structure of this repository is strongly inspired by [vsund](https://github.com/
 ~/.dotfiles$ ./install-profile <profile> [<configs...>]
 ```
 See [meta/profiles/](./meta/profiles) for available profiles
+
+#### Set global git user name and email
+
+```bash
+~/.dotfiles$ ./install-profile <profile> git-override
+```
+
 
 ### For installing single configurations:
 
