@@ -1,7 +1,6 @@
 - shell:
-    - [ "sh -c \"$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install.sh)\"", Installing Linuxbrew ]
-    - [ "test -d ~/.linuxbrew && eval $(~/.linuxbrew/bin/brew shellenv)" ]
-    - [ "test -d /home/linuxbrew/.linuxbrew && eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)" ]
-    - [ "test -r ~/.bash_profile && echo \"test -f $(brew --prefix)/bin/brew && eval \$($(brew --prefix)/bin/brew shellenv)\" >>~/.bash_profile" ]
-    - [ "echo \"test -f $(brew --prefix)/bin/brew && eval \$($(brew --prefix)/bin/brew shellenv)\" >>~/.profile" ]
+    - [ /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)", Installing Linuxbrew ]
+    - test -d /home/linuxbrew/.linuxbrew && eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+    - test -r ~/.bash_profile && echo "test -f $(brew --prefix)/bin/brew && eval \$($(brew --prefix)/bin/brew shellenv)" >>~/.bash_profile
+    - echo "test -f $(brew --prefix)/bin/brew && eval \$($(brew --prefix)/bin/brew shellenv)" >>~/.profile
     - [ brew bundle --file Brewfile.linux, Install dependencies ]

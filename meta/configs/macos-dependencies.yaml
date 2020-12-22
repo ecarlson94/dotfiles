@@ -1,5 +1,0 @@
-- shell:
-    -
-        command: sudo easy_install pip
-        stdin: true
-        description: Installing pip
