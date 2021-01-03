@@ -3,7 +3,7 @@
 # =============================================================================
 # override change directory
 function cd() {
-  builtin cd $@ && ls;
+  builtin cd $@ && ls -CF;
 }
 
 function history() {

@@ -32,6 +32,7 @@ alias tfsr="terraform state remove"
 alias tfr="terraform refresh"
 
 #git
+alias a="git add"
 alias aa="git add -A"
 alias b="git branch"
 alias bd="gb -D"
