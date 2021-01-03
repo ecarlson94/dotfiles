@@ -18,6 +18,23 @@ endif
 call plug#begin('~/.vim/plugged')
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" AutoSave
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Plug '907th/vim-auto-save'
+let g:auto_save = 1
+let g:auto_save_silent = 1
+let g:auto_save_write_all_buffers = 1  " write all open buffers as if you would use :wa
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" EasyMotion
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Plug 'easymotion/vim-easymotion'
+map <Leader> <Plug>(easymotion-prefix)
+let g:EasyMotion_smartcase = 1
+map <Leader>j <Plug>(easymotion-j)
+map <Leader>k <Plug>(easymotion-k)
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " FZF (Fuzzy Finder): requires ripgrep
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
@@ -41,6 +58,7 @@ command! -bang -nargs=* Rg
       \   <bang>0)
 
 nnoremap <C-p><C-a> :Rg<cr>
+map <c-p> :Files<CR>
 nnoremap <leader>o :Files<cr>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -51,6 +69,7 @@ Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 let Tlist_GainFocus_On_ToggleOpen=1
 let NERDTreeQuitOnOpen=1
 let NERDTreeShowHidden=1
+map <C-n> :NERDTreeToggle<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Display
@@ -127,11 +146,13 @@ let g:OmniSharp_selector_ui = 'fzf'    " Use fzf.vim
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Markdown
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
 Plug 'mzlogin/vim-markdown-toc'
 let g:vmt_fence_hidden_markdown_style='GFM'
 let g:vmt_list_item_char='-'
 let g:vmt_fence_text = 'TOC'
 let g:vmt_fence_closing_text = '/TOC'
+nnoremap <leader>tc :GenTocGFM<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Testing
@@ -176,7 +197,6 @@ Plug 'tpope/vim-surround'
 Plug 'wesQ3/vim-windowswap'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'jiangmiao/auto-pairs'
-Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
 
 " Comments
 Plug 'tpope/vim-commentary'

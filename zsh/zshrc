@@ -14,6 +14,9 @@ fi
 # Zsh Options
 [ -f ~/.zsh/custom/options.zsh ] && source ~/.zsh/custom/options.zsh
 
+# Zsh Functions
+[ -f ~/.zsh/custom/functions.zsh ] && source ~/.zsh/custom/functions.zsh
+
 # Zsh Bindings
 [ -f ~/.zsh/custom/bindings.zsh ] && source ~/.zsh/custom/bindings.zsh
 

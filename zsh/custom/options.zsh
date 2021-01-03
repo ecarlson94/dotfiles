@@ -50,16 +50,6 @@ bindkey '^[[Z' reverse-menu-complete
 #bindkey '^@' anyframe-widget-cd-ghq-repository
 #bindkey '^r' anyframe-widget-put-history
 
-function cd() {
-   builtin cd $@ && ls;
-}
-
-function history() {
-  #rg --smart-case --colors 'path:fg:yellow' --vimgrep -o '[^;]*$' ~/.zsh_history
-  #rg --smart-case --vimgrep -p -o '[^;]*$' ~/.zsh_history
-    rg --column --line-number --no-heading --fixed-strings --ignore-case --no-ignore --hidden --follow --color "always" --vimgrep -o '[^;]*$' ~/.zsh_history
-}
-
 # Watching other users
 #WATCHFMT="%n %a %l from %m at %t."
 watch=(notme)         # Report login/logout events for everybody except ourself.

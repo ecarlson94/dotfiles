@@ -26,7 +26,8 @@ nnoremap <leader>ts :let _s=@/<Bar>:%s/;\s\+$/;/e<Bar>:let @/=_s<Bar><CR>
 " Replace currently selected text
 vnoremap <leader>rr "hy:%s/<C-r>h//gc<left><left><left>
 
-nnoremap <leader>tc :GenTocGFM<CR>
+" Don't overwrite register when pasting in visual mode
+vnoremap p pgvy
 
 if !exists('g:vscode')
   " ,v brings up .vimrc (thanks, sontek)
@@ -87,27 +88,9 @@ if !exists('g:vscode')
    map <C-H> <C-W><C-H>
   endif
 
-  nnoremap <Leader>m :w <BAR> !lessc % > %:t:r.css<cr><space>
-
   " set working directory
   nnoremap <leader>. :lcd %:p:h<CR>
 
-  " Paste from clipboard
-  map <leader>p "+gP
-
   " Remove trailing whitespace
   map <leader>e :%s/\s\+$//<CR>:let @/=''<CR>
-
-  " Toggle tasklist
-  map <leader>td <Plug>TaskList
-
-  " NERD Tree Settings
-  map <F4> :NERDTreeFind<CR>
-  map <C-n> :NERDTreeToggle<CR>
-
-  " JSBeautify
-  map <leader>jf :call JsBeautify()<cr>
-
-  " FZF map
-  map <c-p> :Files<CR>
 endif
