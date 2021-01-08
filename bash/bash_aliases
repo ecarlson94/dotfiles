@@ -31,7 +31,12 @@ alias tfsl="terraform state list"
 alias tfsr="terraform state remove"
 alias tfr="terraform refresh"
 
-#git
+# Arduino
+alias arduino="arduino-cli"
+alias sketch="arduino sketch"
+alias sketchn="sketch new"
+
+# git
 alias a="git add"
 alias aa="git add -A"
 alias b="git branch"
