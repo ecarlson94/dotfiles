@@ -1,11 +1,6 @@
 # =============================================================================
 #                                   Functions
 # =============================================================================
-# override change directory
-function cd() {
-  builtin cd $@ && ls -CF;
-}
-
 function history() {
   #rg --smart-case --colors 'path:fg:yellow' --vimgrep -o '[^;]*$' ~/.zsh_history
   #rg --smart-case --vimgrep -p -o '[^;]*$' ~/.zsh_history

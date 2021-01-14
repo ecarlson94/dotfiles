@@ -17,41 +17,19 @@ if zplug check "junegunn/fzf-bin"; then
     export FZF_DEFAULT_OPTS="--height 40% --reverse --border --inline-info --color=dark,bg+:235,hl+:10,pointer:5"
 fi
 
-if zplug check "sindresorhus/pure"; then
-    PURE_CMD_MAX_EXEC_TIME=0
-    PURE_PROMPT_SYMBOL="%F{124}➜ %f"
-    #PURE_PROMPT_SYMBOL="%F{124}⇢  %f"
-fi
-
-if zplug check "geometry-zsh/geometry"; then
-    GEOMETRY_PROMPT_PLUGINS=(git exec_time)
-
-    GEOMETRY_COLOR_EXIT_VALUE="magenta"         # prompt symbol color when exit value is != 0
-
-    PROMPT_GEOMETRY_EXEC_TIME=true
-    PROMPT_GEOMETRY_COMMAND_MAX_EXEC_TIME=0
-
-    PROMPT_GEOMETRY_COLORIZE_ROOT=true
-    PROMPT_GEOMETRY_RPROMPT_ASYNC=true
-    PROMPT_GEOMETRY_COLORIZE_SYMBOL=true
-fi
-
 if zplug check "mollifier/anyframe"; then
-    # expressly specify to use peco
-    #zstyle ":anyframe:selector:" use peco
-    # expressly specify to use percol
-    #zstyle ":anyframe:selector:" use percol
-    # expressly specify to use fzf-tmux
-    #zstyle ":anyframe:selector:" use fzf-tmux
     # expressly specify to use fzf
     zstyle ":anyframe:selector:" use fzf
 
-    # specify path and options for peco, percol, or fzf
-    #zstyle ":anyframe:selector:peco:" command 'peco --no-ignore-case'
-    #zstyle ":anyframe:selector:percol:" command 'percol --case-sensitive'
-    #zstyle ":anyframe:selector:fzf-tmux:" command 'fzf-tmux --extended'
+    # specify path and options for fzf
     #zstyle ":anyframe:selector:fzf:" command 'fzf --extended'
     #zstyle ":anyframe:selector:fzf:" command 'fzf'
+
+    # expressly specify to use fzf-tmux
+    #zstyle ":anyframe:selector:" use fzf-tmux
+
+    # specify path and options for peco, percol, or fzf-tmux
+    #zstyle ":anyframe:selector:fzf-tmux:" command 'fzf-tmux --extended'
 
     #bindkey '^@' anyframe-widget-cd-ghq-repository
     #bindkey '^r' anyframe-widget-put-history
@@ -98,48 +76,20 @@ fi
 
 if zplug check "zsh-users/zsh-autosuggestions"; then
     ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=075'
-
 fi
 
 if zplug check "b4b4r07/enhancd"; then
     ENHANCD_FILTER="fzf:peco:percol"
-    ENHANCD_COMMAND="c"
+    ENHANCD_COMPLETION_BEHAVIOR="list"
+    ENHANCD_HOOK_AFTER_CD="ls -CF"
 fi
 
-if zplug check "b4b4r07/zsh-history-enhanced"; then
-    ZSH_HISTORY_FILE="$HISTFILE"
-    ZSH_HISTORY_FILTER="fzf:peco:percol"
-    ZSH_HISTORY_KEYBIND_GET_BY_DIR="^r"
-    ZSH_HISTORY_KEYBIND_GET_ALL="^r^a"
-fi
-
-if zplug check "denysdovhan/spaceship-prompt"; then
-    SPACESHIP_PROMPT_ORDER=(
-    # time        # Time stampts section (Disabled)
-    user          # Username section
-    dir           # Current directory section
-    host          # Hostname section
-    git           # Git section (git_branch + git_status)
-    exec_time     # Execution time
-    line_sep      # Line break
-    battery       # Battery level and status
-    jobs          # Background jobs indicator
-    char          # Prompt character
-    )
-
-    SPACESHIP_RPROMPT_ORDER=(
-    exit_code     # Exit code section
-    time
-    )
-
-    SPACESHIP_TIME_SHOW=true
-    SPACESHIP_EXIT_CODE_SHOW=true
-
-    SPACESHIP_PROMPT_SEPARATE_LINE=false
-    SPACESHIP_PROMPT_ADD_NEWLINE=true
-
-    #PROMPT='%F{red}%n%f@%F{blue}%m%f %F{yellow}%1~%f %# '
-    #RPROMPT='[%F{yellow}%?%f]'
+if zplug check "djui/alias-tips"; then
+    ZSH_PLUGINS_ALIAS_TIPS_EXCLUDES="(_ ll vi)"
+    ZSH_PLUGINS_ALIAS_TIPS_FORCE="1"
+    #
+    # ZSH_PLUGINS_ALIAS_TIPS_REVEAL=1
+    ZSH_PLUGINS_ALIAS_TIPS_REVEAL_EXCLUDES="(_ ll vi)"
 fi
 
 # Install plugins if there are plugins that have not been installed

@@ -15,9 +15,6 @@ bindkey "^u" backward-kill-line
 bindkey "^R" history-incremental-pattern-search-backward
 bindkey "^F" history-incremental-pattern-search-forward
 
-# Do not require a space when attempting to tab-complete.
-bindkey "^i" expand-or-complete-prefix
-
 # Fixes for alt-backspace and arrows keys
 bindkey '^[^?' backward-kill-word
 bindkey "^[[1;5C" forward-word

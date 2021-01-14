@@ -48,11 +48,11 @@ endif
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 if has("nvim") && !exists('g:vscode')
   " Send escape to terminal
-  tnoremap <expr> <A-[> (&filetype == "fzf") ? "<Nul>" : "<Esc>"
+  tnoremap <expr> <C-e> (&filetype == "fzf") ? "<Nul>" : "<Esc>"
   " Exit terminal mode (enter normal mode)
   tnoremap <expr> <Esc> (&filetype == "fzf") ? "<Esc>" : "<C-\><C-n>"
   "Exit terminal
-  tnoremap <expr> <C-x> (&filetype == "fzf") ? "<Nul>" : "<C-\><C-n>:q<CR>"
+  tnoremap <expr> <C-q> (&filetype == "fzf") ? "<Nul>" : "<C-\><C-n>:q<CR>"
 
   " Windowing
   tnoremap <expr> <C-h> (&filetype == "fzf") ? "<C-h>" : "<c-\><c-n><c-w>h"

@@ -33,22 +33,8 @@ setopt print_eight_bit
 setopt print_exit_value
 setopt prompt_subst
 setopt pushd_ignore_dups
-#setopt rm_star_wait
 setopt share_history            # Share history between multiple shells
 setopt transient_rprompt
-
-## Changing directories
-#setopt auto_pushd
-#setopt pushd_ignore_dups        # Dont push copies of the same dir on stack.
-#setopt pushd_minus              # Reference stack entries with "-".
-#
-#setopt extended_glob
-
-bindkey -v
-bindkey -v '^?' backward-delete-char
-bindkey '^[[Z' reverse-menu-complete
-#bindkey '^@' anyframe-widget-cd-ghq-repository
-#bindkey '^r' anyframe-widget-put-history
 
 # Watching other users
 #WATCHFMT="%n %a %l from %m at %t."
