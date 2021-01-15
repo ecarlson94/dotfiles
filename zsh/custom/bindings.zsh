@@ -3,8 +3,8 @@
 # =============================================================================
 
 # Common CTRL bindings.
-bindkey "^a" beginning-of-line
-bindkey "^e" end-of-line
+bindkey "^6" beginning-of-line
+bindkey "^4" end-of-line
 bindkey "^f" forward-word
 bindkey "^b" backward-word
 bindkey "^k" kill-line
@@ -12,8 +12,6 @@ bindkey "^d" delete-char
 bindkey "^y" accept-and-hold
 bindkey "^w" backward-kill-word
 bindkey "^u" backward-kill-line
-bindkey "^R" history-incremental-pattern-search-backward
-bindkey "^F" history-incremental-pattern-search-forward
 
 # Fixes for alt-backspace and arrows keys
 bindkey '^[^?' backward-kill-word

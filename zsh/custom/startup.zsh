@@ -13,28 +13,6 @@ if ! zplug check; then
     fi
 fi
 
-if zplug check "junegunn/fzf-bin"; then
-    export FZF_DEFAULT_OPTS="--height 40% --reverse --border --inline-info --color=dark,bg+:235,hl+:10,pointer:5"
-fi
-
-if zplug check "mollifier/anyframe"; then
-    # expressly specify to use fzf
-    zstyle ":anyframe:selector:" use fzf
-
-    # specify path and options for fzf
-    #zstyle ":anyframe:selector:fzf:" command 'fzf --extended'
-    #zstyle ":anyframe:selector:fzf:" command 'fzf'
-
-    # expressly specify to use fzf-tmux
-    #zstyle ":anyframe:selector:" use fzf-tmux
-
-    # specify path and options for peco, percol, or fzf-tmux
-    #zstyle ":anyframe:selector:fzf-tmux:" command 'fzf-tmux --extended'
-
-    #bindkey '^@' anyframe-widget-cd-ghq-repository
-    #bindkey '^r' anyframe-widget-put-history
-fi
-
 if zplug check "zsh-users/zsh-history-substring-search"; then
     zmodload zsh/terminfo
     bindkey "$terminfo[kcuu1]" history-substring-search-up
@@ -78,26 +56,24 @@ if zplug check "zsh-users/zsh-autosuggestions"; then
     ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=075'
 fi
 
+if zplug check "djui/alias-tips"; then
+    ZSH_PLUGINS_ALIAS_TIPS_EXCLUDES="(_ ll vi)"
+    ZSH_PLUGINS_ALIAS_TIPS_FORCE=1
+
+    # ZSH_PLUGINS_ALIAS_TIPS_REVEAL=1
+    ZSH_PLUGINS_ALIAS_TIPS_REVEAL_EXCLUDES="(_ ll vi)"
+fi
+
 if zplug check "b4b4r07/enhancd"; then
     ENHANCD_FILTER="fzf:peco:percol"
     ENHANCD_COMPLETION_BEHAVIOR="list"
     ENHANCD_HOOK_AFTER_CD="ls -CF"
 fi
 
-if zplug check "djui/alias-tips"; then
-    ZSH_PLUGINS_ALIAS_TIPS_EXCLUDES="(_ ll vi)"
-    ZSH_PLUGINS_ALIAS_TIPS_FORCE="1"
-    #
-    # ZSH_PLUGINS_ALIAS_TIPS_REVEAL=1
-    ZSH_PLUGINS_ALIAS_TIPS_REVEAL_EXCLUDES="(_ ll vi)"
-fi
-
-# Install plugins if there are plugins that have not been installed
-if ! zplug check; then
-    printf "Install plugins? [y/N]: "
-    if read -q; then
-        echo; zplug install
-    fi
+if zplug check "b4b4r07/zsh-history-ltsv"; then
+    ZSH_HISTORY_FILTER="fzf:peco:percol"
+    ZSH_HISTORY_KEYBIND_GET_BY_DIR="^r"
+    ZSH_HISTORY_KEYBIND_GET_ALL="^a"
 fi
 
 # Then, source plugins and add commands to $PATH

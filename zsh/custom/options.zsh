@@ -1,7 +1,10 @@
 # =============================================================================
 #                                   Options
 # =============================================================================
-# required 
+case $(uname -a) in
+    *Microsoft*) unsetopt BG_NICE ;;
+esac
+# required
 autoload -Uz add-zsh-hook
 
 #autoload -U add-zsh-hook
@@ -9,7 +12,6 @@ autoload -Uz add-zsh-hook
 
 #zle -N self-insert url-quote-magic
 
-setopt autocd                   # Allow changing directories without `cd`
 setopt append_history           # Dont overwrite history
 setopt auto_list
 setopt auto_menu
@@ -48,6 +50,4 @@ WORDCHARS='*?_-[]~=./&;!#$%^(){}<>'
 
 # Fuzzy Find
 export FZF_DEFAULT_COMMAND='rg --hidden -l ""'
-
-#zshaddhistory() { whence ${${(z)1}[1]} >| /dev/null || return 1 }
 
