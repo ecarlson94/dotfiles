@@ -18,6 +18,15 @@ endif
 call plug#begin('~/.vim/plugged')
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" TMUX Navigation
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Plug 'christoomey/vim-tmux-navigator'
+" Write all buffers before navigating from Vim to tmux pane
+let g:tmux_navigator_save_on_switch = 2
+" Disable tmux navigator when zooming the Vim pane
+let g:tmux_navigator_disable_when_zoomed = 1
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Arduino
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Plug 'ecarlson94/vim-arduino-cli'
@@ -74,7 +83,14 @@ Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 let Tlist_GainFocus_On_ToggleOpen=1
 let NERDTreeQuitOnOpen=1
 let NERDTreeShowHidden=1
-map <C-n> :NERDTreeToggle<CR>
+map <C-n> :call NERDTreeToggleAndRefresh()<CR>
+
+function NERDTreeToggleAndRefresh()
+  :NERDTreeToggle
+  if g:NERDTree.IsOpen()
+    :NERDTreeRefreshRoot
+  endif
+endfunction
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Display

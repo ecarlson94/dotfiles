@@ -2,6 +2,7 @@ linuxbrew
 github
 git
 zsh
+tmux
 vim-dependencies
 vim
 vim-plugins

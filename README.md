@@ -77,6 +77,7 @@ meta
     ├── github.yaml
     ├── homebrew.yaml
     ├── linuxbrew.yaml
+    ├── tmux.yaml
     ├── vim-dependencies.yaml
     ├── vim-plugins.yaml
     ├── vim.yaml

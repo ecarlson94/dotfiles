@@ -73,7 +73,7 @@ fi
 if zplug check "b4b4r07/zsh-history-ltsv"; then
     ZSH_HISTORY_FILTER="fzf:peco:percol"
     ZSH_HISTORY_KEYBIND_GET_BY_DIR="^r"
-    ZSH_HISTORY_KEYBIND_GET_ALL="^a"
+    # ZSH_HISTORY_KEYBIND_GET_ALL="^r^a"
 fi
 
 # Then, source plugins and add commands to $PATH
