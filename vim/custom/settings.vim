@@ -66,7 +66,7 @@ augroup END
 set nowrap  " Line wrapping off
 set cursorline
 
-colorscheme blade_runner
+colorscheme nord
 
 set t_Co=256 " For 256 color mode support
 

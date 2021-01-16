@@ -39,9 +39,13 @@ alias vi="nvim"
 alias vim="nvim"
 
 # tmux
-alias tx="tmuxinator start default"
-alias txsd="tmuxinator start dev"
-alias txsdot="tmuxinator start dotfiles"
+alias txsd="tmuxinator start default"
+alias dev="tmuxinator start dev"
+alias dotfiles="tmuxinator start dotfiles"
+
+# basic
+alias grep="grep --color=auto --line-number"
+alias ls="ls --color=always -GF"
 
 unameOut="$(uname -s)"
 case "${unameOut}" in

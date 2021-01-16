@@ -95,26 +95,28 @@ endfunction
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Display
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Plug 'gosukiwi/vim-atom-dark'
-Plug 'changyuheng/color-scheme-holokai-for-vim'
-Plug 'flazz/vim-colorschemes'
-Plug 'fielding/vice'
-Plug 'xdg/vim-darkluma'
-Plug 'atahabaki/archman-vim'
-Plug 'Mizux/vim-colorschemes', { 'as': 'mizux' }
-
-" Rainbow brackets
-Plug 'frazrepo/vim-rainbow'
-let g:rainbow_active=1
-
 Plug 'nathanaelkane/vim-indent-guides'
 let g:indent_guides_enable_on_vim_startup=1
 
-" Airline
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-let g:airline_powerline_fonts = 1
-let g:airline_theme = 'simple'
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Themes
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Plug 'gosukiwi/vim-atom-dark'
+" Plug 'changyuheng/color-scheme-holokai-for-vim'
+" Plug 'flazz/vim-colorschemes'
+" Plug 'fielding/vice'
+" Plug 'xdg/vim-darkluma'
+" Plug 'atahabaki/archman-vim'
+" Plug 'Mizux/vim-colorschemes', { 'as': 'mizux' }
+Plug 'arcticicestudio/nord-vim'
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Status line (airline)
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+ Plug 'vim-airline/vim-airline'
+ Plug 'vim-airline/vim-airline-themes'
+ let g:airline_powerline_fonts = 1
+ let g:airline_theme = 'nord'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Snippets

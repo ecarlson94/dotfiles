@@ -34,10 +34,6 @@ zplug "peco/peco", as:command, from:gh-r, use:"*${(L)$(uname -s)}*amd64*"
 # Bookmarks and jump
 zplug "jocelynmallon/zshmarks"
 
-# Directory colors
-zplug "seebi/dircolors-solarized", ignore:"*", as:plugin
-zplug "pinelibg/dircolors-solarized-zsh"
-
 zplug "plugins/colored-man-pages", from:oh-my-zsh
 zplug "plugins/common-aliases",    from:oh-my-zsh
 zplug "plugins/command-not-found", from:oh-my-zsh

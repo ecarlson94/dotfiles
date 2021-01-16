@@ -3,7 +3,6 @@
 # =============================================================================
 
 [ -d "$HOME/bin" ] && export PATH="$HOME/bin:$PATH"
-DIRCOLORS_SOLARIZED_ZSH_THEME="256dark"
 
 # Install plugins if there are plugins that have not been installed
 if ! zplug check; then
