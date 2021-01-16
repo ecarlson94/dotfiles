@@ -9,7 +9,7 @@ set -g @plugin 'tmux-plugins/tmux-resurrect'
 set -g @resurrect-capture-pane-contents 'on'
 
 set -g @plugin 'tmux-plugins/tmux-continuum'
-set -g @continuum-restore 'on'
+# set -g @continuum-restore 'on'
 
 
 # Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf)

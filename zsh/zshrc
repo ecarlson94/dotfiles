@@ -8,6 +8,8 @@ fi
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 
+export EDITOR=nvim
+
 # ZPlug Plugins
 [ -f ~/.zsh/custom/plugins.zsh ] && source ~/.zsh/custom/plugins.zsh
 

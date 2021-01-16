@@ -28,13 +28,20 @@ alias arduino="arduino-cli"
 alias sketch="arduino sketch"
 alias sketchn="sketch new"
 
-
+# NPM
 alias nr="npm run"
 alias wp="nr webpack"
 alias wpw="nr webwatch"
+
+# VIM
 alias vimdiff="nvim -d"
 alias vi="nvim"
 alias vim="nvim"
+
+# tmux
+alias tx="tmuxinator start default"
+alias txsd="tmuxinator start dev"
+alias txsdot="tmuxinator start dotfiles"
 
 unameOut="$(uname -s)"
 case "${unameOut}" in

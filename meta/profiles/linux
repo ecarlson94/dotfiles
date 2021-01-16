@@ -3,6 +3,7 @@ github
 git
 zsh
 tmux
+tmuxinator
 vim-dependencies
 vim
 vim-plugins
