@@ -19,9 +19,11 @@ Structure of this repository is heavily inspired by [vsund](https://github.com/v
 <!-- /TOC -->
 
 ## Dependencies
-* [Powerline Font](https://github.com/romkatv/powerlevel10k#fonts)
+- [Powerline Font](https://github.com/romkatv/powerlevel10k#fonts)
+- curl
 
 ## Installation
+_*NOTE:*_: Be sure to use `sudo` with the Ubuntu profiles
 
 ```bash
 ~$ git clone --recursive git@github.com:ecarlson94/dotfiles.git ~/.dotfiles
@@ -35,6 +37,7 @@ Structure of this repository is heavily inspired by [vsund](https://github.com/v
 ```
 See [meta/profiles/](./meta/profiles) for available profiles
 
+
 #### Set global git user name and email
 
 ```bash
@@ -43,6 +46,7 @@ See [meta/profiles/](./meta/profiles) for available profiles
 
 
 ### For installing single configurations:
+_*NOTE:*_: Be sure to use `sudo` with the `apt` and `snap` profiles
 
 ```bash
 ~/.dotfiles$ ./install-standalone <configs...>
@@ -62,6 +66,7 @@ You can run the above installation commands safely multiple times, if you think 
 ```
 meta/profiles
 ├── linux
+├── ubuntu-desktop
 ├── mac
 └── no-deps (Skips dependency install, requires another profile be run first)
 ```
@@ -71,12 +76,14 @@ meta/profiles
 meta
 ├── base.json
 └── configs
+    ├── apt.yaml
     ├── bash.yaml
     ├── git-override.yaml (Allows setting user.name and user.email)
     ├── git.yaml
     ├── github.yaml
     ├── homebrew.yaml
     ├── linuxbrew.yaml
+    ├── snap.yaml
     ├── tmux.yaml
     ├── tmuxinator.yaml
     ├── vim-dependencies.yaml
