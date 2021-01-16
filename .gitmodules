@@ -8,3 +8,6 @@
 [submodule "meta/dotbot-snap"]
 	path = meta/dotbot-snap
 	url = https://github.com/DrDynamic/dotbot-snap.git
+[submodule "meta/dotbot-apt"]
+	path = meta/dotbot-apt
+	url = https://github.com/bryant1410/dotbot-apt
