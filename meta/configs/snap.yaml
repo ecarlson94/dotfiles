@@ -1,2 +1,4 @@
-- snap:
-  - discord
+- shell:
+  - snap install cmake --classic
+  - snap install node --classic --channel=14
+  - snap install scc

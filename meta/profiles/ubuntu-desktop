@@ -1,12 +1,13 @@
-apt
-snap
+snap-sudo
+apt-sudo
+snap-desktop-sudo
 github
 git
 dir-colors
 zsh
 tmux
 tmuxinator
-vim-dependencies
+vim-dependencies-sudo
 vim
 vim-plugins
 gnupg

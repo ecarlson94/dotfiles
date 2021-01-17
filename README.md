@@ -23,7 +23,6 @@ Structure of this repository is heavily inspired by [vsund](https://github.com/v
 - curl
 
 ## Installation
-_*NOTE:*_: Be sure to use `sudo` with the Ubuntu profiles
 
 ```bash
 ~$ git clone --recursive git@github.com:ecarlson94/dotfiles.git ~/.dotfiles
@@ -46,12 +45,13 @@ See [meta/profiles/](./meta/profiles) for available profiles
 
 
 ### For installing single configurations:
-_*NOTE:*_: Be sure to use `sudo` with the `apt` and `snap` profiles
 
 ```bash
 ~/.dotfiles$ ./install-standalone <configs...>
 ```
 See [meta/configs/](./meta/configs) for available configurations
+
+_*Note:*_ Any configuration can be run as sudo by adding `-sudo` to the end of it when invoking the install script.
 
 ### Post-Installation
 You can run the above installation commands safely multiple times, if you think that helps with better installation.
@@ -76,14 +76,15 @@ meta/profiles
 meta
 ├── base.json
 └── configs
-    ├── apt.yaml
+    ├── apt-sudo.yaml
     ├── bash.yaml
     ├── git-override.yaml (Allows setting user.name and user.email)
     ├── git.yaml
     ├── github.yaml
     ├── homebrew.yaml
     ├── linuxbrew.yaml
-    ├── snap.yaml
+    ├── snap-sudo.yaml
+    ├── snap-desktop-sudo.yaml (contains packages that are gui based)
     ├── tmux.yaml
     ├── tmuxinator.yaml
     ├── vim-dependencies.yaml
