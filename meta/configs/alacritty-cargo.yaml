@@ -1,4 +1,4 @@
 - shell:
-    - cd alacritty
+    - cd meta/alacritty
     - cargo build --release
-    - cd ../
+    - cd ../../
