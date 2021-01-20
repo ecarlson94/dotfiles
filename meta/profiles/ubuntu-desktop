@@ -1,5 +1,7 @@
 snap-sudo
 apt-sudo
+alacritty-apt-dependencies-sudo
+alacritty-cargo
 snap-desktop-sudo
 github
 git

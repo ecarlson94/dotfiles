@@ -1,0 +1,4 @@
+- shell:
+    - cd alacritty
+    - cargo build --release
+    - cd ../
