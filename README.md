@@ -76,7 +76,10 @@ meta/profiles
 meta
 ├── base.json
 └── configs
-    ├── apt-sudo.yaml
+    ├── alacritty-apt-dependencies.yaml
+    ├── alacritty-cargo.yaml
+    ├── alacritty.yaml
+    ├── apt.yaml
     ├── bash.yaml
     ├── git-override.yaml (Allows setting user.name and user.email)
     ├── git.yaml
