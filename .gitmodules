@@ -14,3 +14,6 @@
 [submodule "meta/dotbot-apt-get"]
 	path = meta/dotbot-apt-get
 	url = git@github.com:rubenvereecken/dotbot-apt-get.git
+[submodule "alacritty"]
+	path = alacritty
+	url = git@github.com:alacritty/alacritty.git
