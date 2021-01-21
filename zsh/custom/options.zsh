@@ -49,5 +49,5 @@ KEYTIMEOUT=1
 WORDCHARS='*?_-[]~=./&;!#$%^(){}<>'
 
 # Fuzzy Find
-export FZF_DEFAULT_COMMAND='rg --hidden -l ""'
+export FZF_DEFAULT_COMMAND='rg --hidden -l --no-ignore-vcs --files'
 

@@ -49,29 +49,21 @@ map <Leader>j <Plug>(easymotion-j)
 map <Leader>k <Plug>(easymotion-k)
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" FZF (Fuzzy Finder): requires ripgrep
+" FZF (Fuzzy Finder Search): requires ripgrep
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+function! RipgrepFzf(query, fullscreen)
+  let command_fmt = 'rg --column --line-number --no-heading --color=always --smart-case -- %s || true'
+  let initial_command = printf(command_fmt, shellescape(a:query))
+  let reload_command = printf(command_fmt, '{q}')
+  let spec = {'options': ['--phony', '--query', a:query, '--bind', 'change:reload:'.reload_command]}
+  call fzf#vim#grep(initial_command, 1, fzf#vim#with_preview(spec), a:fullscreen)
+endfunction
 
-" --column: Show column number
-" --line-number: Show line number
-" --no-heading: Do not show file headings in results
-" --fixed-strings: Search term as a literal string
-" --ignore-case: Case insensitive search
-" --no-ignore: Do not respect .gitignore, etc...
-" --hidden: Search hidden files and folders
-" --follow: Follow symlinks
-" --glob: Additional conditions for search (in this case ignore everything in the .git/ folder)
-" --color: Search color options
-command! -bang -nargs=* Rg
-      \ call fzf#vim#grep(
-      \   'rg --hidden --column --line-number --no-heading --color=always --ignore-case '.shellescape(<q-args>), 1,
-      \   <bang>0 ? fzf#vim#with_preview('up:60%')
-      \           : fzf#vim#with_preview('right:50%:hidden', '?'),
-      \   <bang>0)
+command! -nargs=* -bang RG call RipgrepFzf(<q-args>, <bang>0)
 
-nnoremap <C-p><C-a> :Rg<cr>
+nnoremap <C-p><C-a> :RG<cr>
 map <c-p> :Files<CR>
 nnoremap <leader>o :Files<cr>
 

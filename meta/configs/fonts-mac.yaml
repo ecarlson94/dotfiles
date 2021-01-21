@@ -1,5 +1,5 @@
-- link:
-    $HOME/Library/Fonts/MesloLGS NF Bold.ttf: fonts/MesloLGS NF Bold.ttf
-    $HOME/Library/Fonts/MesloLGS NF Italic.ttf: fonts/MesloLGS NF Italic.ttf
-    $HOME/Library/Fonts/MesloLGS NF Regular.ttf: fonts/MesloLGS NF Regular.ttf
-    $HOME/Library/Fonts/MesloLGS NF Bold Italic.ttf: fonts/MesloLGS NF Bold Italic.ttf
+- shell:
+    - cp fonts/MesloLGS\ NF\ Bold.ttf $HOME/Library/Fonts/
+    - cp fonts/MesloLGS\ NF\ Italic.ttf $HOME/Library/Fonts/
+    - cp fonts/MesloLGS\ NF\ Regular.ttf $HOME/Library/Fonts/
+    - cp fonts/MesloLGS\ NF\ Bold\ Italic.ttf $HOME/Library/Fonts/
