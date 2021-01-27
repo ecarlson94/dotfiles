@@ -7,13 +7,13 @@ Structure of this repository is heavily inspired by [vsund](https://github.com/v
 
 - [Dependencies](#dependencies)
 - [Installation](#installation)
-  - [For installing a predefined profile:](#for-installing-a-predefined-profile)
-    - [Set global git user name and email](#set-global-git-user-name-and-email)
-  - [For installing single configurations:](#for-installing-single-configurations)
-  - [Post-Installation](#post-installation)
+    - [For installing a predefined profile:](#for-installing-a-predefined-profile)
+        - [Set global git user name and email](#set-global-git-user-name-and-email)
+    - [For installing single configurations:](#for-installing-single-configurations)
+    - [Post-Installation](#post-installation)
 - [Contents](#contents)
-  - [Profiles](#profiles)
-  - [Configs](#configs)
+    - [Profiles](#profiles)
+    - [Configs](#configs)
 - [License](#license)
 
 <!-- /TOC -->
@@ -65,8 +65,8 @@ You can run the above installation commands safely multiple times, if you think 
 ### Profiles
 ```
 meta/profiles
-├── linux
 ├── ubuntu-desktop
+├── ubuntu
 ├── mac
 └── no-deps (Skips dependency install, requires another profile be run first)
 ```
@@ -85,9 +85,10 @@ meta
     ├── git.yaml
     ├── github.yaml
     ├── homebrew.yaml
-    ├── linuxbrew.yaml
-    ├── snap-sudo.yaml
-    ├── snap-desktop-sudo.yaml (contains packages that are gui based)
+    ├── homebrew-mac.yaml
+    ├── homebrew-linux.yaml
+    ├── homebrew-linux-apt.yaml
+    ├── snap-desktop.yaml (contains packages that are gui based)
     ├── tmux.yaml
     ├── tmuxinator.yaml
     ├── vim-dependencies.yaml

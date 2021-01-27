@@ -1,16 +1,5 @@
 - shell:
-    - apt-key adv --keyserver keyserver.ubuntu.com --recv-key C99B11DEB97541F0
-    - [ apt-add-repository https://cli.github.com/packages, Adding github cli repo to apt ]
-    - curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
-    - echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
     - apt update
-    - apt install -y build-essential bash-completion curl gh tmux zsh
-    - apt-get update
-    - apt-get install -y manpages-dev coreutils ctags fzf git gnupg python python3 python3-pip
-    - apt-get install -y neovim python3-neovim ripgrep tmuxinator
-    - apt-get install -y wget yarn apt-transport-https ca-certificates gnupg-agent software-properties-common
-    - [ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add -, Add docker apt repo ]
-    - apt-key fingerprint 0EBFCD88
-    - add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
-    - apt-get update
-    - apt-get install -y docker-ce docker-ce-cli containerd.io
+    - [ apt install -y build-essential curl file git, Installing Homebrew dependencies... ]
+    - [ apt install python-is-python3, Installing zsh plugin dependencies ]
+

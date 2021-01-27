@@ -6,11 +6,10 @@ tmux
 tmuxinator
 vim
 gnupg
-snap-sudo
 apt-sudo
-alacritty-apt-dependencies-sudo
-alacritty-cargo
+homebrew
+homebrew-linux
 zsh-dependencies
-vim-dependencies-sudo
+vim-dependencies
 vim-plugins
 snap-desktop-sudo

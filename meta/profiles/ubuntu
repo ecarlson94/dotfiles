@@ -6,6 +6,7 @@ tmux
 tmuxinator
 vim
 gnupg
+apt-sudo
 homebrew
 homebrew-linux
 zsh-dependencies
