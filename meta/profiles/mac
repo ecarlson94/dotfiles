@@ -1,5 +1,3 @@
-homebrew
-homebrew-mac
 fonts-mac
 github
 git
@@ -7,7 +5,10 @@ dir-colors
 zsh
 tmux
 tmuxinator
-vim-dependencies
 vim
-vim-plugins
 gnupg
+homebrew
+homebrew-mac
+zsh-dependencies
+vim-dependencies
+vim-plugins

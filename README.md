@@ -93,7 +93,8 @@ meta
     ├── vim-dependencies.yaml
     ├── vim-plugins.yaml
     ├── vim.yaml
-    └── zsh.yaml
+    ├── zsh.yaml
+    └── zsh-dependencies.yaml
 ```
 
 ## License

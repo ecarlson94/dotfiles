@@ -1,12 +1,13 @@
-homebrew
-homebrew-linux
 github
 git
 dir-colors
 zsh
 tmux
 tmuxinator
-vim-dependencies
 vim
-vim-plugins
 gnupg
+homebrew
+homebrew-linux
+zsh-dependencies
+vim-dependencies
+vim-plugins
