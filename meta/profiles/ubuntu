@@ -11,5 +11,6 @@ apt-sudo
 homebrew
 homebrew-linux
 zsh-dependencies
+zsh-plugins
 vim-dependencies
 vim-plugins

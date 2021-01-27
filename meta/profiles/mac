@@ -10,5 +10,6 @@ gnupg
 homebrew
 homebrew-mac
 zsh-dependencies
+zsh-plugins
 vim-dependencies
 vim-plugins

@@ -57,8 +57,7 @@ _*Note:*_ Any configuration can be run as sudo by adding `-sudo` to the end of i
 You can run the above installation commands safely multiple times, if you think that helps with better installation.
 
 1. Restart terminal
-1. Select `y` to install plugins
-1. (Linux) Run `compaudit | xargs chmod go-w`
+1. (WSL) Run `compaudit | xargs chmod go-w`
 
 ## Contents
 
@@ -97,6 +96,7 @@ meta
     ├── vim-plugins.yaml
     ├── vim.yaml
     ├── zsh-dependencies.yaml
+    ├── zsh-plugins.yaml
     └── zsh.yaml
 ```
 

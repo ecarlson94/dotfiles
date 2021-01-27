@@ -1,3 +1,2 @@
 - shell:
   - snap install discord
-  - snap install alacritty --edge --classic
