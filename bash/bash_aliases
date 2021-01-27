@@ -50,12 +50,3 @@ alias db="dotnet build"
 # basic
 alias grep="grep --color=auto --line-number"
 alias ls="ls --color=always -GF"
-
-unameOut="$(uname -s)"
-case "${unameOut}" in
-  Linux*)     machine=Linux;;
-  Darwin*)    machine=Mac;;
-  CYGWIN*)    machine=Cygwin;;
-  MINGW*)     machine=MinGw;;
-  *)          machine="UNKNOWN:${unameOut}"
-esac

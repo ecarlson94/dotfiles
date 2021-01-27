@@ -1,4 +1,2 @@
 - shell:
-    - cd meta/alacritty
-    - cargo build --release
-    - cd ../../
+    - [ ./alacritty/build.sh, Building Alacritty...]

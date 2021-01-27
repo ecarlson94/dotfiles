@@ -13,4 +13,7 @@ homebrew-linux
 zsh-dependencies
 vim-dependencies
 vim-plugins
+alacritty-ubuntu-deps-sudo
+alacritty-cargo
+alacritty
 snap-desktop-sudo
