@@ -19,7 +19,6 @@ Structure of this repository is heavily inspired by [vsund](https://github.com/v
 <!-- /TOC -->
 
 ## Dependencies
-- [Powerline Font](https://github.com/romkatv/powerlevel10k#fonts)
 - curl
 
 ## Installation
