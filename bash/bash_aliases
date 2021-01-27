@@ -39,9 +39,13 @@ alias vi="nvim"
 alias vim="nvim"
 
 # tmux
-alias txsd="tmuxinator start default"
 alias dev="tmuxinator start dev"
+alias devtasks="tmuxinator start devtasks"
+alias tasks="tmuxinator start tasks"
 alias dotfiles="tmuxinator start dotfiles"
+
+# dotnet
+alias db="dotnet build"
 
 # basic
 alias grep="grep --color=auto --line-number"
