@@ -51,6 +51,7 @@ See [meta/profiles/](./meta/profiles) for available profiles
 See [meta/configs/](./meta/configs) for available configurations
 
 _*Note:*_ Any configuration can be run as sudo by adding `-sudo` to the end of it when invoking the install script.
+*DO NOT* run the script as a sudoer.
 
 ### Post-Installation
 You can run the above installation commands safely multiple times, if you think that helps with better installation.
@@ -75,26 +76,28 @@ meta/profiles
 meta
 ├── base.json
 └── configs
-    ├── alacritty.yaml
     ├── alacritty-cargo.yaml
     ├── alacritty-ubuntu-deps.yaml
+    ├── alacritty.yaml
     ├── apt.yaml
     ├── bash.yaml
+    ├── dir-colors.yaml
+    ├── fonts-linux.yaml
+    ├── fonts-mac.yaml
     ├── git-override.yaml (Allows setting user.name and user.email)
     ├── git.yaml
     ├── github.yaml
-    ├── homebrew.yaml
     ├── homebrew-mac.yaml
     ├── homebrew-linux.yaml
-    ├── homebrew-linux-apt.yaml
+    ├── homebrew.yaml
     ├── snap-desktop.yaml (contains packages that are gui based)
     ├── tmux.yaml
     ├── tmuxinator.yaml
     ├── vim-dependencies.yaml
     ├── vim-plugins.yaml
     ├── vim.yaml
-    ├── zsh.yaml
-    └── zsh-dependencies.yaml
+    ├── zsh-dependencies.yaml
+    └── zsh.yaml
 ```
 
 ## License
