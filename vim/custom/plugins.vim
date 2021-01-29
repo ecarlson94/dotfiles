@@ -204,6 +204,16 @@ Plug 'powerline/fonts', { 'do' : './install.sh' }
 Plug 'ryanoasis/vim-devicons'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Git
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Plug 'APZelos/blamer.nvim'
+let g:blamer_enabled = 1
+let g:blamer_delay = 500
+let g:blamer_show_in_visual_modes = 0
+let g:blamer_show_in_insert_modes = 0
+let g:blamer_template = '<committer>, <committer-time> • <summary> - <commit-short>'
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Misc
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Plug 'mileszs/ack.vim'
