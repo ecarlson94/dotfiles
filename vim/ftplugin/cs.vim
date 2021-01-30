@@ -29,6 +29,10 @@ if !exists('g:vscode')
   nnoremap <buffer> <C-\> :OmniSharpSignatureHelp<CR>
   inoremap <buffer> <C-\> <C-o>:OmniSharpSignatureHelp<CR>
 
+  " Test commands
+  nnoremap <buffer> <Leader>rt :OmniSharpRunTest
+  nnoremap <buffer> <Leader>rft : OmniSharpRunTestsInFile
+
   " Navigate up and down by method/property/field
   nnoremap <buffer> <S-k> :OmniSharpNavigateUp<CR>
   nnoremap <buffer> <S-j> :OmniSharpNavigateDown<CR>
@@ -53,7 +57,31 @@ if !exists('g:vscode')
   nnoremap <Leader>so :OmniSharpStartServer<CR>
   nnoremap <Leader>sp :OmniSharpStopServer<CR>
 
+  let g:OmniSharp_popup_position = 'peek'
+  if has('nvim')
+    let g:OmniSharp_popup_options = {
+    \ 'winhl': 'Normal:NormalFloat'
+    \}
+  else
+    let g:OmniSharp_popup_options = {
+    \ 'highlight': 'Normal',
+    \ 'padding': [0, 0, 0, 0],
+    \ 'border': [1]
+    \}
+  endif
+  let g:OmniSharp_popup_mappings = {
+  \ 'sigNext': '<C-n>',
+  \ 'sigPrev': '<C-p>',
+  \ 'pageDown': ['<C-f>', '<PageDown>'],
+  \ 'pageUp': ['<C-b>', '<PageUp>']
+  \}
+
+  let g:OmniSharp_highlight_groups = {
+  \ 'ExcludedCode': 'NonText'
+  \}
+
   " Enable snippet completion
-  " let g:OmniSharp_want_snippet=1
+  let g:OmniSharp_want_snippet=1
+
 endif
 

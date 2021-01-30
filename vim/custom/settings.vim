@@ -31,20 +31,6 @@ set path+=**
 " ctags
 command! MakeTags !ctags -R .
 
-" netrw File Explorer
-let g:netrw_banner=0       " disable annoying banner
-let g:netrw_browse_split=4 " open in prior window
-let g:netrw_altv=1         " open splits to the right
-let g:netrw_liststyle=3    " tree view
-let g:netrw_listhide=netrw_gitignore#Hide()
-let g:netrw_listhide.=',(^\|\s\s\)\zs\.\S\+'
-
-" NERDTree
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | exec 'NERDTree' | endif " open NERDTree if nothing is specified
-autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | wincmd p | ene | exe 'NERDTree' argv()[0] | endif " open NERDTree if directory is specified
-autocmd BufEnter * if bufname('#') =~# "^NERD_tree_" && winnr('$') > 1 | b# | endif " don't open new buffers in NERDTree window
-
 " clear highlighted search using the space bar
 :nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
 
@@ -136,12 +122,18 @@ filetype plugin on      " Load filetype plugins
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 autocmd BufRead *.spark set filetype=html
 autocmd BufRead *.vue set filetype=html
-autocmd BufRead .vim* set filetype=vim
+autocmd BufRead *.vim* set filetype=vim
+autocmd BufRead *.yaml set filetype=yaml
+autocmd BufRead *.yml set filetype=yaml
+autocmd BufRead *.tf set filetype=terraform
+autocmd BufRead *.tfvars set filetype=terraform
+autocmd BufRead *.css set filetype=css
+autocmd BufRead *.less set filetype=css
+autocmd BufRead *.sass set filetype=css
+autocmd BufRead *.sh set filetype=bash
+autocmd BufRead *.zsh set filetype=bash
 autocmd BufRead *.rst set tw=80
-autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
 autocmd FileType spark set omnifunc=htmlcomplete#CompleteTags
-autocmd FileType css set omnifunc=csscomplete#CompleteCSS
-autocmd FileType scss set omnifunc=csscomplete#CompleteCSS
 autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
 autocmd FileType php set omnifunc=phpcomplete#CompletePHP
 autocmd FileType c set omnifunc=ccomplete#Complete
@@ -156,11 +148,6 @@ set nocompatible        " vim > vi mode.
 syntax on
 
 set splitbelow
-
-" Don't autoselect first omnicomplete option, show options even if there is only
-" one (so the preview documentation is accessible). Remove 'preview' if you
-" don't want to see any documentation whatsoever.
-set completeopt=longest,menuone,preview
 
 " Set desired preview window height for viewing documentation.
 set previewheight=5

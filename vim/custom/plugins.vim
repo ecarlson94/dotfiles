@@ -84,6 +84,20 @@ function NERDTreeToggleAndRefresh()
   endif
 endfunction
 
+" netrw File Explorer
+let g:netrw_banner=0       " disable annoying banner
+let g:netrw_browse_split=4 " open in prior window
+let g:netrw_altv=1         " open splits to the right
+let g:netrw_liststyle=3    " tree view
+let g:netrw_listhide=netrw_gitignore#Hide()
+let g:netrw_listhide.=',(^\|\s\s\)\zs\.\S\+'
+
+" NERDTree
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | exec 'NERDTree' | endif " open NERDTree if nothing is specified
+autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | wincmd p | ene | exe 'NERDTree' argv()[0] | endif " open NERDTree if directory is specified
+autocmd BufEnter * if bufname('#') =~# "^NERD_tree_" && winnr('$') > 1 | b# | endif " don't open new buffers in NERDTree window
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Display
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -93,13 +107,6 @@ let g:indent_guides_enable_on_vim_startup=1
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Themes
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Plug 'gosukiwi/vim-atom-dark'
-" Plug 'changyuheng/color-scheme-holokai-for-vim'
-" Plug 'flazz/vim-colorschemes'
-" Plug 'fielding/vice'
-" Plug 'xdg/vim-darkluma'
-" Plug 'atahabaki/archman-vim'
-" Plug 'Mizux/vim-colorschemes', { 'as': 'mizux' }
 Plug 'arcticicestudio/nord-vim'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -111,31 +118,76 @@ Plug 'arcticicestudio/nord-vim'
  let g:airline_theme = 'nord'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Autocomplete Engine / Intellisense
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Plug 'prabirshrestha/asyncomplete.vim'
+let g:asyncomplete_auto_popup = 1
+let g:asyncomplete_auto_completeopt = 0
+let g:asyncomplete_force_refresh_on_context_changed = 1
+" auto close preview window when completion done
+autocmd! CompleteDone * if pumvisible() == 0 | pclose | endif
+
+if has('nvim')
+  set completeopt=menuone,noinsert,noselect,preview
+  Plug 'ncm2/float-preview.nvim'
+  let g:float_preview#docked = 0
+else
+  set completeopt=menuone,noinsert,noselect,popuphidden
+  set completepopup=highlight:Pmenu,border:off
+endif
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Snippets
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Plug 'Shougo/neosnippet.vim'
-Plug 'Shougo/neosnippet-snippets'
+Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
+Plug 'prabirshrestha/asyncomplete-ultisnips.vim'
 let g:UltiSnipsExpandTrigger="<c-j>"
 let g:UltiSnipsJumpForwardTrigger="<c-j>"
 let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 let g:UltiSnipsSnippetsDir='~/.vim/snippets'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Autocomplete Engine
+" Language Server Protocol (LSP)
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Plug 'neoclide/coc.nvim', { 'branch': 'release' }
+Plug 'prabirshrestha/async.vim'
+Plug 'prabirshrestha/vim-lsp'
+" let g:lsp_diagnostics_enabled=0
+Plug 'prabirshrestha/asyncomplete-lsp.vim'
+Plug 'mattn/vim-lsp-settings'
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" LESS / CSS
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Plug 'neoclide/coc-css', {'do': 'yarn install --frozen-lockfile'}
+function! s:on_lsp_buffer_enabled() abort
+    setlocal omnifunc=lsp#complete
+    setlocal signcolumn=yes
+    if exists('+tagfunc') | setlocal tagfunc=lsp#tagfunc | endif
+    nmap <buffer> gd <plug>(lsp-definition)
+    nmap <buffer> gs <plug>(lsp-document-symbol-search)
+    nmap <buffer> gS <plug>(lsp-workspace-symbol-search)
+    nmap <buffer> gr <plug>(lsp-references)
+    nmap <buffer> gi <plug>(lsp-implementation)
+    nmap <buffer> gt <plug>(lsp-type-definition)
+    nmap <buffer> <leader>rn <plug>(lsp-rename)
+    nmap <buffer> [g <Plug>(lsp-previous-diagnostic)
+    nmap <buffer> ]g <Plug>(lsp-next-diagnostic)
+    nmap <buffer> K <plug>(lsp-hover)
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Javascript
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Plug 'neoclide/coc-tsserver', {'do': 'yarn install --frozen-lockfile'}
-Plug 'neoclide/coc-eslint', {'do': 'yarn install --frozen-lockfile'}
+    let g:lsp_format_sync_timeout = 1000
+    autocmd! BufWritePre *.rs,*.go call execute('LspDocumentFormatSync')
+
+    " refer to doc to add more commands
+endfunction
+
+augroup lsp_install
+    au!
+    " call s:on_lsp_buffer_enabled only for languages that has the server registered.
+    autocmd User lsp_buffer_enabled call s:on_lsp_buffer_enabled()
+augroup END
+
+let g:lsp_settings = {
+\  'omnisharp-lsp': {
+\    'disabled': 1,
+\   }
+\}
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Terraform
@@ -144,8 +196,6 @@ Plug 'hashivim/vim-terraform'
 let g:terraform_align=1
 let g:terraform_fold_sections=0
 let g:terraform_fmt_on_save=1
-
-Plug 'juliosueiras/vim-terraform-completion'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " C#
@@ -230,11 +280,7 @@ Plug 'tpope/vim-commentary'
 Plug 'alvan/vim-closetag', { 'for': [ 'html', 'xml', 'javascript' ] }
 let g:closetag_filenames = "*.html, *.js, *.xml"
 
-" You can specify revision/branch/tag.
-Plug 'Shougo/vimshell', { 'rev' : '3787e5'  }
-
 set encoding=utf8
-" fonts end
 
 " Required:
 call plug#end()

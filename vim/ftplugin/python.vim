@@ -7,7 +7,6 @@ autocmd BufRead *.rst set tw=80
 " treat html files as django templates
 autocmd BufRead *.html set filetype=htmldjango
 
-set omnifunc=pythoncomplete#Complete
 set makeprg=python\ -c\ \"import\ py_compile,sys;\ sys.stderr=sys.stdout;\ py_compile.compile(r'%')\"
 set efm=%C\ %.%#,%A\ \ File\ \"%f\"\\,\ line\ %l%.%#,%Z%[%^\ ]%\\@=%m
 
