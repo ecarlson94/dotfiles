@@ -6,10 +6,11 @@ zsh
 tmux
 tmuxinator
 vim
-gnupg
+gnupg-mac
 homebrew
 homebrew-mac
 zsh-dependencies
 zsh-plugins
 vim-dependencies
 vim-plugins
+gnupg-configure

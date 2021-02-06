@@ -14,7 +14,8 @@ zsh-dependencies
 zsh-plugins
 vim-dependencies
 vim-plugins
+gnupg-configure
 alacritty-ubuntu-deps-sudo
 alacritty-cargo
 alacritty
-snap-desktop-sudo
+ubuntu-desktop-sudo

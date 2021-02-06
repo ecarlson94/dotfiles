@@ -86,10 +86,13 @@ meta
     ├── git-override.yaml (Allows setting user.name and user.email)
     ├── git.yaml
     ├── github.yaml
+    ├── gnupg.yaml
+    ├── gnupg-mac.yaml
+    ├── gnupg-configure.yaml
     ├── homebrew-mac.yaml
     ├── homebrew-linux.yaml
     ├── homebrew.yaml
-    ├── snap-desktop.yaml (contains packages that are gui based)
+    ├── ubuntu-desktop.yaml (contains packages that are gui based)
     ├── tmux.yaml
     ├── tmuxinator.yaml
     ├── vim-dependencies.yaml

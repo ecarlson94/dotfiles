@@ -1,0 +1,2 @@
+- shell:
+    - [ gpg --import gnupg/gpg-primary-public-key.txt, Configuring GNUPG...]

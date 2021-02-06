@@ -1,6 +1,6 @@
 - shell:
     - apt update
     - [ apt install -y build-essential curl file git, Installing Homebrew dependencies... ]
-    - [ apt install -y python-is-python3, Installing zsh plugin dependencies ]
-    - [ apt install -y gnome-shell-extension-autohidetopbar, Installing Gnome Hide Topbar ]
+    - [ apt install -y python-is-python3, Installing zsh plugin dependencies... ]
+    - [ apt install -y scdaemon pcscd, Installing GNUPG dependencies... ]
 
