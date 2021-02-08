@@ -68,9 +68,41 @@ map <c-p> :Files<CR>
 nnoremap <leader>o :Files<cr>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" NERDCommenter
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Plug 'preservim/nerdcommenter'
+" [count]<leader>cc |NERDCommenterComment|
+"     Comment out the current line or text selected in visual mode.
+" [count]<leader>cn |NERDCommenterNested|
+"     Same as cc but forces nesting.
+" [count]<leader>c<space> |NERDCommenterToggle|
+"     Toggles the comment state of the selected line(s). If the topmost selected line is commented, all selected lines are uncommented and vice versa.
+" [count]<leader>cm |NERDCommenterMinimal|
+"     Comments the given lines using only one set of multipart delimiters.
+" [count]<leader>ci |NERDCommenterInvert|
+"     Toggles the comment state of the selected line(s) individually.
+" [count]<leader>cs |NERDCommenterSexy|
+"     Comments out the selected lines with a pretty block formatted layout.
+" [count]<leader>cy |NERDCommenterYank|
+"     Same as cc except that the commented line(s) are yanked first.
+" <leader>c$ |NERDCommenterToEOL|
+"     Comments the current line from the cursor to the end of line.
+" <leader>cA |NERDCommenterAppend|
+"     Adds comment delimiters to the end of line and goes into insert mode between them.
+" <leader>ca |NERDCommenterAltDelims|
+"     Switches to the alternative set of delimiters.
+" [count]<leader>cl |NERDCommenterAlignLeft [count]<leader>cb |NERDCommenterAlignBoth
+"     Same as |NERDCommenterComment| except that the delimiters are aligned down the left side (<leader>cl) or both sides (<leader>cb).
+" [count]<leader>cu |NERDCommenterUncomment|
+"     Uncomments the selected line(s).
+let g:NERDCreateDefaultMappings = 1
+let g:NERDSpaceDelims = 1
+let g:NERDDefaultNesting = 1
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " NERDTree
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
+Plug 'preservim/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 let Tlist_GainFocus_On_ToggleOpen=1
 let NERDTreeQuitOnOpen=1
@@ -272,9 +304,6 @@ Plug 'tpope/vim-surround'
 Plug 'wesQ3/vim-windowswap'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'jiangmiao/auto-pairs'
-
-" Comments
-Plug 'tpope/vim-commentary'
 
 " closetag
 Plug 'alvan/vim-closetag', { 'for': [ 'html', 'xml', 'javascript' ] }
