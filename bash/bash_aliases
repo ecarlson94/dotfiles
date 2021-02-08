@@ -47,6 +47,7 @@ alias dotfiles="tmuxinator start dotfiles"
 
 # dotnet
 alias db="dotnet build"
+alias dr="db && dotnet run"
 
 # basic
 alias grep="grep --color=auto --line-number"
