@@ -23,8 +23,8 @@ map <expr> <leader>sa (exists('g:vscode')) ? ":call VSCodeNotify('workbench.acti
 nnoremap <leader>ta :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
 " Trim trailing whitespace following ';'
 nnoremap <leader>ts :let _s=@/<Bar>:%s/;\s\+$/;/e<Bar>:let @/=_s<Bar><CR>
-" Replace currently selected text
-vnoremap <leader>rr "hy:%s/<C-r>h//gc<left><left><left>
+" Replace currently selected text in current file
+vnoremap <leader>r "hy:%s/<C-r>h//gc<left><left><left>
 
 " Don't overwrite register when pasting in visual mode
 vnoremap p pgvy

@@ -53,6 +53,7 @@ map <Leader>k <Plug>(easymotion-k)
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+
 function! RipgrepFzf(query, fullscreen)
   let command_fmt = 'rg --column --line-number --no-heading --color=always --smart-case -- %s || true'
   let initial_command = printf(command_fmt, shellescape(a:query))
@@ -66,6 +67,28 @@ command! -nargs=* -bang RG call RipgrepFzf(<q-args>, <bang>0)
 nnoremap <C-p><C-a> :RG<cr>
 map <c-p> :Files<CR>
 nnoremap <leader>o :Files<cr>
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" vim-grepper
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Plug 'mhinz/vim-grepper'
+let g:grepper={}
+let g:grepper.tools=["rg"]
+
+nmap gs <plug>(GrepperOperator)
+xmap gs <plug>(GrepperOperator)
+
+" Replace word under cursor text in all files
+nnoremap <leader>R
+  \ :let @s='\<'.expand('<cword>').'\>'<CR>
+  \ :Grepper -cword -noprompt<CR>
+  \ :cfdo %s/<C-r>s// \| update
+  \ <left><left><left><left><left><left><left><left><left><left><left>
+" Replace currently selected text in all files
+vnoremap <leader>R
+  \ "hy:Grepper -noprompt -query '<C-r>h'<CR>
+  \ :cfdo %s/<C-r>h// \| update
+  \ <left><left><left><left><left><left><left><left><left><left><left>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " NERDCommenter
