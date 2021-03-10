@@ -8,4 +8,4 @@ aliases:
     ro: repo view --web
     pro: pr view --web
     prm: pr merge -m
-prompt: disabled
+prompt: enabled
