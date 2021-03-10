@@ -16,6 +16,6 @@ vim-dependencies
 vim-plugins
 gnupg-configure
 alacritty-ubuntu-deps-sudo
-alacritty-cargo
+alacritty-cargo-sudo
 alacritty
 ubuntu-desktop-sudo
