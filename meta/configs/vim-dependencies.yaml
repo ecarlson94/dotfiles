@@ -1,3 +1,3 @@
 - shell:
-    - [ npm install -g neovim, Install neovim node client ]
-    - [ pip3 install --user --upgrade pynvim, Install neovim plugin manager ]
+    - [ source ./configure-linuxbrew.sh && npm install -g neovim, Install neovim node client ]
+    - [ source ./configure-linuxbrew.sh && pip3 install --user --upgrade pynvim, Install neovim plugin manager ]

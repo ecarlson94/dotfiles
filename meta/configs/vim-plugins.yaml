@@ -1,2 +1,2 @@
 - shell:
-    - [ nvim +VimEnter +PlugInstall +qa > /dev/null, Installing vim plugins ]
+    - [ source ./configure-linuxbrew.sh && nvim +VimEnter +PlugInstall +qa > /dev/null, Installing vim plugins ]

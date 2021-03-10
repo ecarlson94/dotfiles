@@ -2,4 +2,6 @@
 
 source ./configure-linuxbrew.sh
 
-./zsh/install-plugins.zsh
+brew update-reset
+
+brew bundle --file Brewfile.linux

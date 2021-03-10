@@ -20,5 +20,7 @@
 [init]
 	defaultBranch = main
 	defautBranch = main
+[gpg]
+	program = gpg
 [commit]
 	gpgsign = true

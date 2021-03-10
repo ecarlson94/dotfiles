@@ -1,6 +1,10 @@
 - shell:
     - apt update
+    - apt upgrade -y
+    - apt-get update
+    - apt-get upgrade -y
     - [ apt install -y build-essential curl file git, Installing Homebrew dependencies... ]
     - [ apt install -y python-is-python3, Installing zsh plugin dependencies... ]
+    - [ apt-get install -y python3-pip, Installing zsh plugin dependencies... ]
     - [ apt install -y scdaemon pcscd, Installing GNUPG dependencies... ]
 

@@ -7,7 +7,3 @@ if [ -d /home/linuxbrew/.linuxbrew ]; then eval $(/home/linuxbrew/.linuxbrew/bin
 if [ -r ~/.bash_profile ]; then echo "eval \$($(brew --prefix)/bin/brew shellenv)" >>~/.bash_profile; fi
 
 echo "eval \$($(brew --prefix)/bin/brew shellenv)" >>~/.profile
-
-brew update-reset
-
-brew bundle --file Brewfile.linux

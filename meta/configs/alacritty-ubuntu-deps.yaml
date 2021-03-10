@@ -1,4 +1,5 @@
 - shell:
+    - apt install -y snapd
     - snap install rustup --classic
     - apt-get update
     - rustup override set stable

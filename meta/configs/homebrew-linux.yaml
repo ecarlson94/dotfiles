@@ -1,2 +1,2 @@
 - shell:
-    - [ ./configure-linuxbrew.sh, Install dependencies ]
+    - [ ./linuxbrew-bundle.sh, Install dependencies ]
