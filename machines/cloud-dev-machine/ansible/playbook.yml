@@ -1,0 +1,42 @@
+- name: Development Server
+  hosts: localhost
+  connection: local
+  gather_facts: no
+  tasks:
+    - include_vars: ./credentials.yml
+    - name: Check {{ username }} user
+      command: ssh -q -o BatchMode=yes -o ConnectTimeout=3 "{{ username }}@{{ inventory_hostname }}" "echo OK"
+      delegate_to: localhost
+      changed_when: false
+      failed_when: false
+      register: check_user
+    - block:
+      - name: "Create {{ username }} user"
+        user:
+          name: "{{ username }}"
+          comment: "{{ username }} user"
+          password: "{{ password }}"
+          shell: /bin/bash
+      - name: "Allow sudo for {{ username }}"
+        copy:
+          content: "{{ username }} ALL=(ALL) ALL"
+          dest: "/etc/sudoers.d/{{ username }}"
+          mode: 0600
+      - name: "Install {{ username }} dotfiles"
+        command: git clone --recursive https://github.com/ecarlson94/dotfiles "/home/{{ username }}"
+      - name: Add authorized key
+        authorized_key:
+          user: "{{ username }}"
+          key: "{{ lookup('file', '/home/{{ username }}/.dotfiles/ssh/gpg-ssh-key.pub') }}"
+          exclusive: yes
+      when: check_user | false
+    # - name: Install apt dependencies
+      # become: true
+      # become_user: "{{ username }}"
+      # become_method: sudo
+      # command: cd /home/{{ username }}/.dotfiles && ./install-standalone apt-sudo
+    # - name: Install dotfile dependencies
+      # become: true
+      # become_user: "{{ username }}"
+      # become_method: su
+      # command: cd /home/{{ username }}/.dotfiles && ./install-profile ubuntu-no-sudo
