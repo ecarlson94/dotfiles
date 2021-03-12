@@ -1,3 +1,0 @@
-- shell:
-    - [ brew bundle --file Brewfile.mac, Install dependencies]
-
