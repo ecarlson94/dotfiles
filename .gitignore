@@ -3,3 +3,6 @@ secrets.*
 credentials.*
 .pkrvars.hcl
 *.pkrvars.hcl
+*cmdline
+*.img
+*kernel
