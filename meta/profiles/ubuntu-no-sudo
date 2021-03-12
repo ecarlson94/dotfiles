@@ -1,4 +1,3 @@
-fonts-linux
 github
 git
 dir-colors
@@ -7,8 +6,7 @@ tmux
 tmuxinator
 vim
 gnupg
-homebrew
-homebrew-linux
+fonts-linux
 zsh-dependencies
 zsh-plugins
 vim-dependencies
