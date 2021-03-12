@@ -13,7 +13,7 @@
     - [ 'if [ ! -d ~/.fzf ]; then git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf; fi && ~/.fzf/install --key-bindings --completion --no-update-rc', Installing terminal fuzzy finder (fzf)... ]
     - [ apt install -y gh, Installing github cli... ]
     - [ apt-get install -y ripgrep, Installing ripgrep... ]
-    - [ apt install -y tmux tmuxinator, Installing TMUX... ]
+    - [ apt install -y tmux ruby && gem install tmuxinator, Installing TMUX... ]
     - [ snap install docker, Installing docker... ]
     - snap install scc
 
