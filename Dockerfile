@@ -26,4 +26,4 @@ RUN \
     # Install dotfiles \
     git clone --recursive "git@github.com:ecarlson94/dotfiles.git" "$HOME/.dotfiles" && \
     cd "$HOME/.dotfiles" && \
-    ./install-profile no-deps
+    ./install-profile no-deps apk

@@ -1,0 +1,14 @@
+- shell:
+    - apk upgrade --no-cache
+    - [ apk add --update --no-cache bash-completion cmake ctags file git curl build-essential coreutils wget software-properties-common, Install core dependencies... ]
+    - [ apk add --update --no-cache  gnupg-scdaemon pcsc-lite gnupg, Installing GNUPG... ]
+    - [ apk add --update --no-cache npm yarn neovim, Installing neovim... ]
+    - [ apk add --update --no-cache python3 py3-pip zsh, Installing zsh... ]
+    - [ apk add --update --no-cache fontconfig, Installing font dependencies... ]
+    - [ 'if [ ! -d ~/.fzf ]; then git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf; fi && ~/.fzf/install --key-bindings --completion --no-update-rc', Installing terminal fuzzy finder (fzf)... ]
+    # - [ apt install -y gh, Installing github cli... ]
+    - [ apk add --update --no-cache ripgrep, Installing ripgrep... ]
+    - [ apk add --update --no-cache tmux ruby && gem install tmuxinator, Installing TMUX... ]
+    - [ apk add --update --no-cache docker docker-compose && sudo groupadd -f docker && sudo usermod -aG docker $USER, Installing docker... ]
+    - [ apk add --update --no-cache go && go get -u github.com/boyter/scc/, Install Sloc Cloc and Code... ]
+
