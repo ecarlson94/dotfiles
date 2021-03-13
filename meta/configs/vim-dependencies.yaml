@@ -1,3 +1,2 @@
 - shell:
-    - [ npm install -g neovim, Install neovim node client ]
     - [ pip3 install --user --upgrade pynvim, Install neovim plugin manager ]
