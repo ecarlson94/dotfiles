@@ -65,7 +65,6 @@ You can run the above installation commands safely multiple times, if you think 
 meta/profiles
 ├── ubuntu-desktop
 ├── ubuntu
-├── ubuntu-no-sudo
 ├── mac
 └── no-deps (Skips dependency install, requires another profile be run first)
 ```
