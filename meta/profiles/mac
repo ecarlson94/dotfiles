@@ -1,15 +1,4 @@
-fonts-mac
-github
-git
 dir-colors
-zsh
-tmux
-tmuxinator
-vim
 gnupg-mac
 homebrew
-zsh-dependencies
-zsh-plugins
-vim-dependencies
-vim-plugins
-gnupg-configure
+fonts-mac

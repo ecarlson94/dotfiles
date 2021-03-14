@@ -89,6 +89,7 @@ meta
     ├── gnupg-mac.yaml
     ├── gnupg-configure.yaml
     ├── homebrew.yaml
+    ├── shims.yaml
     ├── ubuntu-desktop.yaml (contains packages that are gui based)
     ├── tmux.yaml
     ├── tmuxinator.yaml
