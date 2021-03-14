@@ -12,6 +12,7 @@ export GOPATH=$HOME/go
 export PATH=$GOPATH/bin:$PATH
 MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
 
+export NVIM_LOG_FILE=$HOME/.vim/nvim.logs
 
 # configure dir colors
 # test -r ~/.dir_colors && eval $(dircolors ~/.dir_colors)
