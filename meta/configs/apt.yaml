@@ -14,5 +14,5 @@
     - [ apt install -y gh, Installing github cli... ]
     - [ apt-get install -y ripgrep, Installing ripgrep... ]
     - [ apt install -y tmux ruby && gem install tmuxinator, Installing TMUX... ]
-    - [ snap install docker && sudo groupadd -f docker && sudo usermod -aG docker $USER, Installing docker... ]
+    - [ snap install docker && groupadd -f docker && usermod -aG docker $USER, Installing docker... ]
     - [ snap install scc, Install Sloc Cloc and Code... ]
