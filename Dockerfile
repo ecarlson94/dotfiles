@@ -41,16 +41,10 @@ RUN \
         fontconfig \
         ripgrep \
         tmux \
-        docker \
-        docker-compose \
         less \
         go
 
-ENV GEM_HOME /usr/local/bundle
-ENV PATH $GEM_HOME:$PATH
-
 RUN \
-    mkdir -p "$GEM_HOME" && chmod 777 "$GEM_HOME" && \
     echo "%${group} ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers && \
     adduser -D -G ${group} ${user} && \
     addgroup ${user} docker
