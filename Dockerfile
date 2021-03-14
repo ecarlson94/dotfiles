@@ -21,6 +21,7 @@ RUN \
         python3-dev \
         py3-pip \
         perl \
+        openssh \
         bash \
         bash-completion \
         cmake \
@@ -41,6 +42,8 @@ RUN \
         fontconfig \
         ripgrep \
         tmux \
+        docker \
+        docker-compose \
         less \
         go
 
