@@ -83,9 +83,10 @@ RUN \
         zsh-plugins \
         vim-dependencies \
         vim-plugins \
+        tmux-plugins \
         gnupg-configure
 
-ENV PATH=$GEM_HOME:$PATH
+ENV PATH=$GEM_HOME/bin:$PATH
 ENV HISTFILE=/config/.zsh_history
 
 CMD [ "zsh" ]
