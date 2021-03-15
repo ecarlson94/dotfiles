@@ -69,6 +69,7 @@ RUN \
     tar -xvf ghcli.tar.gz -C ./ghcli && \
     sudo cp ghcli/gh_${ghVersion}_linux_amd64/bin/gh /usr/bin && \
     rm -rf ghcli && \
+    rm ghcli.tar.gz && \
     ./install-profile no-deps \
         zsh-dependencies \
         zsh-plugins \
