@@ -86,7 +86,6 @@ RUN \
         tmux-plugins \
         gnupg-configure
 
-ENV PATH=$GEM_HOME/bin:$PATH
 ENV HISTFILE=/config/.zsh_history
 
 CMD [ "zsh" ]
