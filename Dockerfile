@@ -70,7 +70,15 @@ RUN \
     sudo cp ghcli/gh_${ghVersion}_linux_amd64/bin/gh /usr/bin && \
     rm -rf ghcli && \
     rm ghcli.tar.gz && \
-    ./install-profile no-deps \
+    ./install-standalone \
+        github \
+        git \
+        dir-colors \
+        zsh \
+        tmux \
+        tmuxinator \
+        vim \
+        gnupg \
         zsh-dependencies \
         zsh-plugins \
         vim-dependencies \
