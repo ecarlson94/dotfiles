@@ -61,45 +61,45 @@ You can run the above installation commands safely multiple times, if you think 
 ## Contents
 
 ### Profiles
-```
+<pre>
 meta/profiles
-├── ubuntu-desktop
-├── ubuntu
-├── mac
-└── no-deps (Skips dependency install, requires another profile be run first)
-```
+├── <a href="./meta/profiles/mac" title="mac">mac</a>
+├── <a href="./meta/profiles/no-deps" title="no-deps">no-deps</a> (Skips dependency install, requires another profile be run first)
+├── <a href="./meta/profiles/ubuntu" title="ubuntu">ubuntu</a>
+└── <a href="./meta/profiles/ubuntu-desktop" title="ubuntu-desktop">ubuntu-desktop</a>
+</pre>
 
 ### Configs
-```
+<pre>
 meta
-├── base.json
+├── <a href="./meta/base.yaml" title="base.yaml">base.yaml</a>
 └── configs
-    ├── alacritty-cargo.yaml
-    ├── alacritty-ubuntu-deps.yaml
-    ├── alacritty.yaml
-    ├── apt.yaml
-    ├── bash.yaml
-    ├── dir-colors.yaml
-    ├── fonts-linux.yaml
-    ├── fonts-mac.yaml
-    ├── git-override.yaml (Allows setting user.name and user.email)
-    ├── git.yaml
-    ├── github.yaml
-    ├── gnupg.yaml
-    ├── gnupg-mac.yaml
-    ├── gnupg-configure.yaml
-    ├── homebrew.yaml
-    ├── shims.yaml
-    ├── ubuntu-desktop.yaml (contains packages that are gui based)
-    ├── tmux.yaml
-    ├── tmuxinator.yaml
-    ├── vim-dependencies.yaml
-    ├── vim-plugins.yaml
-    ├── vim.yaml
-    ├── zsh-dependencies.yaml
-    ├── zsh-plugins.yaml
-    └── zsh.yaml
-```
+    ├── <a href="./meta/configs/alacritty-cargo.yaml" title="alacritty-cargo.yaml">alacritty-cargo.yaml</a>
+    ├── <a href="./meta/configs/alacritty-ubuntu-deps.yaml" title="alacritty-ubuntu-deps.yaml">alacritty-ubuntu-deps.yaml</a>
+    ├── <a href="./meta/configs/alacritty.yaml" title="alacritty.yaml">alacritty.yaml</a>
+    ├── <a href="./meta/configs/apt.yaml" title="apt.yaml">apt.yaml</a>
+    ├── <a href="./meta/configs/bash.yaml" title="bash.yaml">bash.yaml</a>
+    ├── <a href="./meta/configs/dir-colors.yaml" title="dir-colors.yaml">dir-colors.yaml</a>
+    ├── <a href="./meta/configs/fonts-linux.yaml" title="fonts-linux.yaml">fonts-linux.yaml</a>
+    ├── <a href="./meta/configs/fonts-mac.yaml" title="fonts-mac.yaml">fonts-mac.yaml</a>
+    ├── <a href="./meta/configs/git-override.yaml" title="git-override.yaml">git-override.yaml</a> (Allows setting user.name and user.email)
+    ├── <a href="./meta/configs/git.yaml" title="git.yaml">git.yaml</a>
+    ├── <a href="./meta/configs/github.yaml" title="github.yaml">github.yaml</a>
+    ├── <a href="./meta/configs/gnupg.yaml" title="gnupg.yaml">gnupg.yaml</a>
+    ├── <a href="./meta/configs/gnupg-mac.yaml" title="gnupg-mac.yaml">gnupg-mac.yaml</a>
+    ├── <a href="./meta/configs/gnupg-configure.yaml" title="gnupg-configure.yaml">gnupg-configure.yaml</a>
+    ├── <a href="./meta/configs/homebrew.yaml" title="homebrew.yaml">homebrew.yaml</a>
+    ├── <a href="./meta/configs/shims.yaml" title="shims.yaml">shims.yaml</a>
+    ├── <a href="./meta/configs/ubuntu-desktop.yaml" title="ubuntu-desktop.yaml">ubuntu-desktop.yaml</a> (contains packages that are gui based)
+    ├── <a href="./meta/configs/tmux.yaml" title="tmux.yaml">tmux.yaml</a>
+    ├── <a href="./meta/configs/tmuxinator.yaml" title="tmuxinator.yaml">tmuxinator.yaml</a>
+    ├── <a href="./meta/configs/vim-dependencies.yaml" title="vim-dependencies.yaml">vim-dependencies.yaml</a>
+    ├── <a href="./meta/configs/vim-plugins.yaml" title="vim-plugins.yaml">vim-plugins.yaml</a>
+    ├── <a href="./meta/configs/vim.yaml" title="vim.yaml">vim.yaml</a>
+    ├── <a href="./meta/configs/zsh-dependencies.yaml" title="zsh-dependencies.yaml">zsh-dependencies.yaml</a>
+    ├── <a href="./meta/configs/zsh-plugins.yaml" title="zsh-plugins.yaml">zsh-plugins.yaml</a>
+    └── <a href="./meta/configs/zsh.yaml" title="zsh.yaml">zsh.yaml</a>
+</pre>
 
 ## License
 This software is hereby released under an MIT License. That means you can do whatever you want with conditions only requiring preservation of copyright and license notices.
