@@ -6,9 +6,14 @@ if [ ! -d ~/.zplug ]; then
     source ~/.zplug/init.zsh
     zplug "zplug/zplug", hook-build:"zplug --self-manage"
 fi
+
+test -e ~/.dircolors && \
+   eval `dircolors -b ~/.dircolors`
+
 source ~/.zplug/init.zsh
 source ~/.zsh/custom/plugins.zsh
 
+if [[ ! -v TERM ]]; then export TERM=xterm; fi
 if ! zplug check; then
     zplug install
 fi

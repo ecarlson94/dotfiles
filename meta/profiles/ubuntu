@@ -1,15 +1,4 @@
-github
-git
+shims-sudo
 dir-colors
-zsh
-tmux
-tmuxinator
-vim
-gnupg
 apt-sudo
 fonts-linux
-zsh-dependencies
-zsh-plugins
-vim-dependencies
-vim-plugins
-gnupg-configure
