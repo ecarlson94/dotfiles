@@ -1,2 +1,2 @@
 - shell:
-    - [ nvim +PlugInstall +qa, Installing vim plugins ]
+    - [ nvim +PlugInstall +qa, Installing vim plugins... ]

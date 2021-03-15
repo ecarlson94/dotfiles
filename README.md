@@ -97,6 +97,7 @@ meta
     ├── <a href="./meta/configs/ubuntu-desktop.yaml" title="ubuntu-desktop.yaml">ubuntu-desktop.yaml</a> (contains packages that are gui based)
     ├── <a href="./meta/configs/tmux.yaml" title="tmux.yaml">tmux.yaml</a>
     ├── <a href="./meta/configs/tmuxinator.yaml" title="tmuxinator.yaml">tmuxinator.yaml</a>
+    ├── <a href="./meta/configs/tmux-plugins.yaml" title="tmux-plugins.yaml">tmux-plugins.yaml</a>
     ├── <a href="./meta/configs/vim-dependencies.yaml" title="vim-dependencies.yaml">vim-dependencies.yaml</a>
     ├── <a href="./meta/configs/vim-plugins.yaml" title="vim-plugins.yaml">vim-plugins.yaml</a>
     ├── <a href="./meta/configs/vim.yaml" title="vim.yaml">vim.yaml</a>

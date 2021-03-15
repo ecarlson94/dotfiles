@@ -10,6 +10,7 @@ export PATH=$HOME/bin:/usr/local/opt/coreutils/libexec/gnubin:/usr/local/bin:$PA
 export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
 export GOPATH=$HOME/go
 export PATH=$GOPATH/bin:$PATH
+export PATH=$GEM_HOME/bin:$PATH
 MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
 
 export NVIM_LOG_FILE=$HOME/.vim/nvim.logs
