@@ -1,5 +1,9 @@
 # Dotfiles
-Dotfile management using [Dotbot](https://github.com/anishathalye/dotbot).
+Dotfile management using [Dotbot](https://github.com/anishathalye/dotbot) and [Docker](https://www.docker.com/).
+
+Quick uptime with containerized dotfiles and minimal dependency installation on host.
+Most dependencies exist in the [walawren/dotfiles](https://hub.docker.com/r/walawren/dotfiles) container image and the container
+is executed like a binary through [shims links](./meta/configs/shims.yaml) (currently only [zsh](./shims/zsh.sh) entrypoint is needed).
 
 The structure of this repository is heavily inspired by [vsund](https://github.com/vsund/dotfiles) and [vbrandl](https://github.com/vbrandl/dotfiles).
 
@@ -19,7 +23,8 @@ The structure of this repository is heavily inspired by [vsund](https://github.c
 <!-- /TOC -->
 
 ## Dependencies
-- curl
+- git
+- docker (automatically installed)
 
 ## Installation
 
