@@ -11,7 +11,7 @@ sudo docker run -it --rm \
   -w "$HOME" \
   -v "$HOME/.dotfiles":/dotfiles \
   -v $PWD:/cwd \
-  -v $HOME/.config/dotfiles:/config \
+  -v $HOME/.config:/config:rw \
   -v /var/run/docker.sock:/var/run/docker.sock \
   -v ${HOME}/.gnupg/:/.gnupg/:ro \
   -v /run/user/$(id -u)/:/run/user/$(id -u)/:ro \
