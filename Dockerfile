@@ -85,4 +85,6 @@ RUN \
         vim-plugins \
         gnupg-configure
 
+ENV PATH=$GEM_HOME:$PATH
+
 CMD [ "zsh" ]
