@@ -86,5 +86,6 @@ RUN \
         gnupg-configure
 
 ENV PATH=$GEM_HOME:$PATH
+ENV HISTFILE=/config/.zsh_history
 
 CMD [ "zsh" ]
