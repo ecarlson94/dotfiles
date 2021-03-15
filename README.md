@@ -84,6 +84,7 @@ meta
     ├── <a href="./meta/configs/apt.yaml" title="apt.yaml">apt.yaml</a>
     ├── <a href="./meta/configs/bash.yaml" title="bash.yaml">bash.yaml</a>
     ├── <a href="./meta/configs/dir-colors.yaml" title="dir-colors.yaml">dir-colors.yaml</a>
+    ├── <a href="./meta/configs/dotfiles-container.yaml" title="dotfiles-container.yaml">dotfiles-container.yaml</a>
     ├── <a href="./meta/configs/fonts-linux.yaml" title="fonts-linux.yaml">fonts-linux.yaml</a>
     ├── <a href="./meta/configs/fonts-mac.yaml" title="fonts-mac.yaml">fonts-mac.yaml</a>
     ├── <a href="./meta/configs/git-override.yaml" title="git-override.yaml">git-override.yaml</a> (Allows setting user.name and user.email)
