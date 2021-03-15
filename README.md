@@ -69,7 +69,6 @@ You can run the above installation commands safely multiple times, if you think 
 <pre>
 meta/profiles
 ├── <a href="./meta/profiles/mac" title="mac">mac</a>
-├── <a href="./meta/profiles/no-deps" title="no-deps">no-deps</a> (Skips dependency install, requires another profile be run first)
 ├── <a href="./meta/profiles/ubuntu" title="ubuntu">ubuntu</a>
 └── <a href="./meta/profiles/ubuntu-desktop" title="ubuntu-desktop">ubuntu-desktop</a>
 </pre>
