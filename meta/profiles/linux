@@ -3,7 +3,7 @@ bash
 dir-colors
 git
 github
-gnupg-mac
+gnupg
 tmux
 tmuxinator
 vim
