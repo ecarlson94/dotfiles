@@ -44,6 +44,7 @@ alias dev="tmuxinator start dev"
 alias devtasks="tmuxinator start devtasks"
 alias tasks="tmuxinator start tasks"
 alias dotfiles="tmuxinator start dotfiles"
+alias dev-container="tmuxinator start dev-container"
 
 # dotnet
 alias db="dotnet build"
