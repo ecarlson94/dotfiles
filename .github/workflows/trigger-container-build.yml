@@ -1,0 +1,14 @@
+name: Publish Docker Image (Development)
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  trigger_container_build:
+    name: Trigger Dev Container Build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger Dev Container Build
+        run: |
+          curl -XPOST -u "${{ secrets.PAT_USERNAME}}:${{secrets.PAT_TOKEN}}" -H "Accept: application/vnd.github.everest-preview+json" -H "Content-Type: application/json" https://api.github.com/repos/ecarlson94/dev-container/dispatches --data '{"event_type": "build_dev_container"}'

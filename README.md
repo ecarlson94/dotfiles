@@ -5,6 +5,7 @@ This repository contains only dotfiles for symlink. For dependency management, p
 
 The structure of this repository is heavily inspired by [vsund](https://github.com/vsund/dotfiles) and [vbrandl](https://github.com/vbrandl/dotfiles).
 
+## Table of Contents
 <!-- TOC GFM -->
 
 - [Dependencies](#dependencies)
