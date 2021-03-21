@@ -34,6 +34,7 @@ for config in ${@}; do
     rm -f "$configFile"
 done
 
+cd "${BASE_DIR}"
 
 echo "Restart your terminal..."
 
