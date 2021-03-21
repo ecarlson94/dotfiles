@@ -1,4 +1,4 @@
-name: Publish Docker Image (Development)
+name: Trigger Dev Container Build
 on:
   push:
     branches:
