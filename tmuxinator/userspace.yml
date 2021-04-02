@@ -1,6 +1,6 @@
-# ~/.config/tmuxinator/dotfiles.yml
+# ~/.config/tmuxinator/userspace.yml
 
-name: dev-container
+name: userspace
 root: ~/.dev-container
 windows:
   - editor:

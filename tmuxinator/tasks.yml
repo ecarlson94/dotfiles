@@ -1,4 +1,4 @@
-# ~/.config/tmuxinator/dev.yml
+# ~/.config/tmuxinator/tasks.yml
 
 name: tasks
 root: ~/
