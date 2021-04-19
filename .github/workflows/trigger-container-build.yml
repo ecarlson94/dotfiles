@@ -6,9 +6,13 @@ on:
 
 jobs:
   trigger_container_build:
-    name: Trigger Dev Container Build
+    name: Trigger BYOB Build
     runs-on: ubuntu-latest
     steps:
-      - name: Trigger Dev Container Build
-        run: |
-          curl -XPOST -u "${{ secrets.PAT_USERNAME}}:${{secrets.PAT_TOKEN}}" -H "Accept: application/vnd.github.everest-preview+json" -H "Content-Type: application/json" https://api.github.com/repos/ecarlson94/dev-container/dispatches --data '{"event_type": "build_dev_container"}'
+      - name: Trigger BYOB Container Build
+        uses: peter-evans/repository-dispatch@v1
+        with:
+          token: ${{ secrets.PAT_TOKEN }}
+          repository: ${{ secrets.PAT_USERNAME }}/userspace
+          event-type: build_userspace
+          client-payload: '{"branch": "main"}'
