@@ -1,7 +1,7 @@
 # Dotfiles
 Dotfile management using [Dotbot](https://github.com/anishathalye/dotbot).
 
-This repository contains only dotfiles for symlink. For dependency management, please review [ecarlson94/dev-container](https://github.com/ecarlson94/dev-container).
+This repository contains only dotfiles for symlink. For dependency management, please review [ecarlson94/userspace](https://github.com/ecarlson94/userspace).
 
 The structure of this repository is heavily inspired by [vsund](https://github.com/vsund/dotfiles) and [vbrandl](https://github.com/vbrandl/dotfiles).
 
