@@ -1,4 +1,4 @@
-# Dotfiles
+# Dotfiles [![Trigger Dev Container Build](https://github.com/ecarlson94/dotfiles/actions/workflows/trigger-container-build.yml/badge.svg?branch=main)](https://github.com/ecarlson94/dotfiles/actions/workflows/trigger-container-build.yml) [![Publish Docker Image](https://github.com/ecarlson94/userspace/actions/workflows/publish-docker-image.yml/badge.svg?event=repository_dispatch)](https://github.com/ecarlson94/userspace/actions/workflows/publish-docker-image.yml?query=event%3Arepository_dispatch++)
 Dotfile management using [Dotbot](https://github.com/anishathalye/dotbot).
 
 This repository contains only dotfiles for symlink. For dependency management, please review [ecarlson94/userspace](https://github.com/ecarlson94/userspace).
