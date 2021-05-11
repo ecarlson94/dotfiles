@@ -51,6 +51,6 @@ alias db="dotnet build"
 alias dr="db && dotnet run"
 
 # basic
-alias grep="grep --color=auto --line-number"
+alias grep="grep --color=auto"
 alias ls="ls --color=always -GF"
 alias restartgpg="gpgconf --kill gpg-agent"
