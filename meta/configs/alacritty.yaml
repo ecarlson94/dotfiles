@@ -1,2 +1,2 @@
 - link:
-    $HOME/.config/alacritty: alacritty
+    $HOME/.config/alacritty/alacritty.yml: alacritty/alacritty.yml
