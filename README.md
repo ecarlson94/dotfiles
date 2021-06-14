@@ -65,14 +65,15 @@ meta/profiles
 meta
 ├── <a href="./meta/base.yaml" title="base.yaml">base.yaml</a>
 └── configs
+    ├── <a href="./meta/configs/alacritty-dr460nized.yaml" title="alacritty-dr460nized.yaml">alacritty-dr460nized.yaml</a>
     ├── <a href="./meta/configs/alacritty.yaml" title="alacritty.yaml">alacritty.yaml</a>
     ├── <a href="./meta/configs/bash.yaml" title="bash.yaml">bash.yaml</a>
     ├── <a href="./meta/configs/dir-colors.yaml" title="dir-colors.yaml">dir-colors.yaml</a>
     ├── <a href="./meta/configs/git-override.yaml" title="git-override.yaml">git-override.yaml</a> (Allows setting user.name and user.email)
     ├── <a href="./meta/configs/git.yaml" title="git.yaml">git.yaml</a>
     ├── <a href="./meta/configs/github.yaml" title="github.yaml">github.yaml</a>
-    ├── <a href="./meta/configs/gnupg.yaml" title="gnupg.yaml">gnupg.yaml</a>
     ├── <a href="./meta/configs/gnupg-mac.yaml" title="gnupg-mac.yaml">gnupg-mac.yaml</a>
+    ├── <a href="./meta/configs/gnupg.yaml" title="gnupg.yaml">gnupg.yaml</a>
     ├── <a href="./meta/configs/tmux.yaml" title="tmux.yaml">tmux.yaml</a>
     ├── <a href="./meta/configs/tmuxinator.yaml" title="tmuxinator.yaml">tmuxinator.yaml</a>
     ├── <a href="./meta/configs/vim.yaml" title="vim.yaml">vim.yaml</a>
