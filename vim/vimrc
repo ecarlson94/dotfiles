@@ -13,3 +13,6 @@ endif
 
 " Bindings
 source ~/.vim/custom/bindings.vim
+
+" coc.nvim
+source ~/.vim/custom/coc.vim

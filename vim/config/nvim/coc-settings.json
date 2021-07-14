@@ -1,0 +1,10 @@
+{
+  "markdownlint.config": {
+    "no-inline-html": false,
+    "line-length": {
+      "line_length": 100
+    }
+  },
+  "eslint.autoFixOnSave": true,
+  "prettier.disableSuccessMessage": true
+}

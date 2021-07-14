@@ -141,7 +141,6 @@ autocmd FileType c set omnifunc=ccomplete#Complete
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Misc
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:coc_disable_startup_warning = 1
 set noswapfile
 
 set nocompatible        " vim > vi mode.
@@ -163,3 +162,6 @@ autocmd BufLeave term://* stopinsert
 
 " Windows General
 set wildignore+=.git\*,.sass-cache\\*,*.orig,*.cache,*.nupkg,*.exe
+
+" Auto Save on blur
+:au BufLeave * :wa

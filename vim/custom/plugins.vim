@@ -32,14 +32,6 @@ let g:tmux_navigator_disable_when_zoomed = 1
 Plug 'ecarlson94/vim-arduino-cli'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" AutoSave
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Plug '907th/vim-auto-save'
-let g:auto_save = 1
-let g:auto_save_silent = 1
-let g:auto_save_write_all_buffers = 1  " write all open buffers as if you would use :wa
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " EasyMotion
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Plug 'easymotion/vim-easymotion'
@@ -173,23 +165,11 @@ Plug 'arcticicestudio/nord-vim'
  let g:airline_theme = 'nord'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Autocomplete Engine / Intellisense
+" Autocomplete Engine / Intellisense / Linter / Pretty
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Plug 'prabirshrestha/asyncomplete.vim'
-let g:asyncomplete_auto_popup = 1
-let g:asyncomplete_auto_completeopt = 0
-let g:asyncomplete_force_refresh_on_context_changed = 1
-" auto close preview window when completion done
-autocmd! CompleteDone * if pumvisible() == 0 | pclose | endif
-
-if has('nvim')
-  set completeopt=menuone,noinsert,noselect,preview
-  Plug 'ncm2/float-preview.nvim'
-  let g:float_preview#docked = 0
-else
-  set completeopt=menuone,noinsert,noselect,popuphidden
-  set completepopup=highlight:Pmenu,border:off
-endif
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+let g:coc_global_extensions = ['coc-json', 'coc-tsserver', 'coc-graphql', 'coc-yaml', 'coc-sh', 'coc-vimlsp', 'coc-css', 'coc-markdownlint', 'coc-prettier', 'coc-eslint', 'coc-styled-components']
+" let g:coc_disable_startup_warning = 1
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Snippets
@@ -267,11 +247,13 @@ let g:OmniSharp_selector_ui = 'fzf'    " Use fzf.vim
 " Markdown
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
+" TODO: replace with external invocation of doctoc
 Plug 'mzlogin/vim-markdown-toc'
 let g:vmt_fence_hidden_markdown_style='GFM'
 let g:vmt_list_item_char='-'
 let g:vmt_fence_text = 'TOC'
 let g:vmt_fence_closing_text = '/TOC'
+let g:vmt_fence_hidden_markdown_style
 nnoremap <leader>tc :GenTocGFM<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -281,7 +263,7 @@ Plug 'janko/vim-test'
 let g:test#preserve_screen=1
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Syntax
+" Syntax / Linter
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Plug 'dense-analysis/ale'
 let g:ale_sign_error = "✗"
@@ -291,13 +273,13 @@ highlight ALEWarningSign ctermbg=NONE ctermfg=yellow
 let g:airline#extensions#ale#enabled = 1
 " linters
 let g:ale_linters = {
-\ 'cs': ['OmniSharp']
+\ 'cs': ['OmniSharp'],
 \}
 " fixers
 let g:ale_fix_on_save = 1
-let g:ale_fixers = {
-\  'javascript': ['eslint'],
-\}
+" let g:ale_fixers = {
+" \ 'javascript': ['prettier', 'eslint'],
+" \}
 
 Plug 'sheerun/vim-polyglot'
 Plug 'editorconfig/editorconfig-vim'
@@ -326,7 +308,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'wesQ3/vim-windowswap'
 Plug 'christoomey/vim-tmux-navigator'
-Plug 'jiangmiao/auto-pairs'
+" Plug 'jiangmiao/auto-pairs'
 
 " closetag
 Plug 'alvan/vim-closetag', { 'for': [ 'html', 'xml', 'javascript' ] }
