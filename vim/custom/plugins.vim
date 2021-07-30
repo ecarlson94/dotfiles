@@ -168,7 +168,7 @@ Plug 'arcticicestudio/nord-vim'
 " Autocomplete Engine / Intellisense / Linter / Pretty
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-let g:coc_global_extensions = ['coc-json', 'coc-tsserver', 'coc-graphql', 'coc-yaml', 'coc-sh', 'coc-vimlsp', 'coc-css', 'coc-markdownlint', 'coc-prettier', 'coc-eslint', 'coc-styled-components']
+let g:coc_global_extensions = readfile(glob('~/.vim/custom/coc.plugins'))
 " let g:coc_disable_startup_warning = 1
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

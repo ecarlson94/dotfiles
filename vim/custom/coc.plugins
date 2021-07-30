@@ -1,0 +1,11 @@
+coc-json
+coc-tsserver
+coc-graphql
+coc-yaml
+coc-sh
+coc-vimlsp
+coc-css
+coc-markdownlint
+coc-prettier
+coc-eslint
+coc-styled-components
