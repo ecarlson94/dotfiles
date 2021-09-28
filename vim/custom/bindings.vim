@@ -19,6 +19,8 @@ map <expr> <leader>qa (exists('g:vscode')) ? ":call VSCodeNotify('workbench.acti
 map <expr> <leader>ss (exists('g:vscode')) ? ":call VSCodeNotify('workbench.action.files.save')<CR>" : ":w<CR>"
 " Save all buffers
 map <expr> <leader>sa (exists('g:vscode')) ? ":call VSCodeNotify('workbench.action.files.saveAll')<CR>" : ":wa<CR>"
+" Eslint Show Output Channel
+map <leader>es :CocCommand eslint.showOutputChannel<CR>
 " Trim all trailing whitespace
 nnoremap <leader>ta :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
 " Trim trailing whitespace following ';'
