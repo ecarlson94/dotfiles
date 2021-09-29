@@ -9,7 +9,7 @@ set -g @plugin 'tmux-plugins/tmux-resurrect'
 set -g @resurrect-capture-pane-contents 'on'
 
 set -g @plugin 'tmux-plugins/tmux-continuum'
-# set -g @continuum-restore 'on'
+set -g @continuum-restore 'on'
 
 # Prefix highlight
 set -g @plugin 'tmux-plugins/tmux-prefix-highlight'
