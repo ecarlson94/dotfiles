@@ -47,4 +47,5 @@ main() {
   pane_split_bindings
   improve_new_window_binding
 }
+
 main
