@@ -56,9 +56,8 @@ endfunction
 
 command! -nargs=* -bang RG call RipgrepFzf(<q-args>, <bang>0)
 
-nnoremap <C-p><C-a> :RG<cr>
-map <c-p> :Files<CR>
-nnoremap <leader>o :Files<cr>
+nnoremap <leader>fa :RG<CR>
+nnoremap <leader>ff :GFiles<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " vim-grepper

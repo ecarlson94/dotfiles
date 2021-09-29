@@ -50,4 +50,5 @@ WORDCHARS='*?_-[]~=./&;!#$%^(){}<>'
 
 # Fuzzy Find
 export FZF_DEFAULT_COMMAND='rg --hidden -l --no-ignore-vcs --files'
+export FZF_DEFAULT_OPTS='-m --height 50% --border'
 
