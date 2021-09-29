@@ -7,6 +7,7 @@ set -g @plugin 'christoomey/vim-tmux-navigator'
 # Session saves through restart
 set -g @plugin 'tmux-plugins/tmux-resurrect'
 set -g @resurrect-capture-pane-contents 'on'
+set -g @resurrect-strategy-nvim 'session'
 
 set -g @plugin 'tmux-plugins/tmux-continuum'
 set -g @continuum-restore 'on'

@@ -306,6 +306,7 @@ let g:blamer_template = '<committer>, <committer-time> • <summary> - <commit-s
 Plug 'mileszs/ack.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
+Plug 'tpope/vim-obsession'
 Plug 'wesQ3/vim-windowswap'
 Plug 'christoomey/vim-tmux-navigator'
 " Plug 'jiangmiao/auto-pairs'
