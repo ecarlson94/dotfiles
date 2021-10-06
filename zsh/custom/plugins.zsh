@@ -48,7 +48,6 @@ zplug "plugins/history",           from:oh-my-zsh
 zplug "plugins/urltools",          from:oh-my-zsh
 zplug "plugins/web-search",        from:oh-my-zsh
 zplug "plugins/z",                 from:oh-my-zsh
-zplug "plugins/zsh_reload",        from:oh-my-zsh
 
 # Supports oh-my-zsh plugins and the like
 if [[ $OSTYPE = (linux)* ]]; then
