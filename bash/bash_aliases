@@ -24,6 +24,20 @@ alias tfsr="terraform state remove"
 alias tft="terraform taint"
 alias tfv="terraform version"
 
+# Terragrunt
+alias tga="terragrunt apply"
+alias tgaa="terragrunt apply -auto-approve"
+alias tgd="terragrunt destroy"
+alias tgda="terragrunt destroy -auto-approve"
+alias tgi="terragrunt init"
+alias tgp="terragrunt plan"
+alias tgr="terragrunt refresh"
+alias tgs="terragrunt show"
+alias tgsl="terragrunt state list"
+alias tgsr="terragrunt state remove"
+alias tgt="terragrunt taint"
+alias tgv="terragrunt version"
+
 # Arduino
 alias arduino="arduino-cli"
 alias sketch="arduino sketch"
