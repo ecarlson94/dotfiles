@@ -28,7 +28,7 @@ zplug "b4b4r07/enhancd", use:init.sh
 zplug "b4b4r07/zsh-history-ltsv", use:init.sh
 
 # Miscellaneous commands
-zplug "zdharma/zsh-diff-so-fancy"
+# zplug "zdharma/zsh-diff-so-fancy" TODO find replacement
 zplug "peco/peco", as:command, from:gh-r, use:"*${(L)$(uname -s)}*amd64*"
 
 # Bookmarks and jump

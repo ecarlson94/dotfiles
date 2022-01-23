@@ -66,8 +66,3 @@ fi
 
 gh=$(which gh)
 [ -f $gh ] && eval $($gh completion -s zsh)
-
-export GPG_TTY=$TTY
-export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
-echo UPDATESTARTUPTTY | gpg-connect-agent > /dev/null
-gpgconf --launch gpg-agent
