@@ -7,7 +7,7 @@ export ZSH="$HOME/.sheldon/repos/github.com/ohmyzsh/ohmyzsh"
 # Check if sheldon is installed
 if [[ ! -f ~/.local/bin/sheldon ]]; then
     curl --proto '=https' -fLsS https://rossmacarthur.github.io/install/crate.sh \
-        | bash -s -- --repo rossmacarthur/sheldon --to ~/.local/bin
+        | bash -s -- --repo rossmacarthur/sheldon --to $HOME/.local/bin
 fi
 
 # "zsh-users/zsh-history-substring-search"

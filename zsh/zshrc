@@ -22,6 +22,10 @@ test -e ~/.dircolors && \
 
 export EDITOR=nvim
 
+# add local bins to path
+[ -d "$HOME/bin" ] && export PATH="$HOME/bin:$PATH"
+[ -d "$HOME/.local/bin" ] && export PATH="$HOME/.local/bin:$PATH"
+
 # Zsh Plugins
 [ -f ~/.zsh/custom/plugins.zsh ] && source ~/.zsh/custom/plugins.zsh
 
@@ -33,10 +37,6 @@ export EDITOR=nvim
 
 # Zsh Bindings
 [ -f ~/.zsh/custom/bindings.zsh ] && source ~/.zsh/custom/bindings.zsh
-
-# add local bins to path
-[ -d "$HOME/bin" ] && export PATH="$HOME/bin:$PATH"
-[ -d "$HOME/.local/bin" ] && export PATH="$HOME/.local/bin:$PATH"
 
 # Zsh Completions
 [ -f ~/.zsh/custom/completions.zsh ] && source ~/.zsh/custom/completions.zsh

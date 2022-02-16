@@ -53,12 +53,9 @@ alias vimdiff="nvim -d"
 alias vi="nvim"
 alias vim="nvim"
 
-# tmux
-alias dev="tmuxinator start dev"
-alias devtasks="tmuxinator start devtasks"
-alias tasks="tmuxinator start tasks"
-alias dotfiles="tmuxinator start dotfiles"
-alias userspace="tmuxinator start userspace"
+
+# code
+alias userspace="code ~/.userspace"
 
 # docker
 alias docker="sudo $(which docker)"
