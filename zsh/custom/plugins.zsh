@@ -5,7 +5,7 @@
 export ZSH="$HOME/.sheldon/repos/github.com/ohmyzsh/ohmyzsh"
 
 # Check if sheldon is installed
-if [[ ! -f ~/.local/bin/sheldon ]]; then
+if [[ ! -f $HOME/.local/bin/sheldon ]]; then
     curl --proto '=https' -fLsS https://rossmacarthur.github.io/install/crate.sh \
         | bash -s -- --repo rossmacarthur/sheldon --to $HOME/.local/bin
 fi
@@ -65,4 +65,4 @@ ENHANCD_HOOK_AFTER_CD="ls -CF"
 ZSH_HISTORY_KEYBIND_GET_BY_DIR="^r"
 # ZSH_HISTORY_KEYBIND_GET_ALL="^r^a"
 
-eval "$(sheldon source)"
+eval "$($HOME/.local/bin/sheldon --home $HOME --config-dir $HOME/.sheldon --data-dir $HOME/.sheldon source)"
