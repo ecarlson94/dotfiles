@@ -83,6 +83,3 @@ github = 'aperezdc/zsh-notes'
 
 [plugins.oh-my-matrix]
 github = 'amstrad/oh-my-matrix'
-
-[plugins."z.lua"]
-github = "skywind3000/z.lua"
