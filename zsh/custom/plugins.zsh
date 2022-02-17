@@ -65,4 +65,16 @@ ENHANCD_HOOK_AFTER_CD="ls -CF"
 ZSH_HISTORY_KEYBIND_GET_BY_DIR="^r"
 # ZSH_HISTORY_KEYBIND_GET_ALL="^r^a"
 
+# aperezdc/zsh-notes
+# Ctrl-N: Open the notes selector.
+bindkey '^N' notes-edit-widget
+# If unset, ~/Notes is used as default.
+zstyle :notes home  ''
+# When set, exits the notes widget after one use.
+zstyle :notes:widget once no
+# Choose the picker used by the widget. Supported values: fzf, skim, fzy.
+zstyle :notes:widget picker fzf
+# Enable preview panel. Disabled by default.
+zstyle :notes:widget:preview enabled yes
+
 eval "$($HOME/.local/bin/sheldon --home $HOME --config-dir $HOME/.sheldon --data-dir $HOME/.sheldon source)"

@@ -27,7 +27,7 @@ github = 'ohmyzsh/ohmyzsh'
 [plugins.shellchanges]
 github = 'ohmyzsh/ohmyzsh'
 dir = 'plugins'
-use = ['{colored-man-pages,command-not-found,copydir,copyfile,cp,dircycle,encode64,extract,urltools,web-search}/*.plugin.zsh']
+use = ['{colored-man-pages,command-not-found,copydir,copyfile,cp,dircycle,encode64,extract,thefuck,urltools,web-search}/*.plugin.zsh']
 
 [plugins.commontools]
 github = 'ohmyzsh/ohmyzsh'
@@ -72,7 +72,17 @@ github = 'djui/alias-tips'
 github = 'hlissner/zsh-autopair'
 apply = ['defer']
 
-# For example:
-#
-# [plugins.base16]
-# github = "chriskempson/base16-shell"
+[plugins.git-extra-commands]
+github = 'unixorn/git-extra-commands'
+
+[plugins.nice-exit-code]
+github = 'bric3/nice-exit-code'
+
+[plugins.zsh-notes]
+github = 'aperezdc/zsh-notes'
+
+[plugins.oh-my-matrix]
+github = 'amstrad/oh-my-matrix'
+
+[plugins."z.lua"]
+github = "skywind3000/z.lua"
