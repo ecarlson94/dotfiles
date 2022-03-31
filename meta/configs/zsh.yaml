@@ -4,4 +4,4 @@
     $HOME/.zshrc: zsh/zshrc
     $HOME/.zsh/custom: zsh/custom
     $HOME/.p10k.zsh: zsh/custom/p10k.zsh
-    $HOME/.sheldon: sheldon
+    $HOME/.sheldon: zsh/sheldon
