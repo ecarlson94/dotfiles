@@ -78,8 +78,5 @@ github = 'unixorn/git-extra-commands'
 [plugins.nice-exit-code]
 github = 'bric3/nice-exit-code'
 
-[plugins.zsh-notes]
-github = 'aperezdc/zsh-notes'
-
 [plugins.oh-my-matrix]
 github = 'amstrad/oh-my-matrix'
