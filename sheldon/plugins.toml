@@ -27,7 +27,7 @@ github = 'ohmyzsh/ohmyzsh'
 [plugins.shellchanges]
 github = 'ohmyzsh/ohmyzsh'
 dir = 'plugins'
-use = ['{colored-man-pages,command-not-found,copydir,copyfile,cp,dircycle,encode64,extract,thefuck,urltools,web-search}/*.plugin.zsh']
+use = ['{colored-man-pages,command-not-found,copypath,copyfile,cp,dircycle,encode64,extract,thefuck,urltools,web-search}/*.plugin.zsh']
 
 [plugins.commontools]
 github = 'ohmyzsh/ohmyzsh'
