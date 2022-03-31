@@ -1,0 +1,143 @@
+version = "0.6.6"
+home = "/home/walawren"
+config_dir = "/home/walawren/.sheldon"
+data_dir = "/home/walawren/.sheldon"
+config_file = "/home/walawren/.sheldon/plugins.toml"
+lock_file = "/home/walawren/.sheldon/plugins.lock"
+clone_dir = "/home/walawren/.sheldon/repos"
+download_dir = "/home/walawren/.sheldon/downloads"
+
+[[plugins]]
+name = "zsh-defer"
+source_dir = "/home/walawren/.sheldon/repos/github.com/romkatv/zsh-defer"
+files = ["/home/walawren/.sheldon/repos/github.com/romkatv/zsh-defer/zsh-defer.plugin.zsh"]
+apply = ["source"]
+
+[[plugins]]
+name = "oh-my-zsh"
+source_dir = "/home/walawren/.sheldon/repos/github.com/ohmyzsh/ohmyzsh"
+files = ["/home/walawren/.sheldon/repos/github.com/ohmyzsh/ohmyzsh/oh-my-zsh.sh"]
+apply = ["source"]
+
+[[plugins]]
+name = "shellchanges"
+source_dir = "/home/walawren/.sheldon/repos/github.com/ohmyzsh/ohmyzsh"
+plugin_dir = "/home/walawren/.sheldon/repos/github.com/ohmyzsh/ohmyzsh/plugins"
+files = ["/home/walawren/.sheldon/repos/github.com/ohmyzsh/ohmyzsh/plugins/colored-man-pages/colored-man-pages.plugin.zsh", "/home/walawren/.sheldon/repos/github.com/ohmyzsh/ohmyzsh/plugins/command-not-found/command-not-found.plugin.zsh", "/home/walawren/.sheldon/repos/github.com/ohmyzsh/ohmyzsh/plugins/copydir/copydir.plugin.zsh", "/home/walawren/.sheldon/repos/github.com/ohmyzsh/ohmyzsh/plugins/copyfile/copyfile.plugin.zsh", "/home/walawren/.sheldon/repos/github.com/ohmyzsh/ohmyzsh/plugins/cp/cp.plugin.zsh", "/home/walawren/.sheldon/repos/github.com/ohmyzsh/ohmyzsh/plugins/dircycle/dircycle.plugin.zsh", "/home/walawren/.sheldon/repos/github.com/ohmyzsh/ohmyzsh/plugins/encode64/encode64.plugin.zsh", "/home/walawren/.sheldon/repos/github.com/ohmyzsh/ohmyzsh/plugins/extract/extract.plugin.zsh", "/home/walawren/.sheldon/repos/github.com/ohmyzsh/ohmyzsh/plugins/thefuck/thefuck.plugin.zsh", "/home/walawren/.sheldon/repos/github.com/ohmyzsh/ohmyzsh/plugins/urltools/urltools.plugin.zsh", "/home/walawren/.sheldon/repos/github.com/ohmyzsh/ohmyzsh/plugins/web-search/web-search.plugin.zsh"]
+apply = ["source"]
+
+[[plugins]]
+name = "commontools"
+source_dir = "/home/walawren/.sheldon/repos/github.com/ohmyzsh/ohmyzsh"
+plugin_dir = "/home/walawren/.sheldon/repos/github.com/ohmyzsh/ohmyzsh/plugins"
+files = ["/home/walawren/.sheldon/repos/github.com/ohmyzsh/ohmyzsh/plugins/brew/brew.plugin.zsh", "/home/walawren/.sheldon/repos/github.com/ohmyzsh/ohmyzsh/plugins/docker-compose/docker-compose.plugin.zsh", "/home/walawren/.sheldon/repos/github.com/ohmyzsh/ohmyzsh/plugins/dotnet/dotnet.plugin.zsh", "/home/walawren/.sheldon/repos/github.com/ohmyzsh/ohmyzsh/plugins/flutter/flutter.plugin.zsh", "/home/walawren/.sheldon/repos/github.com/ohmyzsh/ohmyzsh/plugins/gh/gh.plugin.zsh", "/home/walawren/.sheldon/repos/github.com/ohmyzsh/ohmyzsh/plugins/git/git.plugin.zsh", "/home/walawren/.sheldon/repos/github.com/ohmyzsh/ohmyzsh/plugins/golang/golang.plugin.zsh", "/home/walawren/.sheldon/repos/github.com/ohmyzsh/ohmyzsh/plugins/mongocli/mongocli.plugin.zsh", "/home/walawren/.sheldon/repos/github.com/ohmyzsh/ohmyzsh/plugins/node/node.plugin.zsh", "/home/walawren/.sheldon/repos/github.com/ohmyzsh/ohmyzsh/plugins/npm/npm.plugin.zsh", "/home/walawren/.sheldon/repos/github.com/ohmyzsh/ohmyzsh/plugins/pip/pip.plugin.zsh", "/home/walawren/.sheldon/repos/github.com/ohmyzsh/ohmyzsh/plugins/sudo/sudo.plugin.zsh", "/home/walawren/.sheldon/repos/github.com/ohmyzsh/ohmyzsh/plugins/systemd/systemd.plugin.zsh", "/home/walawren/.sheldon/repos/github.com/ohmyzsh/ohmyzsh/plugins/terraform/terraform.plugin.zsh", "/home/walawren/.sheldon/repos/github.com/ohmyzsh/ohmyzsh/plugins/yarn/yarn.plugin.zsh"]
+apply = ["source"]
+
+[[plugins]]
+name = "zsh-syntax-highlighting"
+source_dir = "/home/walawren/.sheldon/repos/github.com/zsh-users/zsh-syntax-highlighting"
+files = ["/home/walawren/.sheldon/repos/github.com/zsh-users/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh"]
+apply = ["defer"]
+
+[[plugins]]
+name = "zsh-autosuggestions"
+source_dir = "/home/walawren/.sheldon/repos/github.com/zsh-users/zsh-autosuggestions"
+files = ["/home/walawren/.sheldon/repos/github.com/zsh-users/zsh-autosuggestions/zsh-autosuggestions.zsh"]
+apply = ["source"]
+
+[[plugins]]
+name = "powerlevel10k"
+source_dir = "/home/walawren/.sheldon/repos/github.com/romkatv/powerlevel10k"
+files = ["/home/walawren/.sheldon/repos/github.com/romkatv/powerlevel10k/powerlevel10k.zsh-theme"]
+apply = ["source"]
+
+[[plugins]]
+name = "enhancd"
+source_dir = "/home/walawren/.sheldon/repos/github.com/b4b4r07/enhancd"
+files = ["/home/walawren/.sheldon/repos/github.com/b4b4r07/enhancd/enhancd.plugin.zsh"]
+apply = ["source"]
+
+[[plugins]]
+name = "zsh-history-substring-search"
+source_dir = "/home/walawren/.sheldon/repos/github.com/zsh-users/zsh-history-substring-search"
+files = ["/home/walawren/.sheldon/repos/github.com/zsh-users/zsh-history-substring-search/zsh-history-substring-search.plugin.zsh"]
+apply = ["defer"]
+
+[[plugins]]
+name = "zsh-256color"
+source_dir = "/home/walawren/.sheldon/repos/github.com/chrissicool/zsh-256color"
+files = ["/home/walawren/.sheldon/repos/github.com/chrissicool/zsh-256color/zsh-256color.plugin.zsh"]
+apply = ["source"]
+
+[[plugins]]
+name = "zsh-history-ltsv"
+source_dir = "/home/walawren/.sheldon/repos/github.com/b4b4r07/zsh-history-ltsv"
+files = ["/home/walawren/.sheldon/repos/github.com/b4b4r07/zsh-history-ltsv/init.zsh", "/home/walawren/.sheldon/repos/github.com/b4b4r07/zsh-history-ltsv/src/cli.zsh", "/home/walawren/.sheldon/repos/github.com/b4b4r07/zsh-history-ltsv/src/filter.zsh", "/home/walawren/.sheldon/repos/github.com/b4b4r07/zsh-history-ltsv/src/history.zsh", "/home/walawren/.sheldon/repos/github.com/b4b4r07/zsh-history-ltsv/src/utils.zsh"]
+apply = ["source"]
+
+[[plugins]]
+name = "zsh-diff-so-fancy"
+source_dir = "/home/walawren/.sheldon/repos/github.com/z-shell/zsh-diff-so-fancy"
+files = ["/home/walawren/.sheldon/repos/github.com/z-shell/zsh-diff-so-fancy/zsh-diff-so-fancy.plugin.zsh"]
+apply = ["source"]
+
+[[plugins]]
+name = "zsh-completions"
+source_dir = "/home/walawren/.sheldon/repos/github.com/zsh-users/zsh-completions"
+files = ["/home/walawren/.sheldon/repos/github.com/zsh-users/zsh-completions/zsh-completions.plugin.zsh"]
+apply = ["source"]
+
+[[plugins]]
+name = "alias-tips"
+source_dir = "/home/walawren/.sheldon/repos/github.com/djui/alias-tips"
+files = ["/home/walawren/.sheldon/repos/github.com/djui/alias-tips/alias-tips.plugin.zsh"]
+apply = ["source"]
+
+[[plugins]]
+name = "zsh-autopair"
+source_dir = "/home/walawren/.sheldon/repos/github.com/hlissner/zsh-autopair"
+files = ["/home/walawren/.sheldon/repos/github.com/hlissner/zsh-autopair/zsh-autopair.plugin.zsh"]
+apply = ["defer"]
+
+[[plugins]]
+name = "git-extra-commands"
+source_dir = "/home/walawren/.sheldon/repos/github.com/unixorn/git-extra-commands"
+files = ["/home/walawren/.sheldon/repos/github.com/unixorn/git-extra-commands/git-extra-commands.plugin.zsh"]
+apply = ["source"]
+
+[[plugins]]
+name = "nice-exit-code"
+source_dir = "/home/walawren/.sheldon/repos/github.com/bric3/nice-exit-code"
+files = ["/home/walawren/.sheldon/repos/github.com/bric3/nice-exit-code/nice-exit-code.plugin.zsh"]
+apply = ["source"]
+
+[[plugins]]
+name = "zsh-notes"
+source_dir = "/home/walawren/.sheldon/repos/github.com/aperezdc/zsh-notes"
+files = ["/home/walawren/.sheldon/repos/github.com/aperezdc/zsh-notes/notes.plugin.zsh"]
+apply = ["source"]
+
+[[plugins]]
+name = "oh-my-matrix"
+source_dir = "/home/walawren/.sheldon/repos/github.com/amstrad/oh-my-matrix"
+files = ["/home/walawren/.sheldon/repos/github.com/amstrad/oh-my-matrix/oh-my-matrix.plugin.zsh"]
+apply = ["source"]
+[templates.PATH]
+value = "export PATH=\"{{ dir }}:$PATH\""
+each = false
+
+[templates.path]
+value = "path=( \"{{ dir }}\" $path )"
+each = false
+
+[templates.fpath]
+value = "fpath=( \"{{ dir }}\" $fpath )"
+each = false
+
+[templates.source]
+value = "source \"{{ file }}\""
+each = true
+
+[templates.defer]
+value = "zsh-defer source \"{{ file }}\""
+each = true

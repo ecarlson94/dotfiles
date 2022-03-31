@@ -6,6 +6,9 @@ if !exists('g:vscode')
 
   " Settings
   source ~/.vim/custom/settings.vim
+
+  " coc.nvim
+  source ~/.vim/custom/coc.vim
 else
   " VS Code
   source ~/.vim/custom/vscode.vim
@@ -13,6 +16,3 @@ endif
 
 " Bindings
 source ~/.vim/custom/bindings.vim
-
-" coc.nvim
-source ~/.vim/custom/coc.vim
