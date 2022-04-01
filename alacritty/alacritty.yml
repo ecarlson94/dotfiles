@@ -4,25 +4,25 @@ font:
   size: 14
   # The normal (roman) font face to use.
   normal:
-    family: MesloLGS NF
+    family: Hack
     # Style can be specified to pick a specific face.
     style: Regular
 
   # The bold font face
   bold:
-    family: MesloLGS NF
+    family: Hack
     # Style can be specified to pick a specific face.
     style: Bold
 
   # The italic font face
   italic:
-    family: MesloLGS NF
+    family: Hack
     # Style can be specified to pick a specific face.
     style: Italic
 
   # Bold italic font face
   bold_italic:
-    family: MesloLGS NF
+    family: Hack
     # Style can be specified to pick a specific face.
     style: Bold Italic
 
@@ -128,7 +128,7 @@ colors: *nord
 #  args:
 #    - --login
 shell:
-  program: /usr/local/bin/zsh
+  program: /usr/bin/zsh
   args:
     - --login
 
