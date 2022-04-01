@@ -1,5 +1,7 @@
 local opts = { noremap = true, silent = true }
 
+local term_opts = { silent = true }
+
 -- Shorten function name
 local keymap = vim.api.nvim_set_keymap
 
@@ -51,6 +53,9 @@ keymap("n", "<leader>sa", ":wa<cr>", opts)
 keymap("n", "<leader>qq", ":Bdelete<cr>", opts)
 keymap("n", "<leader>qa", ":qa<cr>", opts)
 keymap("n", "<leader>vs", ":vsplit<cr>", opts)
+keymap("n", "<leader>e", ":NvimTreeToggle<cr>", opts)
+keymap("n", "<leader>f", "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ preview = false }))<cr>", opts)
+keymap("n", "<leader>d", ":Telescope live_grep<cr>", opts)
 
 -- Insert --
 -- Press jk fast to enter
@@ -73,7 +78,7 @@ keymap("x", "K", ":move '<-2<CR>gv-gv", opts)
 keymap("x", "<A-j>", ":move '>+1<CR>gv-gv", opts)
 keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
 
-keymap("n", "<leader>e", ":NvimTreeToggle<cr>", opts)
-keymap("n", "<leader>f", "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ preview = false }))<cr>", opts)
-keymap("n", "<leader>d", ":Telescope live_grep<cr>", opts)
+-- Terminal --
+-- Open new terminal vsplit
+keymap("t", "<C-n>", "<ESC>2<C-\\>", term_opts)
 
