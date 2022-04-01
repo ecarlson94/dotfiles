@@ -128,7 +128,7 @@ colors: *nord
 #  args:
 #    - --login
 shell:
-  program: /usr/local/bin/zsh
+  program: /usr/bin/zsh
   args:
     - --login
 
