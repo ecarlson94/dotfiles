@@ -223,6 +223,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/walawren/.local/share/nvim/site/pack/packer/start/vim-bbye",
     url = "https://github.com/moll/vim-bbye"
+  },
+  ["vim-markdown-toc"] = {
+    loaded = true,
+    path = "/home/walawren/.local/share/nvim/site/pack/packer/start/vim-markdown-toc",
+    url = "https://github.com/mzlogin/vim-markdown-toc"
   }
 }
 

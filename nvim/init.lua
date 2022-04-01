@@ -13,4 +13,5 @@ require "user.nvim-tree"
 require "user.lualine"
 require "user.bufferline"
 require "user.toggleterm"
+require "user.vim-markdown-toc"
 
