@@ -9,10 +9,10 @@ if !exists('g:vscode')
 
   " coc.nvim
   source ~/.vim/custom/coc.vim
+
+  " Bindings
+  source ~/.vim/custom/bindings.vim
 else
   " VS Code
   source ~/.vim/custom/vscode.vim
 endif
-
-" Bindings
-source ~/.vim/custom/bindings.vim

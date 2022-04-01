@@ -1,0 +1,3 @@
+- link:
+    $HOME/.vim/ftplugin: vim/ftplugin
+    $HOME/.config/nvim: nvim
