@@ -67,7 +67,6 @@ alias dr="db && dotnet run"
 # basic
 alias grep="grep --color=auto"
 alias ls="ls --color=always -GF"
-alias restartgpg="gpgconf --kill gpg-agent"
 alias gcsmg="gcmsg"
 alias loc="scc"
 alias rmf="rm -f"

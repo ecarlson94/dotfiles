@@ -17,9 +17,12 @@
 [user]
 	name = Eric Carlson
 	email = e.carlson94@gmail.com
-	signingkey = 2E35BB9E857219FD
 [init]
 	defaultBranch = main
 	defautBranch = main
-[gpg]
-	program = gpg
+[credential "https://github.com"]
+	helper =
+	helper = !/usr/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+	helper =
+	helper = !/usr/bin/gh auth git-credential
