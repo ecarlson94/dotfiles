@@ -102,6 +102,5 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
-
 eval $(which ssh-agent)
 export TTY=$(tty)
