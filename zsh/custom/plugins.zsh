@@ -81,4 +81,4 @@ zstyle :notes:widget picker fzf
 # Enable preview panel. Disabled by default.
 zstyle :notes:widget:preview enabled yes
 
-eval "$($HOME/.local/bin/sheldon --home $HOME --config-dir $HOME/.sheldon --data-dir $HOME/.sheldon source)"
+eval "$($HOME/.local/bin/sheldon --config-dir $HOME/.sheldon --data-dir $HOME/.sheldon source)"
