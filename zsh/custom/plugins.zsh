@@ -4,6 +4,10 @@
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.sheldon/repos/github.com/ohmyzsh/ohmyzsh"
 
+# Set sheldon config directories
+export SHELDON_CONFIG_DIR="$HOME/.sheldon"
+export SHELDON_DATA_DIR="$HOME/.sheldon"
+
 # Check if sheldon is installed
 if [[ ! -f $HOME/.local/bin/sheldon ]]; then
     curl --proto '=https' -fLsS https://rossmacarthur.github.io/install/crate.sh \
