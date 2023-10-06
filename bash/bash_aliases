@@ -70,3 +70,6 @@ alias ls="ls --color=always -GF"
 alias gcsmg="gcmsg"
 alias loc="scc"
 alias rmf="rm -f"
+alias ll='ls -alF'
+alias la='ls -A'
+alias l='ls -CF'
