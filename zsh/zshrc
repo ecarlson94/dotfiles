@@ -41,7 +41,7 @@ export EDITOR=nvim
 # Zsh Completions
 [ -f ~/.zsh/custom/completions.zsh ] && source ~/.zsh/custom/completions.zsh
 
-[ -f ~/.bash_aliases ] && source ~/.bash_aliases
+[ -f ~/.zsh/custom/aliases.zsh ] && source ~/.zsh/custom/aliases.zsh
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.

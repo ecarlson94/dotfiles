@@ -1,9 +1,7 @@
 alacritty
-bash
 dir-colors
 git
 github
 tmux
-tmuxinator
 nvim
 zsh
