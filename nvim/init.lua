@@ -1,21 +1,18 @@
-require "user.options"
-require "user.keymaps"
-require "user.plugins"
-require "user.colorscheme"
-require "user.cmp"
-require "user.lsp"
-require "user.telescope"
-require "user.treesitter"
-require "user.autopairs"
-require "user.comment"
-require "user.gitsigns"
-require "user.nvim-tree"
-require "user.lualine"
-require "user.bufferline"
-require "user.toggleterm"
-require "user.vim-markdown-toc"
-require "user.project"
-require "user.alpha"
-require "user.which-key"
-require "user.indentline"
-require "user.impatient"
+--[[
+  File: init.lua
+  Description: Entry point file for neovim
+]]
+
+-- Bootsraping plugin manager
+require "lazy-bootstrap"
+
+-- Settings
+require "settings"
+require "keybindings"
+
+-- Plugin management {{{
+local lazy = require("lazy")
+lazy.setup("plugins")
+-- }}}
+
+-- vim:tabstop=2 shiftwidth=2 expandtab syntax=lua foldmethod=marker foldlevelstart=0 foldlevel=0
