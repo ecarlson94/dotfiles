@@ -20,3 +20,6 @@
 [init]
 	defaultBranch = main
 	defautBranch = main
+[safe]
+	directory = /home/walawren/gitrepos
+	directory = /home/walawren/gitrepos/modusense-app-platform
