@@ -8,6 +8,7 @@ fi
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:/usr/local/opt/coreutils/libexec/gnubin:/usr/local/bin:$PATH
 export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+export PATH="/snap/bin:$PATH"
 export GOPATH=$HOME/go
 export PATH=$GOPATH/bin:$PATH
 export PATH=$GEM_HOME/bin:$PATH

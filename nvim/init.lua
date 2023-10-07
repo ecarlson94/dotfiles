@@ -19,4 +19,3 @@ require "user.alpha"
 require "user.which-key"
 require "user.indentline"
 require "user.impatient"
-
