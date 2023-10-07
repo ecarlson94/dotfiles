@@ -14,14 +14,16 @@ The structure of this repository is heavily inspired by
 
 <!-- TOC GFM -->
 
-- [Dependencies](#dependencies)
-- [Installation](#installation)
-  - [For installing a predefined profile](#for-installing-a-predefined-profile)
-    - [Set global git user name and email](#set-global-git-user-name-and-email)
-  - [For installing single configurations](#for-installing-single-configurations)
-- [Contents](#contents)
-  - [Profiles a'](#profiles-a)
-- [License](#license)
+- [Dotfiles](#dotfiles)
+  - [Table of Contents](#table-of-contents)
+  - [Dependencies](#dependencies)
+  - [Installation](#installation)
+    - [For installing a predefined profile](#for-installing-a-predefined-profile)
+      - [Set global git user name and email](#set-global-git-user-name-and-email)
+    - [For installing single configurations](#for-installing-single-configurations)
+  - [Contents](#contents)
+    - [Profiles a'](#profiles-a)
+  - [License](#license)
 
 <!-- TOC -->
 
@@ -64,8 +66,9 @@ See [meta/configs/](./meta/configs) for available configurations
 
 <pre>
 meta/profiles
-├── <a href="./meta/profiles/mac" title="mac">mac</a>
-└── <a href="./meta/profiles/linux" title="linux">linux</a>
+├── <a href="./meta/profiles/headless" title="headless">headless</a>
+├── <a href="./meta/profiles/linux" title="linux">linux</a>
+└── <a href="./meta/profiles/mac" title="mac">mac</a>
 </pre>
 
 ## License
