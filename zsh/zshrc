@@ -68,3 +68,5 @@ fi
 
 gh=$(which gh)
 [ -f $gh ] && eval $($gh completion -s zsh)
+
+if [ -e /home/walawren/.nix-profile/etc/profile.d/nix.sh ]; then . /home/walawren/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
