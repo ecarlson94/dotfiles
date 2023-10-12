@@ -142,14 +142,6 @@ apply = ["source"]
 
 [plugins.hooks]
 
-[[plugins]]
-name = "oh-my-matrix"
-source_dir = "/home/walawren/.sheldon/repos/github.com/amstrad/oh-my-matrix"
-files = ["/home/walawren/.sheldon/repos/github.com/amstrad/oh-my-matrix/oh-my-matrix.plugin.zsh"]
-apply = ["source"]
-
-[plugins.hooks]
-
 [templates]
 PATH = "export PATH=\"{{ dir }}:$PATH\""
 path = "path=( \"{{ dir }}\" $path )"
