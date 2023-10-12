@@ -20,7 +20,7 @@ The structure of this repository is heavily inspired by
       - [Set global git user name and email](#set-global-git-user-name-and-email)
     - [For installing single configurations](#for-installing-single-configurations)
   - [Contents](#contents)
-    - [Profiles a'](#profiles-a)
+    - [Profiles](#profiles)
   - [License](#license)
 
 <!-- TOC -->
@@ -60,7 +60,7 @@ See [meta/configs/](./meta/configs) for available configurations
 
 ## Contents
 
-### Profiles a'
+### Profiles
 
 <pre>
 meta/profiles
