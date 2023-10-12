@@ -3,7 +3,7 @@
 -- Add any additional options here
 
 -- Allows yanking to Windows clipboard from WSL
-vim.cmd [[
+vim.cmd([[
 let g:clipboard = {
   \   'name': 'WslClipboard',
   \   'copy': {
@@ -16,4 +16,21 @@ let g:clipboard = {
   \   },
   \   'cache_enabled': 0,
   \ }
-]]
+]])
+
+vim.opt.conceallevel = 0
+
+-- Whitespace {{{
+vim.opt.listchars = {
+  space = "·",
+  nbsp = "·",
+  tab = ">-",
+  extends = ">",
+  precedes = "<",
+  trail = "~",
+  eol = "¬",
+}
+vim.opt.list = true -- Display whitespace
+
+vim.cmd([[autocmd BufWritePre * :%s/\s\+$//e]]) -- Automatically remove trailing white space on save
+-- }}}

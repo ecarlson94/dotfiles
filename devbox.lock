@@ -1,0 +1,25 @@
+{
+  "lockfile_version": "1",
+  "packages": {
+    "stylua@latest": {
+      "last_modified": "2023-09-27T18:02:17Z",
+      "resolved": "github:NixOS/nixpkgs/517501bcf14ae6ec47efd6a17dda0ca8e6d866f9#stylua",
+      "source": "devbox-search",
+      "version": "0.18.2",
+      "systems": {
+        "aarch64-darwin": {
+          "store_path": "/nix/store/ppfxn6h9d93vr7yi2drrl50mlk8yf6w6-stylua-0.18.2"
+        },
+        "aarch64-linux": {
+          "store_path": "/nix/store/bsvlz5cylh42h1h4qc6v2g5c2xqhiqiq-stylua-0.18.2"
+        },
+        "x86_64-darwin": {
+          "store_path": "/nix/store/g689gg77c2kbamy8m3w04kzwpllh4jbq-stylua-0.18.2"
+        },
+        "x86_64-linux": {
+          "store_path": "/nix/store/w9hljincxjpkrn484dj4grx0xi56gysk-stylua-0.18.2"
+        }
+      }
+    }
+  }
+}
