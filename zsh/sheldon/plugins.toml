@@ -27,7 +27,12 @@ github = 'ohmyzsh/ohmyzsh'
 [plugins.shellchanges]
 github = 'ohmyzsh/ohmyzsh'
 dir = 'plugins'
-use = ['{colored-man-pages,command-not-found,copypath,copyfile,cp,dircycle,encode64,extract,thefuck,urltools,web-search,vi-mode}/*.plugin.zsh']
+use = ['{colored-man-pages,command-not-found,copypath,copyfile,cp,dircycle,encode64,extract,urltools,web-search,vi-mode}/*.plugin.zsh']
+
+[plugins.commonttools]
+github = 'ohmyzsh/ohmyzsh'
+dir = 'plugins'
+use = ['{brew,dotnet,docker,docker-compose,flutter,gh,git,golang,mongocli,node,npm,pip,sudo,systemd,terraform,yarn}/*.plugin.zsh']
 
 [plugins.zsh-syntax-highlighting]
 github = 'zsh-users/zsh-syntax-highlighting'
