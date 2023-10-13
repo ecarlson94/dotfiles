@@ -17,9 +17,17 @@ require("lazy").setup({
       },
     },
     -- import any extras modules here
-    -- { import = "lazyvim.plugins.extras.lang.typescript" },
-    -- { import = "lazyvim.plugins.extras.lang.json" },
-    -- { import = "lazyvim.plugins.extras.ui.mini-animate" },
+    { import = "lazyvim.plugins.extras.coding.codeium" },
+    -- Symbol navigation
+    { import = "lazyvim.plugins.extras.editor.aerial" },
+    -- Jump navigation
+    { import = "lazyvim.plugins.extras.editor.leap" },
+    -- Debug Adaptor Protocal
+    { import = "lazyvim.plugins.extras.dap.core" },
+    -- Testing UI
+    { import = "lazyvim.plugins.extras.test.core" },
+    -- Animate cursor moving
+    { import = "lazyvim.plugins.extras.ui.mini-animate" },
     -- import/override with your plugins
     { import = "plugins" },
   },
