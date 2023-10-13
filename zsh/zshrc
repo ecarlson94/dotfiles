@@ -75,4 +75,4 @@ gh=$(which gh)
 if [ -e /home/walawren/.nix-profile/etc/profile.d/nix.sh ]; then . /home/walawren/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
 
 # Source devbox
-eval "$(devbox global shellenv)"
+eval "$(devbox global shellenv --init-hook)"
