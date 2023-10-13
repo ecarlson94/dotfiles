@@ -15,8 +15,8 @@ return {
       auto_scroll = true,
     },
     keys = {
-      { "<leader>th", [[<cmd>1ToggleTerm<CR>]], desc = "Open/Close terminal 1", mode = { "n", "i", "t" }, buffer = 0 },
-      { "<leader>tn", [[<cmd>2ToggleTerm<CR>]], desc = "Open/Close terminal 2", mode = { "n", "i", "t" }, buffer = 0 },
+      { "<leader>th", [[<cmd>1ToggleTerm<CR>]], desc = "Open/Close terminal 1", mode = { "n", "t" }, buffer = 0 },
+      { "<leader>tn", [[<cmd>2ToggleTerm<CR>]], desc = "Open/Close terminal 2", mode = { "n", "t" }, buffer = 0 },
       { "<esc>", [[<C-\><C-n>]], desc = "Quick exit terminal", mode = { "t" }, buffer = 0 },
       { "jk", [[<C-\><C-n>]], desc = "Quick exit terminal", mode = { "t" }, buffer = 0 },
       { "<C-h>", [[<cmd>wincmd h<cr>]], desc = "Move to left window", mode = { "t" }, buffer = 0 },
