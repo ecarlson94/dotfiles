@@ -19,6 +19,7 @@ let g:clipboard = {
 ]])
 
 vim.opt.conceallevel = 0
+vim.opt.relativenumber = false
 
 -- Whitespace {{{
 vim.opt.listchars = {
