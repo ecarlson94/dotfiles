@@ -49,6 +49,6 @@ KEYTIMEOUT=1
 WORDCHARS='*?_-[]~=./&;!#$%^(){}<>'
 
 # Fuzzy Find
-export FZF_DEFAULT_COMMAND='rg --hidden -l --no-ignore-vcs --files'
+export FZF_DEFAULT_COMMAND='fd --type f --color=always --exclude .git --ignore-file ~/.gitignore'
 export FZF_DEFAULT_OPTS='-m --height 50% --border'
 
