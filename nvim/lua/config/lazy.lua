@@ -16,6 +16,7 @@ require("lazy").setup({
         colorscheme = "catppuccin",
       },
     },
+    { "akinsho/bufferline.nvim", enabled = false },
     -- import any extras modules here
     { import = "lazyvim.plugins.extras.coding.codeium" },
     -- Symbol navigation
@@ -26,8 +27,6 @@ require("lazy").setup({
     { import = "lazyvim.plugins.extras.dap.core" },
     -- Testing UI
     { import = "lazyvim.plugins.extras.test.core" },
-    -- Animate cursor moving
-    { import = "lazyvim.plugins.extras.ui.mini-animate" },
     -- import/override with your plugins
     { import = "plugins" },
   },
