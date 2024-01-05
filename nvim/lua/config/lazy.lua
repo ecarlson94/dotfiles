@@ -16,6 +16,12 @@ require("lazy").setup({
         colorscheme = "catppuccin",
       },
     },
+    {
+      "nvim-treesitter/nvim-treesitter",
+      opts = function(_, opts)
+        opts.ensure_installed = vim.list_extend(opts.ensure_installed, { "elixir" })
+      end,
+    },
     { "akinsho/bufferline.nvim", enabled = false },
     -- import any extras modules here
     { import = "lazyvim.plugins.extras.coding.codeium" },
