@@ -2,6 +2,7 @@ alacritty
 dir-colors
 git
 github
-tmux
+nix
 nvim
+tmux
 zsh

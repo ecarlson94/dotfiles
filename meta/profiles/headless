@@ -1,6 +1,7 @@
 dir-colors
 git
 github
+nix
 nvim
 tmux
 zsh
