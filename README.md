@@ -1,3 +1,6 @@
+This project has been superceded by my [NixOS configurations](https://github.com/ecarlson94/dotnix)
+
+
 # Dotfiles
 
 Dotfile management using [Dotbot](https://github.com/anishathalye/dotbot).
